@@ -579,15 +579,19 @@
             animation: pulse 2s infinite;
         }
 
-        /* Cookie Banner (Top) */
-        .cookie-banner-overlay {
+        /* Cookie Modal */
+        .cookie-modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 9999;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 30px 20px;
             animation: fadeIn 0.3s ease;
         }
 
@@ -596,112 +600,106 @@
             to { opacity: 1; }
         }
 
-        .cookie-banner {
+        .cookie-modal {
             background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-            animation: slideFromTop 0.5s ease;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            animation: slideDown 0.4s ease;
         }
 
-        @keyframes slideFromTop {
+        @keyframes slideDown {
             from {
-                transform: translateY(-100%);
+                transform: translateY(-100px);
+                opacity: 0;
             }
             to {
                 transform: translateY(0);
+                opacity: 1;
             }
         }
 
-        .cookie-banner-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 18px 25px;
+        .cookie-modal-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            margin-bottom: 15px;
         }
 
-        .cookie-icon {
-            font-size: 2.2rem;
-        }
-
-        .cookie-text {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .cookie-text p {
-            color: #444;
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .cookie-modal-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
             margin: 0;
         }
 
-        .cookie-text a {
-            color: #1e4d8c;
-            text-decoration: underline;
-        }
-
-        .cookie-banner-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .cookie-btn {
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .cookie-close {
+            font-size: 1.8rem;
+            color: #999;
             text-decoration: none;
-            border: none;
-            text-align: center;
+            line-height: 1;
+            transition: color 0.2s;
         }
 
-        .cookie-btn.accept-all {
-            background: linear-gradient(135deg, #f5d742 0%, #e6c93a 100%);
-            color: #1a1a1a;
-            box-shadow: 0 4px 15px rgba(245, 215, 66, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        .cookie-btn.accept-all:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(245, 215, 66, 0.6);
-        }
-
-        .cookie-btn.decline {
-            background: #f0f0f0;
-            color: #666;
-            border: 1px solid #ddd;
-        }
-
-        .cookie-btn.decline:hover {
-            background: #e5e5e5;
+        .cookie-close:hover {
             color: #333;
         }
 
+        .cookie-modal p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+
+        .cookie-modal-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .cookie-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+        }
+
+        .cookie-btn.accept {
+            background: #1e3a5f;
+            color: white;
+        }
+
+        .cookie-btn.accept:hover {
+            background: #152a45;
+        }
+
+        .cookie-btn.preferences {
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .cookie-btn.preferences:hover {
+            background: #f5f5f5;
+            border-color: #ccc;
+        }
+
         @media (max-width: 768px) {
-            .cookie-banner-content {
-                flex-direction: column;
-                text-align: center;
+            .cookie-modal {
+                margin: 15px;
                 padding: 20px;
-                gap: 15px;
             }
 
-            .cookie-banner-buttons {
-                width: 100%;
-                flex-direction: column;
-            }
-
-            .cookie-btn {
-                width: 100%;
-            }
-
-            .cookie-text {
-                min-width: unset;
+            .cookie-modal-buttons {
+                flex-direction: row;
             }
         }
     </style>
@@ -819,18 +817,17 @@
         <span>TRUSTED • SECURE</span>
     </div>
 
-    <!-- Cookie Banner (aparece do topo) -->
-    <div class="cookie-banner-overlay" id="cookieModal">
-        <div class="cookie-banner">
-            <div class="cookie-banner-content">
-                <div class="cookie-icon">🍪</div>
-                <div class="cookie-text">
-                    <p><strong>We use cookies</strong> to enhance your experience. By continuing to browse, you agree to our <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net">Privacy Policy</a>.</p>
-                </div>
-                <div class="cookie-banner-buttons">
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-btn accept-all">Accept Cookies</a>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-btn decline">Decline</a>
-                </div>
+    <!-- Cookie Modal -->
+    <div class="cookie-modal-overlay" id="cookieModal">
+        <div class="cookie-modal">
+            <div class="cookie-modal-header">
+                <h3>Cookies Settings</h3>
+                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-close">&times;</a>
+            </div>
+            <p>We use cookies and similar technologies to help personalize content, tailor and measure ads, and provide a better experience. By clicking accept, you agree to this, as outlined in our Cookie Policy.</p>
+            <div class="cookie-modal-buttons">
+                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-btn accept">Accept</a>
+                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-btn preferences">Preferences</a>
             </div>
         </div>
     </div>
