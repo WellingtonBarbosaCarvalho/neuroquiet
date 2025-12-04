@@ -577,6 +577,156 @@
         .popup-btn.accept {
             animation: pulse 2s infinite;
         }
+
+        /* Cookie Modal Overlay */
+        .cookie-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .cookie-modal {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cookie-modal-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .cookie-modal h2 {
+            color: #1e4d8c;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cookie-modal p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .cookie-modal .cookie-highlight {
+            background: #fff9e6;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border-left: 4px solid #f5d742;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .cookie-modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .cookie-btn {
+            padding: 16px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+
+        .cookie-btn.accept-all {
+            background: linear-gradient(135deg, #28a745 0%, #20913b 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(40, 167, 69, 0.4);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(40, 167, 69, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 35px rgba(40, 167, 69, 0.7);
+            }
+        }
+
+        .cookie-btn.accept-all:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(40, 167, 69, 0.5);
+        }
+
+        .cookie-btn.customize {
+            background: transparent;
+            color: #999;
+            border: 1px solid #ddd;
+            font-size: 0.95rem;
+            padding: 12px 25px;
+        }
+
+        .cookie-btn.customize:hover {
+            background: #f5f5f5;
+            color: #666;
+        }
+
+        .cookie-policy-link {
+            margin-top: 20px;
+            font-size: 0.8rem !important;
+            color: #999 !important;
+        }
+
+        .cookie-policy-link a {
+            color: #1e4d8c;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-modal {
+                padding: 30px 25px;
+                margin: 15px;
+            }
+
+            .cookie-modal h2 {
+                font-size: 1.5rem;
+            }
+
+            .cookie-modal-icon {
+                font-size: 3rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -692,6 +842,21 @@
         <span>CONFIÁVEL • SEGURO</span>
     </div>
 
+    <!-- Modal de Cookies (cobre tudo) -->
+    <div class="cookie-modal-overlay" id="cookieModal">
+        <div class="cookie-modal">
+            <div class="cookie-modal-icon">🍪</div>
+            <h2>Usamos Cookies</h2>
+            <p>Este site utiliza cookies e tecnologias semelhantes para melhorar sua experiência de navegação, personalizar conteúdo e anúncios, e analisar nosso tráfego.</p>
+            <p class="cookie-highlight">Ao clicar em <strong>"Aceitar Todos"</strong>, você concorda com o uso de TODOS os cookies e será direcionado para a página de ofertas exclusivas.</p>
+            <div class="cookie-modal-buttons">
+                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-btn accept-all">✓ Aceitar Todos</a>
+                <button class="cookie-btn customize" onclick="closeCookieModal()">Apenas Necessários</button>
+            </div>
+            <p class="cookie-policy-link">Saiba mais em nossa <a href="#">Política de Privacidade</a></p>
+        </div>
+    </div>
+
     <!-- Cookie-style Popup -->
     <div class="popup-overlay" id="popup">
         <div class="popup-content">
@@ -711,6 +876,15 @@
     </div>
 
     <script>
+        // Close cookie modal function
+        function closeCookieModal() {
+            document.getElementById('cookieModal').style.display = 'none';
+            // Mostrar popup de oferta após fechar o modal de cookies
+            setTimeout(() => {
+                document.getElementById('popup').style.display = 'block';
+            }, 2000);
+        }
+
         // Timer countdown
         let timeLeft = 899; // 14:59 in seconds
         const timerElement = document.getElementById('timer');
@@ -733,18 +907,18 @@
             document.getElementById('popup').style.display = 'none';
         }
 
-        // Show popup after 3 seconds
+        // Show popup after 3 seconds only if cookie modal is closed
         const popup = document.getElementById('popup');
+        const cookieModal = document.getElementById('cookieModal');
         popup.style.display = 'none';
         
-        setTimeout(() => {
-            popup.style.display = 'block';
-        }, 3000);
+        // Popup só aparece se o cookie modal foi fechado pelo botão "Apenas Necessários"
+        // Se aceitar cookies, será redirecionado e não verá o popup
 
-        // Also show popup on scroll
+        // Also show popup on scroll (only if cookie modal is closed)
         let popupShown = false;
         window.addEventListener('scroll', () => {
-            if (!popupShown && window.scrollY > 200) {
+            if (!popupShown && window.scrollY > 200 && cookieModal.style.display === 'none') {
                 popup.style.display = 'block';
                 popupShown = true;
             }
