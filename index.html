@@ -1,290 +1,753 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Exclusiva</title>
+    <title>NeuroQuiet - Claim Your Discounted Offer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* RESET E CONFIGURAÇÕES GERAIS */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background-color: #000000;
-            color: #ffffff;
-            line-height: 1.5;
-            padding-bottom: 80px; /* Espaço para o popup não cobrir o rodapé */
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
         }
 
-        /* BARRA DE AVISO NO TOPO */
-        .top-bar {
-            background-color: #cc0000; /* Vermelho escuro */
-            color: #ffffff;
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e4d8c 0%, #2a5fa8 50%, #1e4d8c 100%);
+            padding: 40px 20px 60px;
             text-align: center;
-            padding: 10px 15px;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
+            position: relative;
         }
 
-        /* CONTAINER PRINCIPAL */
-        .container {
-            max-width: 900px;
+        .header h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .header h1 span {
+            color: #f5d742;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+        .header-arrow {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-arrow::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 15px solid #1e4d8c;
+            margin-top: 5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            text-align: center;
+            padding: 50px 20px 30px;
         }
 
-        /* HEADLINE (TÍTULO) */
-        .headline {
-            font-size: 32px;
+        /* Pricing Cards Container */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        /* Pricing Card */
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 30px 30px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e8e8e8;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #1e4d8c;
+            transform: scale(1.02);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1e4d8c;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .product-image {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .product-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .bottles-placeholder {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        .bottle {
+            width: 35px;
+            height: 90px;
+            background: linear-gradient(180deg, #333 0%, #333 15%, #4a9fd4 15%, #4a9fd4 85%, #2a7ab8 85%, #2a7ab8 100%);
+            border-radius: 5px 5px 8px 8px;
+            position: relative;
+        }
+
+        .bottle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 12px;
+            background: #555;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .bottle.small {
+            height: 75px;
+            width: 30px;
+        }
+
+        .bonus-books {
+            position: absolute;
+            right: -15px;
+            bottom: 0;
+            display: flex;
+            gap: 2px;
+        }
+
+        .bonus-book {
+            width: 22px;
+            height: 32px;
+            border-radius: 2px;
+            transform: rotate(15deg);
+        }
+
+        .bonus-book:nth-child(1) { background: #e74c3c; }
+        .bonus-book:nth-child(2) { background: #f39c12; }
+        .bonus-book:nth-child(3) { background: #c0392b; }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 4rem;
             font-weight: 800;
-            margin-bottom: 30px;
+            color: #1a1a1a;
+            line-height: 1;
+        }
+
+        .price-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: left;
             line-height: 1.2;
         }
 
-        .highlight-red {
-            color: #ff0000;
+        .savings {
+            color: #c41e3a;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
         }
 
-        .highlight-yellow {
-            color: #ffcc00;
-            text-decoration: underline;
-        }
-
-        /* ÁREA DO VÍDEO */
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            background: #000;
-            border: 2px solid #333;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-        }
-
-        /* Aspect Ratio 16:9 para o vídeo */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe, 
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* SOBREPOSIÇÃO DE SOM (SOUND OVERLAY) */
-        .sound-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .sound-btn {
-            background: #28a745;
+        .bonus-badge {
+            background: #1e4d8c;
             color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .add-to-cart-btn {
+            background: #f5d742;
+            color: #1a1a1a;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 215, 66, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #e6c93a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(245, 215, 66, 0.5);
+        }
+
+        .guarantee {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .payment-icon {
+            width: 40px;
+            height: 25px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            animation: pulse 2s infinite;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: white;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+        .payment-icon.mastercard { background: linear-gradient(180deg, #eb001b 50%, #f79e1b 50%); }
+        .payment-icon.visa { background: #1a1f71; }
+        .payment-icon.amex { background: #006fcf; }
+        .payment-icon.discover { background: #ff6000; }
+
+        .total-price {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #666;
         }
 
-        .sound-text {
-            margin-top: 15px;
-            font-size: 16px;
-            font-weight: bold;
+        .total-price .old-price {
+            text-decoration: line-through;
+            color: #999;
         }
 
-        /* RODAPÉ */
-        footer {
-            margin-top: 50px;
-            padding: 20px;
+        .total-price .new-price {
+            color: #c41e3a;
+            font-weight: 600;
+        }
+
+        .shipping {
+            font-size: 0.85rem;
+            color: #1e4d8c;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .shipping.paid {
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
             text-align: center;
-            font-size: 12px;
-            color: #666;
-            border-top: 1px solid #222;
+            padding: 20px 0 30px;
+            border-top: 1px solid #e8e8e8;
         }
 
-        footer a {
+        .rating-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .rating-text {
             color: #666;
+            font-size: 0.95rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            color: #f5d742;
+            font-size: 1.3rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
             text-decoration: none;
-            margin: 0 10px;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .action-btn.primary {
+            background: white;
+            border: 2px solid #1e4d8c;
+            color: #1e4d8c;
         }
 
-        /* POPUP ESTILO COOKIE */
-        .cookie-popup {
+        .action-btn.secondary {
+            background: white;
+            border: 2px solid #c41e3a;
+            color: #c41e3a;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* ClickBank Badge */
+        .clickbank-badge {
             position: fixed;
             bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 600px;
-            background-color: #ffffff;
-            color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 100;
+        }
+
+        .clickbank-badge span {
+            display: block;
+            font-size: 0.6rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        /* Cookie-style Popup */
+        .popup-overlay {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            border: 1px solid #ddd;
-            opacity: 0; /* Começa invisível para animar */
-            animation: slideUp 1s forwards;
-            animation-delay: 2s; /* Aparece após 2 segundos */
+            animation: slideUp 0.5s ease;
         }
 
         @keyframes slideUp {
-            to { opacity: 1; bottom: 20px; }
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
-        .cookie-text {
-            font-size: 13px;
-            text-align: left;
+        .popup-content {
+            background: white;
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
         }
 
-        .cookie-btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
+        .popup-icon {
+            font-size: 2.5rem;
+        }
+
+        .popup-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .popup-text h3 {
+            color: #1e4d8c;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .popup-text p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .popup-text .highlight {
+            color: #c41e3a;
+            font-weight: 600;
+        }
+
+        .popup-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .popup-btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
             cursor: pointer;
-            white-space: nowrap;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
         }
 
-        .cookie-btn:hover {
-            background-color: #0056b3;
+        .popup-btn.accept {
+            background: linear-gradient(135deg, #f5d742 0%, #e6c93a 100%);
+            color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(245, 215, 66, 0.4);
         }
 
-        /* RESPONSIVIDADE (MOBILE) */
-        @media (max-width: 600px) {
-            .headline {
-                font-size: 22px; /* Fonte menor no mobile conforme imagem */
-            }
-            
-            .top-bar {
-                font-size: 11px;
+        .popup-btn.accept:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(245, 215, 66, 0.5);
+        }
+
+        .popup-btn.decline {
+            background: transparent;
+            color: #999;
+            border: 1px solid #ddd;
+        }
+
+        .popup-btn.decline:hover {
+            background: #f5f5f5;
+        }
+
+        .popup-timer {
+            background: #fff3cd;
+            color: #856404;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .popup-timer .time {
+            font-weight: 700;
+            color: #c41e3a;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6rem;
+                padding: 0 10px;
             }
 
-            .container {
-                padding: 15px;
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .cookie-popup {
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+                order: -1;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+
+            .pricing-card:not(.featured) {
+                display: none;
+            }
+
+            .price {
+                font-size: 3.5rem;
+            }
+
+            .popup-content {
                 flex-direction: column;
                 text-align: center;
-                bottom: 10px;
+                padding: 20px;
             }
 
-            .cookie-text {
-                text-align: center;
+            .popup-buttons {
+                width: 100%;
+                flex-direction: column;
             }
 
-            .cookie-btn {
+            .popup-btn {
                 width: 100%;
             }
+
+            .clickbank-badge {
+                bottom: auto;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        /* Pulse animation for CTA */
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(245, 215, 66, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(245, 215, 66, 0.7);
+            }
+        }
+
+        .add-to-cart-btn {
+            animation: pulse 2s infinite;
+        }
+
+        .popup-btn.accept {
+            animation: pulse 2s infinite;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Claim your Discounted NeuroQuiet Below<br><span>While Stock Lasts</span></h1>
+        <div class="header-arrow"></div>
+    </header>
 
-    <div class="top-bar">
-        ATENÇÃO: Este vídeo poderá sair do ar a qualquer momento...
-    </div>
-
-    <div class="container">
-        <h1 class="headline">
-            TRUQUE DE 30 SEGUNDOS <br>
-            <span class="highlight-yellow">"DESLIGA" O PROBLEMA</span> E <br>
-            <span class="highlight-red">DEVOLVE A VIRILIDADE</span> HOJE
-        </h1>
-
-        <div class="video-wrapper">
-            <div class="video-container">
-                <img src="https://via.placeholder.com/800x450/000000/333333?text=Carregando+V%C3%ADdeo..." alt="Vídeo VSL" style="width:100%; height:100%; position:absolute;">
-            </div>
-
-            <div class="sound-overlay" onclick="redirectOffer()">
-                <div class="sound-btn">
-                    <span>🔊</span> LIGAR O SOM
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Pricing Cards -->
+        <div class="pricing-container">
+            <!-- Try Two -->
+            <div class="pricing-card">
+                <h2 class="card-title">Try Two</h2>
+                <p class="card-subtitle">60 Days, 2 Bottles</p>
+                <div class="product-image">
+                    <img src="https://neuroquiethq.com/assets/img/PRODx2-500px.webp" alt="NeuroQuiet 2 Bottles">
                 </div>
-                <div class="sound-text">Seu vídeo já começou... Clique para ouvir</div>
+                <div class="price-container">
+                    <span class="price">$69</span>
+                    <span class="price-label">Per<br>Bottle</span>
+                </div>
+                <p class="savings">YOU SAVE $220</p>
+                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="add-to-cart-btn">ADD TO CART</a>
+                <p class="guarantee">90 Day Money-Back Guarantee</p>
+                <div class="payment-icons">
+                    <div class="payment-icon mastercard">MC</div>
+                    <div class="payment-icon visa">VISA</div>
+                    <div class="payment-icon amex">AMEX</div>
+                    <div class="payment-icon discover">DISC</div>
+                </div>
+                <p class="total-price">TOTAL: <span class="old-price">$358</span> <span class="new-price">$138</span></p>
+                <p class="shipping paid">+ SHIPPING</p>
+            </div>
+
+            <!-- Best Value (Featured) -->
+            <div class="pricing-card featured">
+                <h2 class="card-title">Best Value</h2>
+                <p class="card-subtitle">180 Days, 6 Bottles</p>
+                <div class="product-image">
+                    <img src="https://neuroquiethq.com/assets/img/PRODx6-500px.webp" alt="NeuroQuiet 6 Bottles">
+                </div>
+                <div class="price-container">
+                    <span class="price">$49</span>
+                    <span class="price-label">Per<br>Bottle</span>
+                </div>
+                <p class="savings">YOU SAVE $780</p>
+                <span class="bonus-badge">+ 3 FREE BONUSES</span>
+                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="add-to-cart-btn">ADD TO CART</a>
+                <p class="guarantee">90 Day Money-Back Guarantee</p>
+                <div class="payment-icons">
+                    <div class="payment-icon mastercard">MC</div>
+                    <div class="payment-icon visa">VISA</div>
+                    <div class="payment-icon amex">AMEX</div>
+                    <div class="payment-icon discover">DISC</div>
+                </div>
+                <p class="total-price">TOTAL: <span class="old-price">$1074</span> <span class="new-price">$294</span></p>
+                <p class="shipping">+ FREE US SHIPPING</p>
+            </div>
+
+            <!-- Most Popular -->
+            <div class="pricing-card">
+                <h2 class="card-title">Most Popular</h2>
+                <p class="card-subtitle">90 Days, 3 Bottles</p>
+                <div class="product-image">
+                    <img src="https://neuroquiethq.com/assets/img/PRODx3-500px.webp" alt="NeuroQuiet 3 Bottles">
+                </div>
+                <div class="price-container">
+                    <span class="price">$59</span>
+                    <span class="price-label">Per<br>Bottle</span>
+                </div>
+                <p class="savings">YOU SAVE $360</p>
+                <span class="bonus-badge">+ 3 FREE BONUSES</span>
+                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="add-to-cart-btn">ADD TO CART</a>
+                <p class="guarantee">90 Day Money-Back Guarantee</p>
+                <div class="payment-icons">
+                    <div class="payment-icon mastercard">MC</div>
+                    <div class="payment-icon visa">VISA</div>
+                    <div class="payment-icon amex">AMEX</div>
+                    <div class="payment-icon discover">DISC</div>
+                </div>
+                <p class="total-price">TOTAL: <span class="old-price">$537</span> <span class="new-price">$177</span></p>
+                <p class="shipping">+ FREE US SHIPPING</p>
             </div>
         </div>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="rating-display">
+                <span class="rating-text">Our customers say 4.98/5</span>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <span class="rating-text">based on 2000+ reviews</span>
+            </div>
+            <div class="action-buttons">
+                <a href="#" class="action-btn primary">View Reviews</a>
+                <span style="color: #ccc;">|</span>
+                <a href="#" class="action-btn secondary">View FAQ's</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ClickBank Badge -->
+    <div class="clickbank-badge">
+        CLICKBANK®
+        <span>CONFIÁVEL • SEGURO</span>
     </div>
 
-    <footer>
-        <p>Copyright 2025 - Todos os direitos reservados.</p>
-        <div style="margin-top: 10px;">
-            <a href="#">Termos de Uso</a> | 
-            <a href="#">Privacidade</a>
+    <!-- Cookie-style Popup -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <div class="popup-icon">🎁</div>
+            <div class="popup-text">
+                <h3>🔥 Oferta Especial Disponível!</h3>
+                <p>Garanta <span class="highlight">até 78% OFF</span> + Frete Grátis no NeuroQuiet. Estoque limitado!</p>
+            </div>
+            <div class="popup-timer">
+                ⏰ Expira em: <span class="time" id="timer">14:59</span>
+            </div>
+            <div class="popup-buttons">
+                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="popup-btn accept">QUERO MEU DESCONTO →</a>
+                <button class="popup-btn decline" onclick="closePopup()">Agora não</button>
+            </div>
         </div>
-        <p style="margin-top: 15px; font-size: 10px; color: #444;">
-            Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. 
-            Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.
-        </p>
-    </footer>
-
-    <div class="cookie-popup" id="cookieBar">
-        <div class="cookie-text">
-            <strong>🍪 Utilizamos cookies</strong> para garantir que você tenha a melhor experiência e acesso exclusivo ao conteúdo. Ao continuar, você concorda com nossa política.
-        </div>
-        <button class="cookie-btn" onclick="redirectOffer()">
-            Concordar e Continuar
-        </button>
     </div>
 
     <script>
-        // Link de destino
-        const offerLink = "https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net";
+        // Timer countdown
+        let timeLeft = 899; // 14:59 in seconds
+        const timerElement = document.getElementById('timer');
+        
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        
+        updateTimer();
 
-        // Função de redirecionamento
-        function redirectOffer() {
-            window.location.href = offerLink;
+        // Close popup function
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
         }
 
-        // Script para garantir que o popup funcione corretamente
-        document.addEventListener("DOMContentLoaded", function() {
-            // O popup já tem animação CSS, mas podemos adicionar lógica extra aqui se necessário
-            console.log("Página carregada. Popup pronto.");
+        // Show popup after 3 seconds
+        const popup = document.getElementById('popup');
+        popup.style.display = 'none';
+        
+        setTimeout(() => {
+            popup.style.display = 'block';
+        }, 3000);
+
+        // Also show popup on scroll
+        let popupShown = false;
+        window.addEventListener('scroll', () => {
+            if (!popupShown && window.scrollY > 200) {
+                popup.style.display = 'block';
+                popupShown = true;
+            }
         });
     </script>
 </body>
