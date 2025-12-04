@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação Exclusiva</title>
+    <style>
+        /* RESET E CONFIGURAÇÕES GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.5;
+            padding-bottom: 80px; /* Espaço para o popup não cobrir o rodapé */
+        }
+
+        /* BARRA DE AVISO NO TOPO */
+        .top-bar {
+            background-color: #cc0000; /* Vermelho escuro */
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* CONTAINER PRINCIPAL */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* HEADLINE (TÍTULO) */
+        .headline {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .highlight-red {
+            color: #ff0000;
+        }
+
+        .highlight-yellow {
+            color: #ffcc00;
+            text-decoration: underline;
+        }
+
+        /* ÁREA DO VÍDEO */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background: #000;
+            border: 2px solid #333;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Aspect Ratio 16:9 para o vídeo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe, 
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* SOBREPOSIÇÃO DE SOM (SOUND OVERLAY) */
+        .sound-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .sound-btn {
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+        }
+
+        .sound-text {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* RODAPÉ */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* POPUP ESTILO COOKIE */
+        .cookie-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background-color: #ffffff;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            border: 1px solid #ddd;
+            opacity: 0; /* Começa invisível para animar */
+            animation: slideUp 1s forwards;
+            animation-delay: 2s; /* Aparece após 2 segundos */
+        }
+
+        @keyframes slideUp {
+            to { opacity: 1; bottom: 20px; }
+        }
+
+        .cookie-text {
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .cookie-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.3s;
+        }
+
+        .cookie-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* RESPONSIVIDADE (MOBILE) */
+        @media (max-width: 600px) {
+            .headline {
+                font-size: 22px; /* Fonte menor no mobile conforme imagem */
+            }
+            
+            .top-bar {
+                font-size: 11px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .cookie-popup {
+                flex-direction: column;
+                text-align: center;
+                bottom: 10px;
+            }
+
+            .cookie-text {
+                text-align: center;
+            }
+
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        ATENÇÃO: Este vídeo poderá sair do ar a qualquer momento...
+    </div>
+
+    <div class="container">
+        <h1 class="headline">
+            TRUQUE DE 30 SEGUNDOS <br>
+            <span class="highlight-yellow">"DESLIGA" O PROBLEMA</span> E <br>
+            <span class="highlight-red">DEVOLVE A VIRILIDADE</span> HOJE
+        </h1>
+
+        <div class="video-wrapper">
+            <div class="video-container">
+                <img src="https://via.placeholder.com/800x450/000000/333333?text=Carregando+V%C3%ADdeo..." alt="Vídeo VSL" style="width:100%; height:100%; position:absolute;">
+            </div>
+
+            <div class="sound-overlay" onclick="redirectOffer()">
+                <div class="sound-btn">
+                    <span>🔊</span> LIGAR O SOM
+                </div>
+                <div class="sound-text">Seu vídeo já começou... Clique para ouvir</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright 2025 - Todos os direitos reservados.</p>
+        <div style="margin-top: 10px;">
+            <a href="#">Termos de Uso</a> | 
+            <a href="#">Privacidade</a>
+        </div>
+        <p style="margin-top: 15px; font-size: 10px; color: #444;">
+            Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. 
+            Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.
+        </p>
+    </footer>
+
+    <div class="cookie-popup" id="cookieBar">
+        <div class="cookie-text">
+            <strong>🍪 Utilizamos cookies</strong> para garantir que você tenha a melhor experiência e acesso exclusivo ao conteúdo. Ao continuar, você concorda com nossa política.
+        </div>
+        <button class="cookie-btn" onclick="redirectOffer()">
+            Concordar e Continuar
+        </button>
+    </div>
+
+    <script>
+        // Link de destino
+        const offerLink = "https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net";
+
+        // Função de redirecionamento
+        function redirectOffer() {
+            window.location.href = offerLink;
+        }
+
+        // Script para garantir que o popup funcione corretamente
+        document.addEventListener("DOMContentLoaded", function() {
+            // O popup já tem animação CSS, mas podemos adicionar lógica extra aqui se necessário
+            console.log("Página carregada. Popup pronto.");
+        });
+    </script>
+</body>
+</html>
