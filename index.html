@@ -8,6 +8,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        function closeCookieModal() {
+            document.getElementById('cookieModal').style.display = 'none';
+        }
+
+        // Timer countdown
+        let timeLeft = 899; // 14:59 in seconds
+        const timerElement = document.getElementById('timer');
+        
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        
+        updateTimer();
+
+        // Close popup function
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Lógica do Popup de saída
+        const popup = document.getElementById('popup');
+        popup.style.display = 'none';
+
+        let popupShown = false;
+        window.addEventListener('scroll', () => {
+            if (!popupShown && window.scrollY > 200) {
+                popup.style.display = 'block';
+                popupShown = true;
+            }
+        });
+    </script>
     <style>
         * {
             margin: 0;
@@ -822,12 +861,12 @@
         <div class="cookie-modal">
             <div class="cookie-modal-header">
                 <h3>Cookies Settings</h3>
-                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-close">&times;</a>
+                <span class="cookie-close" onclick="closeCookieModal()" style="cursor: pointer;">&times;</span>
             </div>
             <p>We use cookies and similar technologies to help personalize content, tailor and measure ads, and provide a better experience. By clicking accept, you agree to this, as outlined in our Cookie Policy.</p>
             <div class="cookie-modal-buttons">
-                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-btn accept">Accept</a>
-                <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cookie-btn preferences">Preferences</a>
+                <button class="cookie-btn accept" onclick="closeCookieModal()">Accept</button>
+                <button class="cookie-btn preferences" onclick="closeCookieModal()">Preferences</button>
             </div>
         </div>
     </div>
