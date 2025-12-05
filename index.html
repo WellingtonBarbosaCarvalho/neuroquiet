@@ -3,1375 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NeuroQuiet - Natural hearing and cognitive support. Save up to 78% + Free Shipping. 90-day money-back guarantee. Order now while supplies last.">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="NeuroQuiet - Natural hearing and cognitive support. Save up to 78% + Free Shipping. 90-day money-back guarantee.">
     <title>NeuroQuiet Official | Save Up to 78% - Limited Time Offer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232a5fa8'/><text x='16' y='21' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'>NQ</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary-color: #1e4d8c;
-            --primary-dark: #152a45;
-            --secondary-color: #2a5fa8;
-            --accent-color: #f5d742;
-            --accent-hover: #e6c93a;
-            --danger-color: #c41e3a;
-            --success-color: #27ae60;
-            --text-dark: #1a1a1a;
-            --text-medium: #666;
-            --text-light: #999;
-            --border-color: #e8e8e8;
-            --background: #f5f5f5;
-            --white: #ffffff;
+            --primary: #1e4d8c; --secondary: #2a5fa8; --accent: #f5d742;
+            --danger: #c41e3a; --success: #27ae60; --text: #1a1a1a;
+            --text-med: #666; --text-light: #999; --white: #fff; --bg: #f5f5f5;
         }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 15px 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--white); text-decoration: none; }
+        .header-trust { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+        .trust-item { display: flex; align-items: center; gap: 5px; color: var(--white); font-size: 0.85rem; }
+        .trust-item .icon { font-size: 1.2rem; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--background);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 8px;
-            text-decoration: none;
-            z-index: 100;
-        }
-        .skip-link:focus { top: 0; }
-
-        /* Compact Header */
-        header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            padding: 15px 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        .header-trust {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--white);
-            font-size: 0.85rem;
-        }
-
-        .trust-item .icon {
-            font-size: 1.2rem;
-        }
-
-        /* HERO - Above the Fold */
-        .hero {
-            background: linear-gradient(180deg, var(--white) 0%, #f8f9fa 100%);
-            padding: 40px 20px 30px;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .hero-left h1 {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 900;
-            color: var(--text-dark);
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-
-        .hero-left h1 .highlight {
-            color: var(--danger-color);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            margin-bottom: 20px;
-        }
-
-        .hero-benefits {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .hero-benefits li {
-            padding: 8px 0 8px 30px;
-            position: relative;
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-
-        .hero-benefits li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success-color);
-            font-weight: bold;
-            font-size: 1.4rem;
-        }
-
-        .hero-rating {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #fff3cd;
-            border-radius: 10px;
-        }
-
-        .stars-large {
-            display: flex;
-            gap: 2px;
-        }
-
-        .star-large {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-        }
-
-        .rating-text-large {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
+        /* Hero Section */
+        .hero { background: linear-gradient(180deg, var(--white) 0%, #f8f9fa 100%); padding: 40px 20px 30px; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .hero-left h1 { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 15px; }
+        .hero-left h1 .highlight { color: var(--danger); }
+        .hero-subtitle { font-size: 1.2rem; color: var(--text-med); margin-bottom: 20px; }
+        .hero-benefits { list-style: none; margin-bottom: 25px; }
+        .hero-benefits li { padding: 8px 0 8px 30px; position: relative; }
+        .hero-benefits li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: bold; font-size: 1.4rem; }
+        .hero-rating { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding: 15px; background: #fff3cd; border-radius: 10px; }
+        .stars-large { display: flex; gap: 2px; }
+        .star-large { color: var(--accent); font-size: 1.5rem; }
+        .rating-text-large { font-weight: 600; }
 
         /* Hero Product Card */
-        .hero-product-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            border: 3px solid var(--danger-color);
-            position: relative;
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--danger-color);
-            color: var(--white);
-            padding: 8px 25px;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
-        }
-
-        .product-image-hero {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .product-image-hero img {
-            max-width: 250px;
-            height: auto;
-        }
-
-        .card-title-hero {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .price-hero {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .price-hero .old-price {
-            font-size: 1.2rem;
-            text-decoration: line-through;
-            color: var(--text-light);
-            display: block;
-        }
-
-        .price-hero .new-price {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--danger-color);
-            line-height: 1;
-        }
-
-        .price-hero .per-bottle {
-            font-size: 1rem;
-            color: var(--text-medium);
-        }
-
-        .savings-hero {
-            background: #e8f5e9;
-            color: var(--success-color);
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .features-hero {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .features-hero li {
-            padding: 8px 0 8px 25px;
-            position: relative;
-            font-size: 0.9rem;
-            color: var(--text-dark);
-        }
-
-        .features-hero li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success-color);
-            font-weight: bold;
-        }
-
-        .cta-button-hero {
-            background: linear-gradient(135deg, var(--accent-color) 0%, #ffd700 100%);
-            color: var(--text-dark);
-            border: none;
-            padding: 20px 40px;
-            font-size: 1.3rem;
-            font-weight: 900;
-            border-radius: 50px;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(245, 215, 66, 0.6);
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button-hero:hover::before {
-            left: 100%;
-        }
-
-        .cta-button-hero:hover {
-            background: linear-gradient(135deg, #ffd700 0%, var(--accent-color) 100%);
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(245, 215, 66, 0.7);
-        }
-
-        .guarantee-hero {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: var(--text-medium);
-        }
-
-        .guarantee-hero strong {
-            color: var(--success-color);
-        }
-
-        .customer-stat {
-            background: #e3f2fd;
-            border-left: 4px solid var(--primary-color);
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        /* Trust Section */
-        .trust-section {
-            background: var(--white);
-            padding: 30px 20px;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .trust-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .trust-badge {
-            text-align: center;
-            flex: 1;
-            min-width: 150px;
-        }
-
-        .trust-icon {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .trust-title {
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-        }
-
-        .trust-description {
-            font-size: 0.8rem;
-            color: var(--text-medium);
-        }
-
-        /* Main */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Creator Message Section */
-        .creator-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 20px;
-            padding: 40px 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        .creator-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .creator-header h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .creator-message {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-
-        .creator-message p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-        }
-
-        .creator-signature {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding-top: 20px;
-            border-top: 2px solid var(--border-color);
-        }
-
-        .creator-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 800;
-        }
-
-        .creator-info {
-            flex: 1;
-        }
-
-        .creator-name {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 3px;
-        }
-
-        .creator-title {
-            font-size: 0.9rem;
-            color: var(--text-medium);
-            font-style: italic;
-        }
-
-        /* Benefits Grid */
-        .benefits-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .benefit-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .benefit-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .benefit-description {
-            font-size: 0.95rem;
-            color: var(--text-medium);
-            line-height: 1.6;
-        }
-
-        /* Bonuses Section */
-        .bonuses-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 20px;
-            padding: 50px 30px;
-            margin-bottom: 40px;
-            color: var(--white);
-            box-shadow: 0 10px 40px rgba(30, 77, 140, 0.3);
-        }
-
-        .bonuses-section .section-title {
-            color: var(--white);
-        }
-
-        .bonuses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .bonus-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            color: var(--text-dark);
-        }
-
-        .bonus-badge-top {
-            background: var(--danger-color);
-            color: var(--white);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .bonus-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .bonus-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        .bonus-subtitle {
-            font-size: 0.85rem;
-            color: var(--text-medium);
-            font-style: italic;
-        }
-
-        .shipping-banner {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            color: var(--text-dark);
-            margin-top: 30px;
-        }
-
-        .shipping-banner h3 {
-            font-size: 1.5rem;
-            color: var(--success-color);
-            margin-bottom: 10px;
-        }
-
-        .shipping-banner p {
-            color: var(--text-medium);
-            font-size: 0.9rem;
-        }
-
-        /* Ingredients Section */
-        .ingredients-section {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        .ingredients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .ingredient-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .ingredient-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .ingredient-description {
-            font-size: 0.95rem;
-            color: var(--text-medium);
-            line-height: 1.6;
-        }
-
-        /* Testimonials */
-        .testimonials-section {
-            margin-bottom: 40px;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-info {
-            flex: 1;
-        }
-
-        .testimonial-name {
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 3px;
-        }
-
-        .testimonial-location {
-            font-size: 0.85rem;
-            color: var(--text-medium);
-            margin-bottom: 5px;
-        }
-
-        .testimonial-stars {
-            color: var(--accent-color);
-        }
-
-        .testimonial-text {
-            color: var(--text-medium);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        .testimonial-verified {
-            font-size: 0.8rem;
-            color: var(--success-color);
-            font-weight: 600;
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            margin-bottom: 40px;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .pricing-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            border: 2px solid var(--border-color);
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        }
-
-        .pricing-card.featured {
-            border: 3px solid var(--primary-color);
-            transform: scale(1.05);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-5px);
-        }
-
-        .card-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--danger-color);
-            color: var(--white);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .card-subtitle {
-            color: var(--text-medium);
-            margin-bottom: 20px;
-        }
-
-        .product-image {
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .product-image img {
-            max-height: 100%;
-            max-width: 100%;
-        }
-
-        .price-container {
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--danger-color);
-        }
-
-        .price-label {
-            font-size: 0.85rem;
-            color: var(--text-medium);
-        }
-
-        .savings {
-            background: #e8f5e9;
-            color: var(--success-color);
-            padding: 8px;
-            border-radius: 8px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .bonus-badge {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 8px 15px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
-        .no-bonus {
-            color: var(--text-light);
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--accent-color) 0%, #ffd700 100%);
-            color: var(--text-dark);
-            border: none;
-            padding: 16px 35px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            border-radius: 40px;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(245, 215, 66, 0.5);
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(245, 215, 66, 0.7);
-        }
-
-        .guarantee {
-            margin-top: 12px;
-            font-size: 0.8rem;
-            color: var(--text-medium);
-        }
-
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin: 12px 0;
-            flex-wrap: wrap;
-        }
-
-        .payment-icon {
-            width: 35px;
-            height: 22px;
-            border-radius: 3px;
-            background: #ddd;
-            font-size: 0.55rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--white);
-        }
-
+        .hero-product-card { background: var(--white); border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border: 3px solid var(--danger); position: relative; }
+        .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--danger); color: var(--white); padding: 8px 25px; border-radius: 25px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4); }
+        .product-image-hero { text-align: center; margin-bottom: 20px; }
+        .product-image-hero img { max-width: 250px; height: auto; }
+        .card-title-hero { font-size: 1.8rem; font-weight: 800; color: var(--primary); text-align: center; margin-bottom: 10px; }
+        .price-hero { text-align: center; margin-bottom: 15px; }
+        .price-hero .old-price { font-size: 1.2rem; text-decoration: line-through; color: var(--text-light); display: block; }
+        .price-hero .new-price { font-size: 3.5rem; font-weight: 900; color: var(--danger); line-height: 1; }
+        .price-hero .per-bottle { font-size: 1rem; color: var(--text-med); }
+        .savings-hero { background: #e8f5e9; color: var(--success); padding: 10px; border-radius: 10px; text-align: center; font-weight: 700; font-size: 1.1rem; margin-bottom: 15px; }
+        .features-hero { list-style: none; margin-bottom: 20px; }
+        .features-hero li { padding: 8px 0 8px 25px; position: relative; font-size: 0.9rem; }
+        .features-hero li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: bold; }
+        .cta-button-hero { background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%); color: var(--text); border: none; padding: 20px 40px; font-size: 1.3rem; font-weight: 900; border-radius: 50px; cursor: pointer; width: 100%; transition: all 0.3s; box-shadow: 0 6px 20px rgba(245, 215, 66, 0.6); text-decoration: none; display: block; text-align: center; text-transform: uppercase; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+        .cta-button-hero:hover { background: linear-gradient(135deg, #ffd700 0%, var(--accent) 100%); transform: scale(1.03); box-shadow: 0 8px 25px rgba(245, 215, 66, 0.7); }
+        .guarantee-hero { text-align: center; margin-top: 15px; font-size: 0.85rem; color: var(--text-med); }
+        .guarantee-hero strong { color: var(--success); }
+        .customer-stat { background: #e3f2fd; border-left: 4px solid var(--primary); padding: 12px; border-radius: 8px; text-align: center; font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-top: 10px; }
+        .payment-methods { display: flex; justify-content: center; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+        .payment-icon { width: 35px; height: 22px; border-radius: 3px; font-size: 0.55rem; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--white); }
         .payment-icon[data-card="mastercard"] { background: linear-gradient(180deg, #eb001b 50%, #f79e1b 50%); }
         .payment-icon[data-card="visa"] { background: #1a1f71; }
         .payment-icon[data-card="amex"] { background: #006fcf; }
         .payment-icon[data-card="discover"] { background: #ff6000; }
 
-        .total-price {
-            font-size: 0.9rem;
-            color: var(--text-medium);
-            margin-top: 10px;
-        }
+        /* Trust Section */
+        .trust-section { background: var(--white); padding: 30px 20px; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; }
+        .trust-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .trust-badge { text-align: center; flex: 1; min-width: 150px; }
+        .trust-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .trust-title { font-weight: 700; color: var(--primary); font-size: 0.95rem; margin-bottom: 5px; }
+        .trust-description { font-size: 0.8rem; color: var(--text-med); }
 
-        .old-price {
-            text-decoration: line-through;
-            color: var(--text-light);
-        }
+        /* Main */
+        main { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { text-align: center; font-size: 2.2rem; font-weight: 800; color: var(--primary); margin-bottom: 30px; }
 
-        .new-price {
-            color: var(--danger-color);
-            font-weight: 700;
-        }
+        /* Creator Section */
+        .creator-section { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 20px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .creator-message { background: var(--white); border-radius: 15px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .creator-message p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; }
+        .creator-signature { display: flex; align-items: center; gap: 15px; padding-top: 20px; border-top: 2px solid #e8e8e8; }
+        .creator-avatar { width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; }
+        .creator-name { font-weight: 700; font-size: 1.1rem; margin-bottom: 3px; }
+        .creator-title { font-size: 0.9rem; color: var(--text-med); font-style: italic; }
 
-        .shipping-info {
-            font-size: 0.85rem;
-            color: var(--success-color);
-            font-weight: 600;
-            margin-top: 5px;
-        }
+        /* Benefits */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 30px; }
+        .benefit-card { background: var(--white); border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .benefit-card:hover { transform: translateY(-5px); }
+        .benefit-icon { font-size: 3rem; margin-bottom: 15px; }
+        .benefit-title { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+        .benefit-description { font-size: 0.95rem; color: var(--text-med); line-height: 1.6; }
 
-        .shipping-info.paid {
-            color: var(--text-medium);
-            font-weight: 400;
-        }
+        /* Bonuses */
+        .bonuses-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 20px; padding: 50px 30px; margin-bottom: 40px; color: var(--white); box-shadow: 0 10px 40px rgba(30, 77, 140, 0.3); }
+        .bonuses-section .section-title { color: var(--white); }
+        .bonuses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 30px; }
+        .bonus-card { background: var(--white); border-radius: 15px; padding: 25px; text-align: center; color: var(--text); }
+        .bonus-badge-top { background: var(--danger); color: var(--white); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 15px; }
+        .bonus-icon { font-size: 3rem; margin-bottom: 15px; }
+        .bonus-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .bonus-subtitle { font-size: 0.85rem; color: var(--text-med); font-style: italic; }
+        .shipping-banner { background: var(--white); border-radius: 15px; padding: 25px; text-align: center; color: var(--text); margin-top: 30px; }
+        .shipping-banner h3 { font-size: 1.5rem; color: var(--success); margin-bottom: 10px; }
+        .shipping-banner p { color: var(--text-med); font-size: 0.9rem; }
 
-        /* Comparison Table */
-        .comparison-section {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
+        /* Ingredients */
+        .ingredients-section { background: var(--white); border-radius: 20px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .ingredients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .ingredient-card { background: #f8f9fa; border-radius: 15px; padding: 25px; border-left: 4px solid var(--primary); }
+        .ingredient-name { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+        .ingredient-description { font-size: 0.95rem; color: var(--text-med); line-height: 1.6; }
 
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+        /* Testimonials */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 30px; }
+        .testimonial-card { background: var(--white); border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .testimonial-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .testimonial-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+        .testimonial-name { font-weight: 700; margin-bottom: 3px; }
+        .testimonial-location { font-size: 0.85rem; color: var(--text-med); margin-bottom: 5px; }
+        .testimonial-stars { color: var(--accent); }
+        .testimonial-text { color: var(--text-med); font-size: 0.95rem; line-height: 1.6; font-style: italic; margin-bottom: 10px; }
+        .testimonial-verified { font-size: 0.8rem; color: var(--success); font-weight: 600; }
 
-        .comparison-table th,
-        .comparison-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
+        /* Pricing */
+        .pricing-section { margin-bottom: 40px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 30px; }
+        .pricing-card { background: var(--white); border-radius: 20px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #e8e8e8; text-align: center; position: relative; transition: all 0.3s; }
+        .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+        .pricing-card.featured { border: 3px solid var(--primary); transform: scale(1.05); }
+        .pricing-card.featured:hover { transform: scale(1.05) translateY(-5px); }
+        .card-badge { position: absolute; top: -12px; right: 20px; background: var(--danger); color: var(--white); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        .card-title { font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+        .card-subtitle { color: var(--text-med); margin-bottom: 20px; }
+        .product-image { height: 120px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+        .product-image img { max-height: 100%; max-width: 100%; }
+        .price { font-size: 3rem; font-weight: 900; color: var(--danger); }
+        .price-label { font-size: 0.85rem; color: var(--text-med); }
+        .savings { background: #e8f5e9; color: var(--success); padding: 8px; border-radius: 8px; font-weight: 700; margin-bottom: 15px; }
+        .bonus-badge { background: var(--primary); color: var(--white); padding: 8px 15px; border-radius: 15px; font-size: 0.8rem; font-weight: 600; margin-bottom: 15px; display: inline-block; }
+        .no-bonus { color: var(--text-light); font-style: italic; margin-bottom: 15px; }
+        .cta-button { background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%); color: var(--text); border: none; padding: 16px 35px; font-size: 1.1rem; font-weight: 800; border-radius: 40px; cursor: pointer; width: 100%; transition: all 0.3s; box-shadow: 0 4px 15px rgba(245, 215, 66, 0.5); text-decoration: none; display: block; text-align: center; text-transform: uppercase; }
+        .cta-button:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(245, 215, 66, 0.7); }
+        .guarantee { margin-top: 12px; font-size: 0.8rem; color: var(--text-med); }
+        .total-price { font-size: 0.9rem; color: var(--text-med); margin-top: 10px; }
+        .old-price { text-decoration: line-through; color: var(--text-light); }
+        .new-price { color: var(--danger); font-weight: 700; }
+        .shipping-info { font-size: 0.85rem; color: var(--success); font-weight: 600; margin-top: 5px; }
+        .shipping-info.paid { color: var(--text-med); font-weight: 400; }
 
-        .comparison-table th {
-            background: #f8f9fa;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
+        /* Comparison */
+        .comparison-section { background: var(--white); border-radius: 20px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid #e8e8e8; }
+        .comparison-table th { background: #f8f9fa; font-weight: 700; color: var(--primary); }
+        .comparison-table td:first-child { font-weight: 600; }
+        .comparison-table .check { color: var(--success); font-size: 1.5rem; text-align: center; }
+        .comparison-table .cross { color: var(--danger); font-size: 1.5rem; text-align: center; }
 
-        .comparison-table td:first-child {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
+        /* FAQ */
+        .faq-section { background: var(--white); border-radius: 20px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .faq-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #e8e8e8; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+        .faq-answer { color: var(--text-med); line-height: 1.7; font-size: 0.95rem; }
 
-        .comparison-table .check {
-            color: var(--success-color);
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .comparison-table .cross {
-            color: var(--danger-color);
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        .faq-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 12px;
-        }
-
-        .faq-answer {
-            color: var(--text-medium);
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-
-        /* Guarantee Section */
-        .guarantee-section {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border-radius: 20px;
-            padding: 40px 30px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .guarantee-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .guarantee-section h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--success-color);
-            margin-bottom: 15px;
-        }
-
-        .guarantee-section p {
-            font-size: 1rem;
-            color: var(--text-dark);
-            line-height: 1.7;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        /* Guarantee */
+        .guarantee-section { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 20px; padding: 40px 30px; margin-bottom: 40px; text-align: center; }
+        .guarantee-icon { font-size: 4rem; margin-bottom: 20px; }
+        .guarantee-section h2 { font-size: 2rem; font-weight: 800; color: var(--success); margin-bottom: 15px; }
+        .guarantee-section p { font-size: 1rem; line-height: 1.7; max-width: 800px; margin: 0 auto; }
 
         /* Final CTA */
-        .final-cta {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 20px;
-            padding: 50px 30px;
-            text-align: center;
-            color: var(--white);
-            margin-bottom: 40px;
-            box-shadow: 0 10px 40px rgba(30, 77, 140, 0.3);
-        }
-
-        .final-cta h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-        }
-
-        .final-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .cta-button-final {
-            background: var(--accent-color);
-            color: var(--text-dark);
-            border: none;
-            padding: 22px 50px;
-            font-size: 1.4rem;
-            font-weight: 900;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
-        }
-
-        .cta-button-final:hover {
-            background: #ffd700;
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-        }
+        .final-cta { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 20px; padding: 50px 30px; text-align: center; color: var(--white); margin-bottom: 40px; box-shadow: 0 10px 40px rgba(30, 77, 140, 0.3); }
+        .final-cta h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
+        .final-cta p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95; }
+        .cta-button-final { background: var(--accent); color: var(--text); border: none; padding: 22px 50px; font-size: 1.4rem; font-weight: 900; border-radius: 50px; cursor: pointer; transition: all 0.3s; box-shadow: 0 6px 20px rgba(0,0,0,0.3); text-decoration: none; display: inline-block; text-transform: uppercase; }
+        .cta-button-final:hover { background: #ffd700; transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
 
         /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 40px 20px 20px;
-        }
+        footer { background: var(--primary); color: rgba(255,255,255,0.8); padding: 40px 20px; }
+        footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h3 {
-            color: var(--white);
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 8px;
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent-color);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
-        }
-
-        .footer-disclaimer {
-            margin-top: 15px;
-            font-size: 0.75rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .references {
-            margin-top: 20px;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Sticky Mobile CTA */
-        .sticky-cta-mobile {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            padding: 15px 20px;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-            z-index: 1000;
-        }
-
-        .sticky-cta-mobile .cta-button {
-            margin: 0;
-        }
-
-        /* Responsive */
+        /* Mobile */
+        .sticky-cta-mobile { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--white); padding: 15px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); z-index: 1000; }
         @media (max-width: 768px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .hero-product-card {
-                order: -1;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.featured {
-                transform: none;
-                order: -1;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .sticky-cta-mobile {
-                display: block;
-            }
-
-            main {
-                padding-bottom: 80px;
-            }
-
-            .final-cta h2 {
-                font-size: 1.8rem;
-            }
-
-            .comparison-table {
-                font-size: 0.85rem;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 10px 5px;
-            }
+            .hero-container { grid-template-columns: 1fr; gap: 30px; }
+            .hero-product-card { order: -1; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.featured { transform: none; order: -1; }
+            .sticky-cta-mobile { display: block; }
+            main { padding-bottom: 80px; }
+            .final-cta h2 { font-size: 1.8rem; }
+            .comparison-table { font-size: 0.85rem; }
+            .comparison-table th, .comparison-table td { padding: 10px 5px; }
         }
-
-        /* Animations */
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        .cta-button-hero {
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        *:focus-visible {
-            outline: 3px solid var(--accent-color);
-            outline-offset: 2px;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header -->
-    <header role="banner">
+    <header>
         <div class="header-content">
             <a href="#" class="logo">NeuroQuiet</a>
             <div class="header-trust">
-                <div class="trust-item">
-                    <span class="icon">🔒</span>
-                    <span>Secure Checkout</span>
-                </div>
-                <div class="trust-item">
-                    <span class="icon">📦</span>
-                    <span>Free Shipping</span>
-                </div>
-                <div class="trust-item">
-                    <span class="icon">⭐</span>
-                    <span>4.98/5 Rating</span>
-                </div>
+                <div class="trust-item"><span class="icon">🔒</span><span>Secure</span></div>
+                <div class="trust-item"><span class="icon">📦</span><span>Free Shipping</span></div>
+                <div class="trust-item"><span class="icon">⭐</span><span>4.98/5</span></div>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-left">
-                <h1>
-                    Claim Your Discounted NeuroQuiet Below<br>
-                    <span class="highlight">While Stock Lasts</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Boost your hearing health and enhance mental clarity with natural ingredients
-                </p>
-                
+                <h1>Claim Your Discounted NeuroQuiet Below<br><span class="highlight">While Stock Lasts</span></h1>
+                <p class="hero-subtitle">Boost your hearing health and enhance mental clarity with natural ingredients</p>
                 <ul class="hero-benefits">
                     <li><strong>Support ear health</strong> naturally</li>
                     <li><strong>Boost cognitive function</strong> and mental clarity</li>
                     <li><strong>Ease stress</strong> and promote relaxation</li>
                     <li><strong>Made in USA</strong> - FDA-registered facilities</li>
                 </ul>
-
                 <div class="hero-rating">
                     <div class="stars-large">
-                        <span class="star-large">★</span>
-                        <span class="star-large">★</span>
-                        <span class="star-large">★</span>
-                        <span class="star-large">★</span>
-                        <span class="star-large">★</span>
+                        <span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span>
                     </div>
                     <span class="rating-text-large">Our customers say 4.98/5</span>
                 </div>
             </div>
-
             <div class="hero-right">
                 <article class="hero-product-card">
                     <span class="popular-badge">🔥 BEST VALUE - Save 78%</span>
-                    
                     <div class="product-image-hero">
-                        <img src="https://neuroquiethq.com/assets/img/PRODx6-500px.webp" alt="NeuroQuiet 6 Bottles Package" loading="eager">
+                        <img src="https://neuroquiethq.com/assets/img/PRODx6-500px.webp" alt="NeuroQuiet 6 Bottles" loading="eager">
                     </div>
-
                     <h2 class="card-title-hero">Best Value Package</h2>
-                    
                     <div class="price-hero">
                         <span class="old-price">Was $179/bottle</span>
-                        <div>
-                            <span class="new-price">$49</span>
-                            <span class="per-bottle">/bottle</span>
-                        </div>
+                        <div><span class="new-price">$49</span><span class="per-bottle">/bottle</span></div>
                     </div>
-
-                    <div class="savings-hero">
-                        💰 YOU SAVE $780
-                    </div>
-
+                    <div class="savings-hero">💰 YOU SAVE $780</div>
                     <ul class="features-hero">
                         <li>180-Day Supply (6 Bottles)</li>
                         <li>+ 3 FREE BONUSES</li>
                         <li>FREE US Shipping</li>
                         <li>90-Day Money-Back Guarantee</li>
                     </ul>
-
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button-hero">
-                        🛒 Add To Cart Now
-                    </a>
-
+                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button-hero">🛒 Add To Cart Now</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
                         <span class="payment-icon" data-card="amex">AMEX</span>
                         <span class="payment-icon" data-card="discover">DISC</span>
                     </div>
-
-                    <p class="guarantee-hero">
-                        🛡️ <strong>100% Satisfaction Guaranteed</strong>
-                    </p>
-
-                    <div class="customer-stat">
-                        ⚡ 96% of customers order 6 bottles (Recommended)
-                    </div>
+                    <p class="guarantee-hero">🛡️ <strong>100% Satisfaction Guaranteed</strong></p>
+                    <div class="customer-stat">⚡ 96% of customers order 6 bottles (Recommended)</div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Trust Badges -->
     <section class="trust-section">
         <div class="trust-container">
-            <div class="trust-badge">
-                <div class="trust-icon">🔒</div>
-                <div class="trust-title">Secure Checkout</div>
-                <div class="trust-description">256-bit SSL</div>
-            </div>
-            <div class="trust-badge">
-                <div class="trust-icon">🇺🇸</div>
-                <div class="trust-title">Made in USA</div>
-                <div class="trust-description">FDA-Registered</div>
-            </div>
-            <div class="trust-badge">
-                <div class="trust-icon">✅</div>
-                <div class="trust-title">GMP Certified</div>
-                <div class="trust-description">Quality Assured</div>
-            </div>
-            <div class="trust-badge">
-                <div class="trust-icon">📦</div>
-                <div class="trust-title">Free Shipping</div>
-                <div class="trust-description">On 3+ Bottles</div>
-            </div>
-            <div class="trust-badge">
-                <div class="trust-icon">💯</div>
-                <div class="trust-title">90-Day Guarantee</div>
-                <div class="trust-description">Risk-Free Trial</div>
-            </div>
+            <div class="trust-badge"><div class="trust-icon">🔒</div><div class="trust-title">Secure Checkout</div><div class="trust-description">256-bit SSL</div></div>
+            <div class="trust-badge"><div class="trust-icon">🇺🇸</div><div class="trust-title">Made in USA</div><div class="trust-description">FDA-Registered</div></div>
+            <div class="trust-badge"><div class="trust-icon">✅</div><div class="trust-title">GMP Certified</div><div class="trust-description">Quality Assured</div></div>
+            <div class="trust-badge"><div class="trust-icon">📦</div><div class="trust-title">Free Shipping</div><div class="trust-description">On 3+ Bottles</div></div>
+            <div class="trust-badge"><div class="trust-icon">💯</div><div class="trust-title">90-Day Guarantee</div><div class="trust-description">Risk-Free Trial</div></div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main id="main-content" role="main">
-
-        <!-- Creator Message -->
+    <main>
         <section class="creator-section">
-            <div class="creator-header">
-                <h2>Reclaim Your Peace with NeuroQuiet</h2>
-            </div>
+            <h2 class="section-title">Reclaim Your Peace with NeuroQuiet</h2>
             <div class="creator-message">
                 <p>When I first started working on the formula that was to become NeuroQuiet, I never would have imagined in a million years that I would one day help thousands of people from around the world fulfill their dreams of boosting their hearing health.</p>
-                
                 <p>It's people like you that make all those years of research and testing worthwhile, and I hope you manage to get the most out of NeuroQuiet while I can still afford to produce it at these prices.</p>
-                
                 <div class="creator-signature">
                     <div class="creator-avatar">CT</div>
-                    <div class="creator-info">
-                        <div class="creator-name">Christian Toller</div>
-                        <div class="creator-title">Creator, NeuroQuiet</div>
-                    </div>
+                    <div><div class="creator-name">Christian Toller</div><div class="creator-title">Creator, NeuroQuiet</div></div>
                 </div>
             </div>
         </section>
 
-        <!-- Key Benefits -->
         <section class="benefits-section">
             <h2 class="section-title">Experience the Benefits</h2>
             <div class="benefits-grid">
@@ -1393,7 +309,6 @@
             </div>
         </section>
 
-        <!-- Bonuses Section -->
         <section class="bonuses-section">
             <h2 class="section-title">Order 6 Bottles Or 3 Bottles And Get 3 Free Bonuses!</h2>
             <div class="bonuses-grid">
@@ -1416,119 +331,78 @@
                     <p class="bonus-subtitle">(Digital Download)</p>
                 </div>
             </div>
-
             <div class="shipping-banner">
                 <h3>📦 Every 6 Bottle Order Gets FREE Shipping Too!</h3>
                 <p>*96% of customers order 6 bottles (Our recommended option)</p>
             </div>
         </section>
 
-        <!-- Ingredients Section -->
         <section class="ingredients-section">
             <h2 class="section-title">Discover the potent blend of ingredients in NeuroQuiet</h2>
-            <p style="text-align: center; color: var(--text-medium); margin-bottom: 30px;">Support your healthy hearing and enhance your cognitive well-being. Here's how each powerful component works for you:</p>
-            
+            <p style="text-align: center; color: var(--text-med); margin-bottom: 30px;">Support your healthy hearing and enhance your cognitive well-being. Here's how each powerful component works for you:</p>
             <div class="ingredients-grid">
-                <div class="ingredient-card">
-                    <h3 class="ingredient-name">Alpha-GPC</h3>
-                    <p class="ingredient-description">Boosts cognitive function and brain health</p>
-                </div>
-                <div class="ingredient-card">
-                    <h3 class="ingredient-name">GABA</h3>
-                    <p class="ingredient-description">Promotes relaxation and reduces stress</p>
-                </div>
-                <div class="ingredient-card">
-                    <h3 class="ingredient-name">L-Dopa Bean</h3>
-                    <p class="ingredient-description">Support healthy dopamine levels, for mental clarity and peace</p>
-                </div>
-                <div class="ingredient-card">
-                    <h3 class="ingredient-name">Moomiyo</h3>
-                    <p class="ingredient-description">Enhances overall vitality, contributing to brain and body wellness</p>
-                </div>
-                <div class="ingredient-card">
-                    <h3 class="ingredient-name">L-Arginine</h3>
-                    <p class="ingredient-description">Supports healthy blood circulation</p>
-                </div>
-                <div class="ingredient-card">
-                    <h3 class="ingredient-name">L-Tyrosine</h3>
-                    <p class="ingredient-description">Supports stress resilience and neurotransmitter balance</p>
-                </div>
+                <div class="ingredient-card"><h3 class="ingredient-name">Alpha-GPC</h3><p class="ingredient-description">Boosts cognitive function and brain health</p></div>
+                <div class="ingredient-card"><h3 class="ingredient-name">GABA</h3><p class="ingredient-description">Promotes relaxation and reduces stress</p></div>
+                <div class="ingredient-card"><h3 class="ingredient-name">L-Dopa Bean</h3><p class="ingredient-description">Support healthy dopamine levels, for mental clarity and peace</p></div>
+                <div class="ingredient-card"><h3 class="ingredient-name">Moomiyo</h3><p class="ingredient-description">Enhances overall vitality, contributing to brain and body wellness</p></div>
+                <div class="ingredient-card"><h3 class="ingredient-name">L-Arginine</h3><p class="ingredient-description">Supports healthy blood circulation</p></div>
+                <div class="ingredient-card"><h3 class="ingredient-name">L-Tyrosine</h3><p class="ingredient-description">Supports stress resilience and neurotransmitter balance</p></div>
             </div>
         </section>
 
-        <!-- Testimonials -->
         <section class="testimonials-section">
             <h2 class="section-title">Real Customers, Real Life-Changing Results</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">WS</div>
-                        <div class="testimonial-info">
+                        <div>
                             <div class="testimonial-name">William S.</div>
                             <div class="testimonial-location">North Carolina, USA</div>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
-                    <p class="testimonial-text">
-                        "NeuroQuiet did wonders to support my hearing. I work as an audio engineer, so protecting my ears against noise is a must. Go for the 6-bottle pack - it's the best investment you'll ever make!"
-                    </p>
+                    <p class="testimonial-text">"NeuroQuiet did wonders to support my hearing. I work as an audio engineer, so protecting my ears against noise is a must. Go for the 6-bottle pack - it's the best investment you'll ever make!"</p>
                     <div class="testimonial-verified">✓ Verified Purchase</div>
                 </div>
-
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">JR</div>
-                        <div class="testimonial-info">
+                        <div>
                             <div class="testimonial-name">Jason R.</div>
                             <div class="testimonial-location">Arizona, USA</div>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
-                    <p class="testimonial-text">
-                        "My brain feels clearer and I can finally relax. Thank you, NeuroQuiet!"
-                    </p>
+                    <p class="testimonial-text">"My brain feels clearer and I can finally relax. Thank you, NeuroQuiet!"</p>
                     <div class="testimonial-verified">✓ Verified Purchase</div>
                 </div>
-
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">SG</div>
-                        <div class="testimonial-info">
+                        <div>
                             <div class="testimonial-name">Sabine G.</div>
                             <div class="testimonial-location">Texas, USA</div>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
-                    <p class="testimonial-text">
-                        "I treasure my peace and quiet more than anything. So I'm well aware just how important the health of my ears is. Knowing that by taking NeuroQuiet I'm feeding my hearing these essential nutrients helps me sleep better at night. Definitely give this one a try."
-                    </p>
+                    <p class="testimonial-text">"I treasure my peace and quiet more than anything. So I'm well aware just how important the health of my ears is. Knowing that by taking NeuroQuiet I'm feeding my hearing these essential nutrients helps me sleep better at night. Definitely give this one a try."</p>
                     <div class="testimonial-verified">✓ Verified Purchase</div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section -->
         <section class="pricing-section">
             <h2 class="section-title">Take advantage of this limited offer to stock up on<br>NeuroQuiet while supplies last!</h2>
-            
             <div class="pricing-grid">
-                
-                <!-- Package 1 -->
                 <article class="pricing-card">
                     <h3 class="card-title">Try Two</h3>
                     <p class="card-subtitle">60 Days, 2 Bottles</p>
-                    <div class="product-image">
-                        <img src="https://neuroquiethq.com/assets/img/PRODx2-500px.webp" alt="NeuroQuiet 2 Bottles" loading="lazy">
-                    </div>
-                    <div class="price-container">
-                        <span class="price">$69</span>
-                        <span class="price-label">Per Bottle</span>
-                    </div>
+                    <div class="product-image"><img src="https://neuroquiethq.com/assets/img/PRODx2-500px.webp" alt="NeuroQuiet 2 Bottles" loading="lazy"></div>
+                    <div class="price-container"><span class="price">$69</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $220</div>
                     <div class="no-bonus">No bonuses</div>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">
-                        Add To Cart
-                    </a>
+                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -1539,24 +413,15 @@
                     <p class="shipping-info paid">+ SHIPPING</p>
                     <p class="guarantee">90 Day Money-Back Guarantee</p>
                 </article>
-
-                <!-- Package 2 - FEATURED -->
                 <article class="pricing-card featured">
                     <span class="card-badge">Best Value</span>
                     <h3 class="card-title">Best Value</h3>
                     <p class="card-subtitle">180 Days, 6 Bottles</p>
-                    <div class="product-image">
-                        <img src="https://neuroquiethq.com/assets/img/PRODx6-500px.webp" alt="NeuroQuiet 6 Bottles" loading="lazy">
-                    </div>
-                    <div class="price-container">
-                        <span class="price">$49</span>
-                        <span class="price-label">Per Bottle</span>
-                    </div>
+                    <div class="product-image"><img src="https://neuroquiethq.com/assets/img/PRODx6-500px.webp" alt="NeuroQuiet 6 Bottles" loading="lazy"></div>
+                    <div class="price-container"><span class="price">$49</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $780</div>
                     <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">
-                        Add To Cart
-                    </a>
+                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -1567,24 +432,15 @@
                     <p class="shipping-info">+ FREE US SHIPPING</p>
                     <p class="guarantee">90 Day Money-Back Guarantee</p>
                 </article>
-
-                <!-- Package 3 -->
                 <article class="pricing-card">
                     <span class="card-badge">Most Popular</span>
                     <h3 class="card-title">Most Popular</h3>
                     <p class="card-subtitle">90 Days, 3 Bottles</p>
-                    <div class="product-image">
-                        <img src="https://neuroquiethq.com/assets/img/PRODx3-500px.webp" alt="NeuroQuiet 3 Bottles" loading="lazy">
-                    </div>
-                    <div class="price-container">
-                        <span class="price">$59</span>
-                        <span class="price-label">Per Bottle</span>
-                    </div>
+                    <div class="product-image"><img src="https://neuroquiethq.com/assets/img/PRODx3-500px.webp" alt="NeuroQuiet 3 Bottles" loading="lazy"></div>
+                    <div class="price-container"><span class="price">$59</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $360</div>
                     <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">
-                        Add To Cart
-                    </a>
+                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -1595,130 +451,78 @@
                     <p class="shipping-info">+ FREE US SHIPPING</p>
                     <p class="guarantee">90 Day Money-Back Guarantee</p>
                 </article>
-
             </div>
-
             <p style="text-align: center; margin-top: 20px;">
                 <span class="stars-large">
-                    <span class="star-large">★</span>
-                    <span class="star-large">★</span>
-                    <span class="star-large">★</span>
-                    <span class="star-large">★</span>
-                    <span class="star-large">★</span>
+                    <span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span>
                 </span>
                 <span style="margin-left: 10px; font-weight: 600;">Our customers say 4.98/5 based on 2000+ reviews</span>
             </p>
         </section>
 
-        <!-- Comparison Table -->
         <section class="comparison-section">
             <h2 class="section-title">NeuroQuiet vs Competitors</h2>
             <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>NeuroQuiet</th>
-                        <th>Other Competitors</th>
-                    </tr>
-                </thead>
+                <thead><tr><th></th><th>NeuroQuiet</th><th>Other Competitors</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>Boosts cognitive function</td>
-                        <td class="check">✅</td>
-                        <td class="cross">❌</td>
-                    </tr>
-                    <tr>
-                        <td>Eases stress and promotes relaxation</td>
-                        <td class="check">✅</td>
-                        <td class="cross">❌</td>
-                    </tr>
-                    <tr>
-                        <td>Boosts vitality</td>
-                        <td class="check">✅</td>
-                        <td class="cross">❌</td>
-                    </tr>
-                    <tr>
-                        <td>Supports ear health</td>
-                        <td class="check">✅</td>
-                        <td class="check">✅</td>
-                    </tr>
-                    <tr>
-                        <td>90-day money-back</td>
-                        <td class="check">✅</td>
-                        <td class="cross">❌</td>
-                    </tr>
+                    <tr><td>Boosts cognitive function</td><td class="check">✅</td><td class="cross">❌</td></tr>
+                    <tr><td>Eases stress and promotes relaxation</td><td class="check">✅</td><td class="cross">❌</td></tr>
+                    <tr><td>Boosts vitality</td><td class="check">✅</td><td class="cross">❌</td></tr>
+                    <tr><td>Supports ear health</td><td class="check">✅</td><td class="check">✅</td></tr>
+                    <tr><td>90-day money-back</td><td class="check">✅</td><td class="cross">❌</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <!-- FAQ Section -->
         <section class="faq-section">
             <h2 class="section-title">Frequently Asked Questions</h2>
-            
             <div class="faq-item">
                 <h3 class="faq-question">Is NeuroQuiet right for Me?</h3>
                 <p class="faq-answer">NeuroQuiet has provided amazing hearing support for men and women in their 30s, 40, 50s and even 70s. Because it was engineered based on teachings of modern science, NeuroQuiet formula is very gentle yet very powerful at the same time using pure plant ingredients and natural minerals. And you can rest assured knowing it's assembled in the United States.</p>
             </div>
-
             <div class="faq-item">
                 <h3 class="faq-question">What kind of results can I expect from NeuroQuiet?</h3>
                 <p class="faq-answer">Results may vary from person to person. NeuroQuiet is formulated with natural ingredients designed to support hearing health and cognitive function. Many customers report positive experiences, though individual results will depend on various factors including consistent use and personal health conditions.</p>
             </div>
-
             <div class="faq-item">
                 <h3 class="faq-question">How long will it take to see results?</h3>
                 <p class="faq-answer">Individual results vary. Some customers notice benefits within the first few weeks, while others may take longer. We recommend consistent use for at least 90 days for optimal results, which is why we offer our 90-day money-back guarantee.</p>
             </div>
-
             <div class="faq-item">
                 <h3 class="faq-question">What is the best way to take NeuroQuiet?</h3>
                 <p class="faq-answer">Follow the dosage instructions on the bottle label. For best results, take consistently as directed. Always consult with your healthcare provider before starting any new supplement regimen.</p>
             </div>
-
             <div class="faq-item">
                 <h3 class="faq-question">What if NeuroQuiet doesn't work for me?</h3>
                 <p class="faq-answer">We offer a 90-day money-back guarantee. If you're not completely satisfied with your results, simply contact our customer support team for a full refund (minus shipping and handling fees). Return the product, even empty bottles, within 90 days of purchase.</p>
             </div>
-
             <div class="faq-item">
                 <h3 class="faq-question">Where can I buy NeuroQuiet and how quickly can I get it?</h3>
                 <p class="faq-answer">NeuroQuiet is available exclusively through this website. Orders are processed within 1-3 business days. Domestic shipping typically takes 5-7 business days, while international orders may take 10-21 business days. Free shipping is included on 3 and 6-bottle packages for US orders.</p>
             </div>
-
             <div class="faq-item">
                 <h3 class="faq-question">Is my purchase secure? How many times will you charge my card?</h3>
                 <p class="faq-answer">Yes, your purchase is 100% secure. We use industry-standard SSL encryption to protect your information. Your card will be charged only once for your order. There are no hidden fees or recurring charges unless you explicitly opt-in for a subscription program.</p>
             </div>
         </section>
 
-        <!-- Guarantee Section -->
         <section class="guarantee-section">
             <div class="guarantee-icon">🛡️</div>
             <h2>100% Satisfaction Guaranteed<br>90-Day Money Back Guarantee</h2>
             <p>NeuroQuiet comes with a 100% money back guarantee - 90 full days from your original purchase. If you're not totally and completely satisfied with our product or your results within the first 90 days simply let us know by calling our toll-free number or dropping us an email and we'll gladly give you a full refund within 48 hours of the product being returned. That's right - simply return the product, even your empty bottles, anytime within 90 days of your purchase and you'll receive a full, no-questions-asked refund (minus shipping and handling fees).</p>
         </section>
 
-        <!-- Final Pricing -->
         <section class="pricing-section">
             <h2 class="section-title">Try NeuroQuiet Today<br>At Special Introductory Pricing!</h2>
-            
             <div class="pricing-grid">
-                
                 <article class="pricing-card">
                     <h3 class="card-title">Try Two</h3>
                     <p class="card-subtitle">60 Days, 2 Bottles</p>
-                    <div class="product-image">
-                        <img src="https://neuroquiethq.com/assets/img/PRODx2-500px.webp" alt="NeuroQuiet 2 Bottles" loading="lazy">
-                    </div>
-                    <div class="price-container">
-                        <span class="price">$69</span>
-                        <span class="price-label">Per Bottle</span>
-                    </div>
+                    <div class="product-image"><img src="https://neuroquiethq.com/assets/img/PRODx2-500px.webp" alt="NeuroQuiet 2 Bottles" loading="lazy"></div>
+                    <div class="price-container"><span class="price">$69</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $220</div>
                     <div class="no-bonus">No bonuses</div>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">
-                        Add To Cart
-                    </a>
+                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -1729,23 +533,15 @@
                     <p class="shipping-info paid">+ SHIPPING</p>
                     <p class="guarantee">90 Day Money-Back Guarantee</p>
                 </article>
-
                 <article class="pricing-card featured">
                     <span class="card-badge">Best Value</span>
                     <h3 class="card-title">Best Value</h3>
                     <p class="card-subtitle">180 Days, 6 Bottles</p>
-                    <div class="product-image">
-                        <img src="https://neuroquiethq.com/assets/img/PRODx6-500px.webp" alt="NeuroQuiet 6 Bottles" loading="lazy">
-                    </div>
-                    <div class="price-container">
-                        <span class="price">$49</span>
-                        <span class="price-label">Per Bottle</span>
-                    </div>
+                    <div class="product-image"><img src="https://neuroquiethq.com/assets/img/PRODx6-500px.webp" alt="NeuroQuiet 6 Bottles" loading="lazy"></div>
+                    <div class="price-container"><span class="price">$49</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $780</div>
                     <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">
-                        Add To Cart
-                    </a>
+                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -1756,23 +552,15 @@
                     <p class="shipping-info">+ FREE US SHIPPING</p>
                     <p class="guarantee">90 Day Money-Back Guarantee</p>
                 </article>
-
                 <article class="pricing-card">
                     <span class="card-badge">Most Popular</span>
                     <h3 class="card-title">Most Popular</h3>
                     <p class="card-subtitle">90 Days, 3 Bottles</p>
-                    <div class="product-image">
-                        <img src="https://neuroquiethq.com/assets/img/PRODx3-500px.webp" alt="NeuroQuiet 3 Bottles" loading="lazy">
-                    </div>
-                    <div class="price-container">
-                        <span class="price">$59</span>
-                        <span class="price-label">Per Bottle</span>
-                    </div>
+                    <div class="product-image"><img src="https://neuroquiethq.com/assets/img/PRODx3-500px.webp" alt="NeuroQuiet 3 Bottles" loading="lazy"></div>
+                    <div class="price-container"><span class="price">$59</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $360</div>
                     <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">
-                        Add To Cart
-                    </a>
+                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -1783,87 +571,49 @@
                     <p class="shipping-info">+ FREE US SHIPPING</p>
                     <p class="guarantee">90 Day Money-Back Guarantee</p>
                 </article>
-
             </div>
-
             <p style="text-align: center; margin-top: 20px;">
                 <span class="stars-large">
-                    <span class="star-large">★</span>
-                    <span class="star-large">★</span>
-                    <span class="star-large">★</span>
-                    <span class="star-large">★</span>
-                    <span class="star-large">★</span>
+                    <span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span>
                 </span>
                 <span style="margin-left: 10px; font-weight: 600;">Our customers say 4.98/5 based on 2000+ reviews</span>
             </p>
         </section>
 
-        <!-- Final CTA -->
         <section class="final-cta">
             <h2>Ready to Experience NeuroQuiet?</h2>
             <p>Join thousands of satisfied customers • 90-Day Guarantee • Free Shipping on 3+ Bottles</p>
-            <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button-final">
-                Order Now - Limited Stock →
-            </a>
+            <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button-final">Order Now - Limited Stock →</a>
         </section>
-
     </main>
 
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Product</h3>
-                <ul>
-                    <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#ingredients">Ingredients</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                </ul>
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 30px 20px;">
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: white; font-size: 1.1rem; margin-bottom: 15px; text-align: center;">Scientific References</h3>
+                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 15px;">The company is not endorsed by, sponsored by, or affiliated with any of these organizations</p>
+                <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5); line-height: 1.8; text-align: center;">
+                    <p>Moomiyo: A Natural Adaptogen - Shakirov, A. - 2021 • Therapeutic Effects of Moomiyo on the Immune System - Ivanov, A. - 2020 • The Role of Moomiyo in Enhancing Physical Performance - Kolesnikov, V. - 2019 • Alpha-Glycerylphosphorylcholine Increases Motivation in Healthy Adults - Kato, H., et al. - 2021 • Effect of a New Cognition Enhancer, Alpha-Glycerylphosphorylcholine - Canal, N., et al. - 1991 • Safety Assessment of Alpha-GPC as a Food Ingredient - Gatti, G., et al. - 2011 • Alpha-GPC for Cognitive Decline in Alzheimer's Disease - Barbagallo Sangiorgi, G., et al. - 1994 • The Effects of Alpha-GPC on Mood and Cognitive Function - Parker, A.G., et al. - 2015 • GABA and Its Role in Neurotransmission - Smith, J.L., et al. - 2018 • Neuroprotective Effects of GABA on Brain Cells - Lee, T.H., et al. - 2017 • L-Dopa from Mucuna Pruriens and Its Clinical Applications - Gupta, A., et al. - 2019 • The Efficacy of L-Dopa in Parkinson's Disease Treatment - Zhang, Y., et al. - 2020 • L-Arginine and Its Role in Cardiovascular Health - Wu, G., et al. - 2016 • The Impact of L-Arginine on Exercise Performance - Bescos, R., et al. - 2012 • L-Tyrosine Supplementation and Cognitive Performance Under Stress - Deijen, J.B., et al. - 2000 • Effects of L-Tyrosine on Neurotransmitter Levels and Mood - Neri, D.F., et al. - 2015 • Nutraceuticals in Cognitive Disorders - Patel, P.J., et al. - 2022 • Adaptogens and Their Role in Stress Management - Choi, J.H., et al. - 2020 • Natural Products as Cognitive Enhancers - Singh, R.P., et al. - 2023 • The Science Behind Dietary Supplements for Brain Health - Thompson, C.L., et al. - 2021</p>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#shipping">Shipping</a></li>
-                    <li><a href="#guarantee">Guarantee</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="privacy-policy-en.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-service-en.html">Terms of Service</a></li>
-                    <li><a href="disclaimer-en.html">Disclaimer</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <ul>
-                    <li>support@neuroquiet.com</li>
-                    <li>1-800-XXX-XXXX</li>
-                    <li>Available 24/7</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2024 NeuroQuiet. All rights reserved.</p>
-            <p class="footer-disclaimer">
-                *These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.
-            </p>
-            <div class="references">
-                <p><strong>Scientific References:</strong> The company is not endorsed by, sponsored by, or affiliated with any of these organizations.</p>
+            <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="margin-bottom: 15px;">
+                    <a href="privacy-policy-en.html" style="margin: 0 15px; font-size: 0.85rem;">Privacy Policy</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="terms-of-service-en.html" style="margin: 0 15px; font-size: 0.85rem;">Terms of Service</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="disclaimer-en.html" style="margin: 0 15px; font-size: 0.85rem;">Disclaimer</a>
+                </p>
+                <p style="font-size: 0.85rem;">&copy; 2024 NeuroQuiet. All rights reserved.</p>
+                <p style="margin-top: 15px; font-size: 0.75rem; line-height: 1.6; color: rgba(255,255,255,0.6);">
+                    *These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Sticky Mobile CTA -->
     <div class="sticky-cta-mobile">
-        <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">
-            🛒 Add To Cart - Save 78%
-        </a>
+        <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">🛒 Add To Cart - Save 78%</a>
     </div>
 
 </body>
