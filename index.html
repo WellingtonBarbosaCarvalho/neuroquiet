@@ -71,13 +71,20 @@
     </script>
 
     <style>
-        /* Self-hosted Poppins fonts - Eliminates Google Fonts blocking */
+        /* Self-hosted Poppins fonts - Critical fonts use 'block' for faster LCP */
         @font-face {
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 400;
-            font-display: swap;
+            font-display: block;
             src: local('Poppins'), url('./assets/fonts/poppins-400.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-display: block;
+            src: local('Poppins Bold'), url('./assets/fonts/poppins-700.woff2') format('woff2');
         }
         /* Medium weight - non-critical */
         @font-face {
@@ -86,13 +93,6 @@
             font-weight: 500;
             font-display: optional;
             src: local('Poppins Medium'), url('./assets/fonts/poppins-500.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            src: local('Poppins Bold'), url('./assets/fonts/poppins-700.woff2') format('woff2');
         }
         /* Non-critical font weights - NOT USED (fallback to 700) but declared for browsers that need them */
         @font-face {
@@ -648,74 +648,6 @@
             <div class="guarantee-icon">🛡️</div>
             <h2>100% Satisfaction Guaranteed<br>90-Day Money Back Guarantee</h2>
             <p>NeuroQuiet comes with a 100% money back guarantee - 90 full days from your original purchase. If you're not totally and completely satisfied with our product or your results within the first 90 days simply let us know by calling our toll-free number or dropping us an email and we'll gladly give you a full refund within 48 hours of the product being returned. That's right - simply return the product, even your empty bottles, anytime within 90 days of your purchase and you'll receive a full, no-questions-asked refund (minus shipping and handling fees).</p>
-        </section>
-
-        <section class="pricing-section">
-            <h2 class="section-title">Try NeuroQuiet Today<br>At Special Introductory Pricing!</h2>
-            <div class="pricing-grid">
-                <article class="pricing-card">
-                    <h3 class="card-title">Try Two</h3>
-                    <p class="card-subtitle">60 Days, 2 Bottles</p>
-                    <div class="product-image"><img src="./assets/img/PRODx2-500px.webp" alt="NeuroQuiet 2 Bottles" width="120" height="120" loading="lazy"></div>
-                    <div class="price-container"><span class="price">$69</span><span class="price-label">Per Bottle</span></div>
-                    <div class="savings">YOU SAVE $220</div>
-                    <div class="no-bonus">No bonuses</div>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
-                    <div class="payment-methods">
-                        <span class="payment-icon" data-card="mastercard">MC</span>
-                        <span class="payment-icon" data-card="visa">VISA</span>
-                        <span class="payment-icon" data-card="amex">AMEX</span>
-                        <span class="payment-icon" data-card="discover">DISC</span>
-                    </div>
-                    <p class="total-price">TOTAL: <span class="old-price">$358</span> <span class="new-price">$138</span></p>
-                    <p class="shipping-info paid">+ SHIPPING</p>
-                    <p class="guarantee">90 Day Money-Back Guarantee</p>
-                </article>
-                <article class="pricing-card featured">
-                    <span class="card-badge">Best Value</span>
-                    <h3 class="card-title">Best Value</h3>
-                    <p class="card-subtitle">180 Days, 6 Bottles</p>
-                    <div class="product-image"><img src="./assets/img/PRODx6-500px.webp" alt="NeuroQuiet 6 Bottles" width="120" height="120" loading="lazy"></div>
-                    <div class="price-container"><span class="price">$49</span><span class="price-label">Per Bottle</span></div>
-                    <div class="savings">YOU SAVE $780</div>
-                    <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
-                    <div class="payment-methods">
-                        <span class="payment-icon" data-card="mastercard">MC</span>
-                        <span class="payment-icon" data-card="visa">VISA</span>
-                        <span class="payment-icon" data-card="amex">AMEX</span>
-                        <span class="payment-icon" data-card="discover">DISC</span>
-                    </div>
-                    <p class="total-price">TOTAL: <span class="old-price">$1074</span> <span class="new-price">$294</span></p>
-                    <p class="shipping-info">+ FREE US SHIPPING</p>
-                    <p class="guarantee">90 Day Money-Back Guarantee</p>
-                </article>
-                <article class="pricing-card">
-                    <span class="card-badge">Most Popular</span>
-                    <h3 class="card-title">Most Popular</h3>
-                    <p class="card-subtitle">90 Days, 3 Bottles</p>
-                    <div class="product-image"><img src="./assets/img/PRODx3-500px.webp" alt="NeuroQuiet 3 Bottles" width="120" height="120" loading="lazy"></div>
-                    <div class="price-container"><span class="price">$59</span><span class="price-label">Per Bottle</span></div>
-                    <div class="savings">YOU SAVE $360</div>
-                    <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
-                    <div class="payment-methods">
-                        <span class="payment-icon" data-card="mastercard">MC</span>
-                        <span class="payment-icon" data-card="visa">VISA</span>
-                        <span class="payment-icon" data-card="amex">AMEX</span>
-                        <span class="payment-icon" data-card="discover">DISC</span>
-                    </div>
-                    <p class="total-price">TOTAL: <span class="old-price">$537</span> <span class="new-price">$177</span></p>
-                    <p class="shipping-info">+ FREE US SHIPPING</p>
-                    <p class="guarantee">90 Day Money-Back Guarantee</p>
-                </article>
-            </div>
-            <p style="text-align: center; margin-top: 20px;">
-                <span class="stars-large">
-                    <span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span>
-                </span>
-                <span style="margin-left: 10px; font-weight: 700;">Our customers say 4.98/5 based on 2000+ reviews</span>
-            </p>
         </section>
 
         <section class="final-cta">
