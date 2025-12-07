@@ -9,6 +9,14 @@
     <meta name="theme-color" content="#1e4d8c">
     <link rel="canonical" href="https://www.neuroquietoffer.online/">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon.svg">
+    <link rel="shortcut icon" href="./favicon.svg">
+    <link rel="manifest" href="./site.webmanifest">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.neuroquietoffer.online/">
@@ -25,20 +33,12 @@
 
     <title>NeuroQuiet Official | Save Up to 78% - Limited Time Offer</title>
 
-    <!-- DNS Prefetch & Preconnect for faster font loading -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Preload critical font - prevents layout shift -->
-    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2" crossorigin>
+    <!-- Preload critical fonts - Self-hosted for maximum performance -->
+    <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/poppins-400.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/poppins-700.woff2" crossorigin>
 
     <!-- Preload hero image - Critical LCP element (local file = better cache control) -->
     <link rel="preload" as="image" href="./assets/img/PRODx6-500px.webp" fetchpriority="high" imagesrcset="./assets/img/PRODx6-500px.webp 1x" imagesizes="250px">
-
-    <!-- Load fonts WITHOUT JavaScript to prevent reflow -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -71,13 +71,48 @@
     </script>
 
     <style>
-        /* Font loading optimization - prevents reflow */
+        /* Self-hosted Poppins fonts - Eliminates Google Fonts blocking */
         @font-face {
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 400;
             font-display: swap;
-            src: local('Poppins'), local('Poppins-Regular');
+            src: local('Poppins'), url('./assets/fonts/poppins-400.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: local('Poppins Medium'), url('./assets/fonts/poppins-500.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: local('Poppins SemiBold'), url('./assets/fonts/poppins-600.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Poppins Bold'), url('./assets/fonts/poppins-700.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: local('Poppins ExtraBold'), url('./assets/fonts/poppins-800.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: local('Poppins Black'), url('./assets/fonts/poppins-900.woff2') format('woff2');
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
