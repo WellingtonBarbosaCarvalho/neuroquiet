@@ -120,8 +120,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #1e4d8c; --secondary: #2a5fa8; --accent: #f5d742;
-            --danger: #c41e3a; --success: #27ae60; --text: #1a1a1a;
-            --text-med: #666; --text-light: #999; --white: #fff; --bg: #f5f5f5;
+            --danger: #c41e3a; --success: #27ae60; --success-dark: #1e7e34; --text: #1a1a1a;
+            --text-med: #666; --text-light: #757575; --white: #fff; --bg: #f5f5f5;
         }
         body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
         
@@ -157,7 +157,7 @@
         .price-hero .old-price { font-size: 1.2rem; text-decoration: line-through; color: var(--text-light); display: block; }
         .price-hero .new-price { font-size: 3.5rem; font-weight: 700; color: var(--danger); line-height: 1; }
         .price-hero .per-bottle { font-size: 1rem; color: var(--text-med); }
-        .savings-hero { background: #e8f5e9; color: var(--success); padding: 10px; border-radius: 10px; text-align: center; font-weight: 700; font-size: 1.1rem; margin-bottom: 15px; }
+        .savings-hero { background: #e8f5e9; color: var(--success-dark); padding: 10px; border-radius: 10px; text-align: center; font-weight: 700; font-size: 1.1rem; margin-bottom: 15px; }
         .features-hero { list-style: none; margin-bottom: 20px; }
         .features-hero li { padding: 8px 0 8px 25px; position: relative; font-size: 0.9rem; }
         .features-hero li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: bold; }
@@ -172,7 +172,7 @@
         .payment-icon[data-card="mastercard"] { background: linear-gradient(180deg, #eb001b 50%, #f79e1b 50%); }
         .payment-icon[data-card="visa"] { background: #1a1f71; }
         .payment-icon[data-card="amex"] { background: #006fcf; }
-        .payment-icon[data-card="discover"] { background: #ff6000; }
+        .payment-icon[data-card="discover"] { background: #e65100; color: #fff; }
 
         /* Trust Section */
         .trust-section { background: var(--white); padding: 30px 20px; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; }
@@ -249,7 +249,7 @@
         .product-image img { width: 120px; height: 120px; object-fit: contain; }
         .price { font-size: 3rem; font-weight: 700; color: var(--danger); }
         .price-label { font-size: 0.85rem; color: var(--text-med); }
-        .savings { background: #e8f5e9; color: var(--success); padding: 8px; border-radius: 8px; font-weight: 700; margin-bottom: 15px; }
+        .savings { background: #e8f5e9; color: var(--success-dark); padding: 8px; border-radius: 8px; font-weight: 700; margin-bottom: 15px; }
         .bonus-badge { background: var(--primary); color: var(--white); padding: 8px 15px; border-radius: 15px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; display: inline-block; }
         .no-bonus { color: var(--text-light); font-style: italic; margin-bottom: 15px; }
         .cta-button { background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%); color: var(--text); border: none; padding: 16px 35px; font-size: 1.1rem; font-weight: 700; border-radius: 40px; cursor: pointer; width: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 15px rgba(245, 215, 66, 0.5); text-decoration: none; display: block; text-align: center; text-transform: uppercase; }
@@ -258,7 +258,7 @@
         .total-price { font-size: 0.9rem; color: var(--text-med); margin-top: 10px; }
         .old-price { text-decoration: line-through; color: var(--text-light); }
         .new-price { color: var(--danger); font-weight: 700; }
-        .shipping-info { font-size: 0.85rem; color: var(--success); font-weight: 700; margin-top: 5px; }
+        .shipping-info { font-size: 0.85rem; color: var(--success-dark); font-weight: 700; margin-top: 5px; }
         .shipping-info.paid { color: var(--text-med); font-weight: 400; }
 
         /* Comparison */
@@ -291,8 +291,8 @@
         .cta-button-final:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
 
         /* Footer */
-        footer { background: var(--primary); color: rgba(255,255,255,0.8); padding: 40px 20px; }
-        footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        footer { background: var(--primary); color: rgba(255,255,255,0.95); padding: 40px 20px; }
+        footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
         footer a:hover { color: var(--accent); }
 
         /* Content visibility optimization - lazy render off-screen content */
@@ -729,21 +729,21 @@
         <div style="max-width: 1200px; margin: 0 auto; padding: 30px 20px;">
             <div style="margin-bottom: 30px;">
                 <h3 style="color: white; font-size: 1.1rem; margin-bottom: 15px; text-align: center;">Scientific References</h3>
-                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 15px;">The company is not endorsed by, sponsored by, or affiliated with any of these organizations</p>
-                <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5); line-height: 1.8; text-align: center;">
+                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.85); text-align: center; margin-bottom: 15px;">The company is not endorsed by, sponsored by, or affiliated with any of these organizations</p>
+                <div style="font-size: 0.7rem; color: rgba(255,255,255,0.8); line-height: 1.8; text-align: center;">
                     <p>Moomiyo: A Natural Adaptogen - Shakirov, A. - 2021 • Therapeutic Effects of Moomiyo on the Immune System - Ivanov, A. - 2020 • The Role of Moomiyo in Enhancing Physical Performance - Kolesnikov, V. - 2019 • Alpha-Glycerylphosphorylcholine Increases Motivation in Healthy Adults - Kato, H., et al. - 2021 • Effect of a New Cognition Enhancer, Alpha-Glycerylphosphorylcholine - Canal, N., et al. - 1991 • Safety Assessment of Alpha-GPC as a Food Ingredient - Gatti, G., et al. - 2011 • Alpha-GPC for Cognitive Decline in Alzheimer's Disease - Barbagallo Sangiorgi, G., et al. - 1994 • The Effects of Alpha-GPC on Mood and Cognitive Function - Parker, A.G., et al. - 2015 • GABA and Its Role in Neurotransmission - Smith, J.L., et al. - 2018 • Neuroprotective Effects of GABA on Brain Cells - Lee, T.H., et al. - 2017 • L-Dopa from Mucuna Pruriens and Its Clinical Applications - Gupta, A., et al. - 2019 • The Efficacy of L-Dopa in Parkinson's Disease Treatment - Zhang, Y., et al. - 2020 • L-Arginine and Its Role in Cardiovascular Health - Wu, G., et al. - 2016 • The Impact of L-Arginine on Exercise Performance - Bescos, R., et al. - 2012 • L-Tyrosine Supplementation and Cognitive Performance Under Stress - Deijen, J.B., et al. - 2000 • Effects of L-Tyrosine on Neurotransmitter Levels and Mood - Neri, D.F., et al. - 2015 • Nutraceuticals in Cognitive Disorders - Patel, P.J., et al. - 2022 • Adaptogens and Their Role in Stress Management - Choi, J.H., et al. - 2020 • Natural Products as Cognitive Enhancers - Singh, R.P., et al. - 2023 • The Science Behind Dietary Supplements for Brain Health - Thompson, C.L., et al. - 2021</p>
                 </div>
             </div>
             <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1);">
                 <p style="margin-bottom: 15px;">
                     <a href="privacy-policy-en.html" style="margin: 0 15px; font-size: 0.85rem;">Privacy Policy</a>
-                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <span style="color: rgba(255,255,255,0.5);">|</span>
                     <a href="terms-of-service-en.html" style="margin: 0 15px; font-size: 0.85rem;">Terms of Service</a>
-                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <span style="color: rgba(255,255,255,0.5);">|</span>
                     <a href="disclaimer-en.html" style="margin: 0 15px; font-size: 0.85rem;">Disclaimer</a>
                 </p>
                 <p style="font-size: 0.85rem;">&copy; 2024 NeuroQuiet. All rights reserved.</p>
-                <p style="margin-top: 15px; font-size: 0.75rem; line-height: 1.6; color: rgba(255,255,255,0.6);">
+                <p style="margin-top: 15px; font-size: 0.75rem; line-height: 1.6; color: rgba(255,255,255,0.85);">
                     *These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.
                 </p>
             </div>
