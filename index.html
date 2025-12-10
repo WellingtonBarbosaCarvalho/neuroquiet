@@ -1117,27 +1117,50 @@
     </div>
 
     <script>
+        // ===== STARTUP TEST =====
+        console.log('🚀 JavaScript is running!');
+        console.log('📄 File: index.html');
+        console.log('⏰ Loaded at:', new Date().toLocaleTimeString());
+
         // ===== GOOGLE ADS CONVERSION TRACKING =====
         function trackConversion(packageType) {
-            // Fire conversion event
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17757356280/oJXqCL33zMsbEPiBr5NC',
-                    'transaction_id': Date.now() + '-' + Math.random().toString(36).substr(2, 9),
-                    'value': packageType === '6-bottles' ? 294 : packageType === '3-bottles' ? 177 : 138,
-                    'currency': 'USD',
-                    'event_callback': function() {
-                        // Redirect after event is sent
-                        window.location.href = 'https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net';
-                    }
-                });
+            console.log('🔔 trackConversion called with:', packageType);
 
-                // Fallback redirect if callback doesn't fire within 1 second
+            // Get value based on package
+            var value = packageType === '6-bottles' ? 294 : packageType === '3-bottles' ? 177 : 138;
+            var transactionId = Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+
+            console.log('💰 Value:', value, 'USD');
+            console.log('🆔 Transaction ID:', transactionId);
+
+            // Check if gtag is available
+            if (typeof gtag !== 'undefined') {
+                console.log('✅ gtag found, firing conversion event...');
+
+                try {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-17757356280/oJXqCL33zMsbEPiBr5NC',
+                        'transaction_id': transactionId,
+                        'value': value,
+                        'currency': 'USD',
+                        'event_callback': function() {
+                            console.log('✅ Conversion tracked successfully! Redirecting...');
+                            window.location.href = 'https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net';
+                        }
+                    });
+
+                    console.log('📤 Conversion event sent to Google Ads');
+                } catch (error) {
+                    console.error('❌ Error tracking conversion:', error);
+                }
+
+                // Fallback redirect if callback doesn't fire within 1.5 seconds
                 setTimeout(function() {
+                    console.log('⏱️ Fallback redirect triggered');
                     window.location.href = 'https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net';
-                }, 1000);
+                }, 1500);
             } else {
-                // If gtag not loaded, redirect immediately
+                console.warn('⚠️ gtag not loaded, redirecting immediately');
                 window.location.href = 'https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net';
             }
         }
@@ -1249,6 +1272,23 @@
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             document.documentElement.style.setProperty('--animation-duration', '0s');
         }
+
+        // ===== VERIFY GOOGLE ADS LOADED =====
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof gtag !== 'undefined') {
+                    console.log('✅ Google Ads (gtag) loaded successfully');
+                    console.log('📊 Conversion tracking is ACTIVE');
+                    console.log('🎯 Conversion ID: AW-17757356280/oJXqCL33zMsbEPiBr5NC');
+                } else {
+                    console.error('❌ Google Ads (gtag) NOT loaded');
+                    console.error('⚠️ Possible causes:');
+                    console.error('   - Ad blocker is blocking the script');
+                    console.error('   - Network error loading gtag.js');
+                    console.error('   - Script blocked by browser/firewall');
+                }
+            }, 2000);
+        });
     </script>
 
 </body>
