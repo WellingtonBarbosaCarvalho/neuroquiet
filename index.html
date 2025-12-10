@@ -71,6 +71,267 @@
     </script>
 
     <style>
+        /* ===== COUNTDOWN BANNER STYLES ===== */
+        .countdown-banner {
+            background: linear-gradient(135deg, #c41e3a 0%, #8b1529 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(196, 30, 58, 0.4);
+            animation: slideDown 0.5s ease-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .countdown-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+        .countdown-timer {
+            display: inline-flex;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.15);
+            padding: 4px 12px;
+            border-radius: 6px;
+            backdrop-filter: blur(10px);
+        }
+        .timer-segment {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .timer-number {
+            font-size: 1.3rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .timer-label {
+            font-size: 0.65rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+
+        /* ===== STOCK INDICATOR ===== */
+        .stock-indicator {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(255, 107, 107, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.8); }
+        }
+        .stock-dot {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* ===== SOCIAL PROOF NOTIFICATION ===== */
+        .social-proof-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: white;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 350px;
+            z-index: 9998;
+            transform: translateX(-500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .social-proof-notification.show {
+            transform: translateX(0);
+        }
+        .social-proof-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .social-proof-content {
+            flex: 1;
+        }
+        .social-proof-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+        }
+        .social-proof-action {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .social-proof-time {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 2px;
+        }
+        .social-proof-close {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* ===== EXIT INTENT POPUP ===== */
+        .exit-popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .exit-popup-overlay.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .exit-popup {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .exit-popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f5f5f5;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .exit-popup-close:hover {
+            background: #e0e0e0;
+            transform: rotate(90deg);
+        }
+        .exit-popup-icon {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .exit-popup h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #c41e3a;
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .exit-popup p {
+            font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .exit-popup-offer {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 2px dashed #f5d742;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .exit-popup-offer-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .exit-popup-cta {
+            background: linear-gradient(135deg, #f5d742 0%, #ffd700 100%);
+            color: #1a1a1a;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(245, 215, 66, 0.6);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .exit-popup-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 215, 66, 0.8);
+        }
+        .exit-popup-guarantee {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #27ae60;
+            font-weight: 700;
+        }
+
         /* Self-hosted Poppins fonts - Critical fonts use 'block' for faster LCP */
         @font-face {
             font-family: 'Poppins';
@@ -148,7 +409,19 @@
         .rating-text-large { font-weight: 700; }
 
         /* Hero Product Card */
-        .hero-product-card { background: var(--white); border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border: 3px solid var(--danger); position: relative; }
+        .hero-product-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 50px rgba(196, 30, 58, 0.25), 0 0 0 1px rgba(196, 30, 58, 0.1);
+            border: 3px solid var(--danger);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .hero-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(196, 30, 58, 0.35), 0 0 0 1px rgba(196, 30, 58, 0.15);
+        }
         .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--danger); color: var(--white); padding: 8px 25px; border-radius: 25px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4); }
         .product-image-hero { text-align: center; margin-bottom: 20px; min-height: 250px; }
         .product-image-hero img { max-width: 250px; width: 250px; height: 250px; object-fit: contain; }
@@ -161,9 +434,49 @@
         .features-hero { list-style: none; margin-bottom: 20px; }
         .features-hero li { padding: 8px 0 8px 25px; position: relative; font-size: 0.9rem; }
         .features-hero li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: bold; }
-        .cta-button-hero { background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%); color: var(--text); border: none; padding: 20px 40px; font-size: 1.3rem; font-weight: 700; border-radius: 50px; cursor: pointer; width: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 6px 20px rgba(245, 215, 66, 0.6); text-decoration: none; display: block; text-align: center; text-transform: uppercase; animation: pulse 2s infinite; will-change: transform; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
-        .cta-button-hero:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(245, 215, 66, 0.7); }
+        .cta-button-hero {
+            background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%);
+            color: var(--text);
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(245, 215, 66, 0.6), 0 0 0 0 rgba(245, 215, 66, 0.4);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            animation: pulse-ring 2s infinite;
+            will-change: transform;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-button-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        .cta-button-hero:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(1); box-shadow: 0 8px 25px rgba(245, 215, 66, 0.6), 0 0 0 0 rgba(245, 215, 66, 0.7); }
+            50% { transform: scale(1.02); box-shadow: 0 8px 25px rgba(245, 215, 66, 0.6), 0 0 0 10px rgba(245, 215, 66, 0); }
+            100% { transform: scale(1); box-shadow: 0 8px 25px rgba(245, 215, 66, 0.6), 0 0 0 0 rgba(245, 215, 66, 0); }
+        }
+        .cta-button-hero:hover { transform: scale(1.03) translateY(-2px); box-shadow: 0 12px 35px rgba(245, 215, 66, 0.8); }
         .guarantee-hero { text-align: center; margin-top: 15px; font-size: 0.85rem; color: var(--text-med); }
         .guarantee-hero strong { color: var(--success); }
         .customer-stat { background: #e3f2fd; border-left: 4px solid var(--primary); padding: 12px; border-radius: 8px; text-align: center; font-size: 0.85rem; color: var(--primary); font-weight: 700; margin-top: 10px; }
@@ -252,8 +565,42 @@
         .savings { background: #e8f5e9; color: var(--success-dark); padding: 8px; border-radius: 8px; font-weight: 700; margin-bottom: 15px; }
         .bonus-badge { background: var(--primary); color: var(--white); padding: 8px 15px; border-radius: 15px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; display: inline-block; }
         .no-bonus { color: var(--text-light); font-style: italic; margin-bottom: 15px; }
-        .cta-button { background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%); color: var(--text); border: none; padding: 16px 35px; font-size: 1.1rem; font-weight: 700; border-radius: 40px; cursor: pointer; width: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 15px rgba(245, 215, 66, 0.5); text-decoration: none; display: block; text-align: center; text-transform: uppercase; }
-        .cta-button:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(245, 215, 66, 0.7); }
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%);
+            color: var(--text);
+            border: none;
+            padding: 16px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 40px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(245, 215, 66, 0.5);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+        .cta-button:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+        .cta-button:hover { transform: scale(1.03) translateY(-2px); box-shadow: 0 8px 25px rgba(245, 215, 66, 0.7); }
         .guarantee { margin-top: 12px; font-size: 0.8rem; color: var(--text-med); }
         .total-price { font-size: 0.9rem; color: var(--text-med); margin-top: 10px; }
         .old-price { text-decoration: line-through; color: var(--text-light); }
@@ -331,16 +678,59 @@
             .comparison-table { font-size: 0.85rem; }
             .comparison-table th, .comparison-table td { padding: 10px 5px; }
 
+            /* Mobile optimizations for new elements */
+            .countdown-banner { padding: 10px 15px; }
+            .countdown-content { font-size: 0.8rem; flex-direction: column; gap: 8px; }
+            .countdown-timer { font-size: 0.9rem; }
+            .timer-number { font-size: 1.1rem; }
+            .social-proof-notification {
+                bottom: 100px;
+                left: 10px;
+                right: 10px;
+                max-width: none;
+                font-size: 0.85rem;
+            }
+            .exit-popup { padding: 25px; max-width: 95%; }
+            .exit-popup h2 { font-size: 1.5rem; }
+            .exit-popup p { font-size: 1rem; }
+            .exit-popup-offer-text { font-size: 1.2rem; }
+            .stock-indicator { font-size: 0.75rem; padding: 6px 12px; }
+
             /* Disable expensive animations on mobile */
-            @keyframes pulse { 0%, 100% { transform: none; } 50% { transform: none; } }
+            @keyframes pulse-ring { 0%, 100% { transform: none; box-shadow: 0 8px 25px rgba(245, 215, 66, 0.6); } 50% { transform: none; box-shadow: 0 8px 25px rgba(245, 215, 66, 0.6); } }
             .benefit-card:hover { transform: none; }
             .pricing-card:hover { transform: none; }
+            .hero-product-card:hover { transform: none; box-shadow: 0 15px 50px rgba(196, 30, 58, 0.25), 0 0 0 1px rgba(196, 30, 58, 0.1); }
         }
 
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
     </style>
 </head>
 <body>
+
+    <!-- Countdown Banner -->
+    <div class="countdown-banner">
+        <div class="countdown-content">
+            <span>🔥 SPECIAL OFFER ENDS IN:</span>
+            <div class="countdown-timer">
+                <div class="timer-segment">
+                    <span class="timer-number" id="hours">00</span>
+                    <span class="timer-label">Hours</span>
+                </div>
+                <span style="font-size: 1.5rem; font-weight: 700;">:</span>
+                <div class="timer-segment">
+                    <span class="timer-number" id="minutes">00</span>
+                    <span class="timer-label">Mins</span>
+                </div>
+                <span style="font-size: 1.5rem; font-weight: 700;">:</span>
+                <div class="timer-segment">
+                    <span class="timer-number" id="seconds">00</span>
+                    <span class="timer-label">Secs</span>
+                </div>
+            </div>
+            <span>⚡ LIMITED STOCK AVAILABLE</span>
+        </div>
+    </div>
 
     <header>
         <div class="header-content">
@@ -398,6 +788,10 @@
                     </div>
                     <p class="guarantee-hero">🛡️ <strong>100% Satisfaction Guaranteed</strong></p>
                     <div class="customer-stat">⚡ 96% of customers order 6 bottles (Recommended)</div>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>Only <strong id="stock-count">47</strong> bottles left at this price!</span>
+                    </div>
                 </article>
             </div>
         </div>
@@ -685,6 +1079,142 @@
     <div class="sticky-cta-mobile">
         <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">🛒 Add To Cart - Save 78%</a>
     </div>
+
+    <!-- Social Proof Notification -->
+    <div class="social-proof-notification" id="socialProof">
+        <div class="social-proof-avatar" id="spAvatar">JD</div>
+        <div class="social-proof-content">
+            <div class="social-proof-name" id="spName">John D.</div>
+            <div class="social-proof-action" id="spAction">Just purchased 6 bottles</div>
+            <div class="social-proof-time" id="spTime">2 minutes ago</div>
+        </div>
+        <button class="social-proof-close" onclick="document.getElementById('socialProof').classList.remove('show')" aria-label="Close notification">✕</button>
+    </div>
+
+    <!-- Exit Intent Popup -->
+    <div class="exit-popup-overlay" id="exitPopup">
+        <div class="exit-popup">
+            <button class="exit-popup-close" onclick="closeExitPopup()" aria-label="Close popup">✕</button>
+            <div class="exit-popup-icon">⏰</div>
+            <h2>Wait! Don't Miss Out on This Limited Offer!</h2>
+            <p>You're about to leave without taking advantage of our biggest discount ever.</p>
+            <div class="exit-popup-offer">
+                <div class="exit-popup-offer-text">🎁 SAVE UP TO 78% TODAY</div>
+            </div>
+            <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="exit-popup-cta">Claim My Discount Now →</a>
+            <div class="exit-popup-guarantee">✓ 90-Day Money-Back Guarantee • Free Shipping on 3+ Bottles</div>
+        </div>
+    </div>
+
+    <script>
+        // ===== COUNTDOWN TIMER =====
+        (function() {
+            const endTime = new Date().getTime() + (8 * 60 * 60 * 1000); // 8 hours from now
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                if (distance < 0) {
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const hours = Math.floor(distance / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        })();
+
+        // ===== STOCK COUNTER =====
+        (function() {
+            const stockElement = document.getElementById('stock-count');
+            let stock = 47;
+
+            function updateStock() {
+                if (stock > 23 && Math.random() < 0.3) {
+                    stock--;
+                    stockElement.textContent = stock;
+                }
+            }
+
+            setInterval(updateStock, 45000); // Update every 45 seconds
+        })();
+
+        // ===== SOCIAL PROOF NOTIFICATIONS =====
+        (function() {
+            const notifications = [
+                {name: 'Sarah M.', location: 'California', action: 'Just purchased 6 bottles', avatar: 'SM'},
+                {name: 'Michael T.', location: 'Texas', action: 'Just purchased 3 bottles', avatar: 'MT'},
+                {name: 'Jennifer R.', location: 'Florida', action: 'Just purchased 6 bottles', avatar: 'JR'},
+                {name: 'David L.', location: 'New York', action: 'Just purchased 3 bottles', avatar: 'DL'},
+                {name: 'Lisa K.', location: 'Ohio', action: 'Just purchased 6 bottles', avatar: 'LK'},
+                {name: 'Robert P.', location: 'Arizona', action: 'Just purchased 2 bottles', avatar: 'RP'},
+                {name: 'Amanda W.', location: 'Michigan', action: 'Just purchased 6 bottles', avatar: 'AW'},
+                {name: 'James H.', location: 'Georgia', action: 'Just purchased 3 bottles', avatar: 'JH'}
+            ];
+
+            let currentIndex = 0;
+
+            function showNotification() {
+                const notification = notifications[currentIndex];
+                const timeAgo = Math.floor(Math.random() * 8) + 2; // 2-10 minutes
+
+                document.getElementById('spAvatar').textContent = notification.avatar;
+                document.getElementById('spName').textContent = notification.name;
+                document.getElementById('spAction').textContent = notification.action;
+                document.getElementById('spTime').textContent = timeAgo + ' minutes ago from ' + notification.location;
+
+                document.getElementById('socialProof').classList.add('show');
+
+                setTimeout(() => {
+                    document.getElementById('socialProof').classList.remove('show');
+                }, 6000);
+
+                currentIndex = (currentIndex + 1) % notifications.length;
+            }
+
+            // Show first notification after 5 seconds
+            setTimeout(showNotification, 5000);
+            // Then show every 20 seconds
+            setInterval(showNotification, 20000);
+        })();
+
+        // ===== EXIT INTENT POPUP =====
+        let exitPopupShown = false;
+
+        function closeExitPopup() {
+            document.getElementById('exitPopup').classList.remove('active');
+        }
+
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 10 && !exitPopupShown && window.innerWidth > 768) {
+                document.getElementById('exitPopup').classList.add('active');
+                exitPopupShown = true;
+            }
+        });
+
+        // Close popup when clicking outside
+        document.getElementById('exitPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeExitPopup();
+            }
+        });
+
+        // ===== PERFORMANCE: Disable animations if user prefers reduced motion =====
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.style.setProperty('--animation-duration', '0s');
+        }
+    </script>
 
 </body>
 </html>
