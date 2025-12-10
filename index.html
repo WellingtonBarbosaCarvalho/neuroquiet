@@ -789,7 +789,7 @@
                         <li>FREE US Shipping</li>
                         <li>90-Day Money-Back Guarantee</li>
                     </ul>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button-hero">🛒 Add To Cart Now</a>
+                    <a href="javascript:void(0);" onclick="trackConversion('6-bottles'); return false;" class="cta-button-hero">🛒 Add To Cart Now</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -944,7 +944,7 @@
                     <div class="price-container"><span class="price">$69</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $220</div>
                     <div class="no-bonus">No bonuses</div>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
+                    <a href="javascript:void(0);" onclick="trackConversion('2-bottles'); return false;" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -963,7 +963,7 @@
                     <div class="price-container"><span class="price">$49</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $780</div>
                     <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
+                    <a href="javascript:void(0);" onclick="trackConversion('6-bottles'); return false;" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -982,7 +982,7 @@
                     <div class="price-container"><span class="price">$59</span><span class="price-label">Per Bottle</span></div>
                     <div class="savings">YOU SAVE $360</div>
                     <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                    <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">Add To Cart</a>
+                    <a href="javascript:void(0);" onclick="trackConversion('3-bottles'); return false;" class="cta-button">Add To Cart</a>
                     <div class="payment-methods">
                         <span class="payment-icon" data-card="mastercard">MC</span>
                         <span class="payment-icon" data-card="visa">VISA</span>
@@ -1057,7 +1057,7 @@
         <section class="final-cta">
             <h2>Ready to Experience NeuroQuiet?</h2>
             <p>Join thousands of satisfied customers • 90-Day Guarantee • Free Shipping on 3+ Bottles</p>
-            <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button-final">Order Now - Limited Stock →</a>
+            <a href="javascript:void(0);" onclick="trackConversion('6-bottles'); return false;" class="cta-button-final">Order Now - Limited Stock →</a>
         </section>
     </main>
 
@@ -1087,7 +1087,7 @@
     </footer>
 
     <div class="sticky-cta-mobile">
-        <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="cta-button">🛒 Add To Cart - Save 78%</a>
+        <a href="javascript:void(0);" onclick="trackConversion('6-bottles'); return false;" class="cta-button">🛒 Add To Cart - Save 78%</a>
     </div>
 
     <!-- Social Proof Notification -->
@@ -1111,12 +1111,37 @@
             <div class="exit-popup-offer">
                 <div class="exit-popup-offer-text">🎁 SAVE UP TO 78% TODAY</div>
             </div>
-            <a href="https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net" class="exit-popup-cta">Claim My Discount Now →</a>
+            <a href="javascript:void(0);" onclick="trackConversion('6-bottles'); return false;" class="exit-popup-cta">Claim My Discount Now →</a>
             <div class="exit-popup-guarantee">✓ 90-Day Money-Back Guarantee • Free Shipping on 3+ Bottles</div>
         </div>
     </div>
 
     <script>
+        // ===== GOOGLE ADS CONVERSION TRACKING =====
+        function trackConversion(packageType) {
+            // Fire conversion event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17757356280/oJXqCL33zMsbEPiBr5NC',
+                    'transaction_id': Date.now() + '-' + Math.random().toString(36).substr(2, 9),
+                    'value': packageType === '6-bottles' ? 294 : packageType === '3-bottles' ? 177 : 138,
+                    'currency': 'USD',
+                    'event_callback': function() {
+                        // Redirect after event is sent
+                        window.location.href = 'https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net';
+                    }
+                });
+
+                // Fallback redirect if callback doesn't fire within 1 second
+                setTimeout(function() {
+                    window.location.href = 'https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net';
+                }, 1000);
+            } else {
+                // If gtag not loaded, redirect immediately
+                window.location.href = 'https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net';
+            }
+        }
+
         // ===== COUNTDOWN TIMER =====
         (function() {
             const endTime = new Date().getTime() + (8 * 60 * 60 * 1000); // 8 hours from now
