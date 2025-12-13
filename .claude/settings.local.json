@@ -3,7 +3,10 @@
     "allow": [
       "Bash(powershell:*)",
       "Bash(dir:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(copy assetsimg*.webp assetsproductsneuroquiet)",
+      "Bash(du:*)"
     ],
     "deny": [],
     "ask": []

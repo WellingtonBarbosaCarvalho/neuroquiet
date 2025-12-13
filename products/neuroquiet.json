@@ -1,0 +1,355 @@
+{
+  "productName": "NeuroQuiet",
+  "productTagline": "Natural hearing and cognitive support",
+  "domain": "neuroquietoffer.online",
+
+  "meta": {
+    "title": "NeuroQuiet Official | Save Up to 78% - Limited Time Offer",
+    "description": "NeuroQuiet - Natural hearing and cognitive support. Save up to 78% + Free Shipping. 90-day money-back guarantee.",
+    "keywords": "neuroquiet, hearing support, cognitive health, brain health, natural supplement",
+    "themeColor": "#1e4d8c",
+    "ogImage": "https://www.neuroquietoffer.online/assets/img/PRODx6-500px.webp"
+  },
+
+  "tracking": {
+    "googleAdsId": "AW-17757356280",
+    "googleAdsConversionLabel": "oJXqCL33zMsbEPiBr5NC",
+    "clickbankLink": "https://109a56tenbzs4vclmr6h26c2ks.hop.clickbank.net"
+  },
+
+  "colors": {
+    "primary": "#1e4d8c",
+    "secondary": "#2a5fa8",
+    "accent": "#f5d742",
+    "danger": "#c41e3a"
+  },
+
+  "header": {
+    "logo": "NeuroQuiet",
+    "trustBadges": [
+      {"icon": "🔒", "text": "Secure"},
+      {"icon": "📦", "text": "Free Shipping"},
+      {"icon": "⭐", "text": "4.98/5"}
+    ]
+  },
+
+  "countdown": {
+    "enabled": true,
+    "hours": 8,
+    "message": "SPECIAL OFFER ENDS IN:",
+    "subMessage": "LIMITED STOCK AVAILABLE"
+  },
+
+  "hero": {
+    "headline": "Claim Your Discounted NeuroQuiet Below",
+    "headlineHighlight": "While Stock Lasts",
+    "subtitle": "Boost your hearing health and enhance mental clarity with natural ingredients",
+    "benefits": [
+      "<strong>Support ear health</strong> naturally",
+      "<strong>Boost cognitive function</strong> and mental clarity",
+      "<strong>Ease stress</strong> and promote relaxation",
+      "<strong>Made in USA</strong> - FDA-registered facilities"
+    ],
+    "rating": {
+      "stars": 5,
+      "score": "4.98/5",
+      "text": "Our customers say 4.98/5"
+    },
+    "productCard": {
+      "badge": "🔥 BEST VALUE - Save 78%",
+      "title": "Best Value Package",
+      "image": "./assets/products/neuroquiet/PRODx6-500px.webp",
+      "oldPrice": "$179/bottle",
+      "price": "$49",
+      "priceLabel": "/bottle",
+      "savings": "💰 YOU SAVE $780",
+      "features": [
+        "180-Day Supply (6 Bottles)",
+        "+ 3 FREE BONUSES",
+        "FREE US Shipping",
+        "90-Day Money-Back Guarantee"
+      ],
+      "cta": "🛒 Add To Cart Now",
+      "guarantee": "🛡️ <strong>100% Satisfaction Guaranteed</strong>",
+      "customerStat": "⚡ 96% of customers order 6 bottles (Recommended)",
+      "stock": {
+        "enabled": true,
+        "initial": 47,
+        "minimum": 23,
+        "message": "Only <strong id=\"stock-count\">47</strong> bottles left at this price!"
+      }
+    }
+  },
+
+  "trustBadges": [
+    {"icon": "🔒", "title": "Secure Checkout", "description": "256-bit SSL"},
+    {"icon": "🇺🇸", "title": "Made in USA", "description": "FDA-Registered"},
+    {"icon": "✅", "title": "GMP Certified", "description": "Quality Assured"},
+    {"icon": "📦", "title": "Free Shipping", "description": "On 3+ Bottles"},
+    {"icon": "💯", "title": "90-Day Guarantee", "description": "Risk-Free Trial"}
+  ],
+
+  "creator": {
+    "enabled": true,
+    "sectionTitle": "Reclaim Your Peace with NeuroQuiet",
+    "name": "Christian Toller",
+    "title": "Creator, NeuroQuiet",
+    "avatar": "CT",
+    "message": [
+      "When I first started working on the formula that was to become NeuroQuiet, I never would have imagined in a million years that I would one day help thousands of people from around the world fulfill their dreams of boosting their hearing health.",
+      "It's people like you that make all those years of research and testing worthwhile, and I hope you manage to get the most out of NeuroQuiet while I can still afford to produce it at these prices."
+    ]
+  },
+
+  "benefits": {
+    "sectionTitle": "Experience the Benefits",
+    "items": [
+      {
+        "icon": "👂",
+        "title": "Support Ear Health",
+        "description": "Experience a calmer mind while supporting hearing"
+      },
+      {
+        "icon": "😌",
+        "title": "Elevate Your Mood",
+        "description": "Ease discomfort while promoting clarity and calm effortlessly"
+      },
+      {
+        "icon": "⚡",
+        "title": "Feel Vital and Energized",
+        "description": "Enhance your overall well-being and boost your mood"
+      }
+    ]
+  },
+
+  "bonuses": {
+    "enabled": true,
+    "sectionTitle": "Order 6 Bottles Or 3 Bottles And Get 3 Free Bonuses!",
+    "items": [
+      {
+        "badge": "FREE BONUS #1",
+        "icon": "📚",
+        "title": "Hear Like A Pro",
+        "subtitle": "(Digital Download)"
+      },
+      {
+        "badge": "FREE BONUS #2",
+        "icon": "🧠",
+        "title": "Powerful Ways To Sharpen Your Memory",
+        "subtitle": "(Digital Download)"
+      },
+      {
+        "badge": "FREE BONUS #3",
+        "icon": "🍵",
+        "title": "Ultimate Tea Remedies",
+        "subtitle": "(Digital Download)"
+      }
+    ],
+    "shippingBanner": {
+      "title": "📦 Every 6 Bottle Order Gets FREE Shipping Too!",
+      "subtitle": "*96% of customers order 6 bottles (Our recommended option)"
+    }
+  },
+
+  "ingredients": {
+    "sectionTitle": "Discover the potent blend of ingredients in NeuroQuiet",
+    "subtitle": "Support your healthy hearing and enhance your cognitive well-being. Here's how each powerful component works for you:",
+    "items": [
+      {"name": "Alpha-GPC", "description": "Boosts cognitive function and brain health"},
+      {"name": "GABA", "description": "Promotes relaxation and reduces stress"},
+      {"name": "L-Dopa Bean", "description": "Support healthy dopamine levels, for mental clarity and peace"},
+      {"name": "Moomiyo", "description": "Enhances overall vitality, contributing to brain and body wellness"},
+      {"name": "L-Arginine", "description": "Supports healthy blood circulation"},
+      {"name": "L-Tyrosine", "description": "Supports stress resilience and neurotransmitter balance"}
+    ]
+  },
+
+  "testimonials": {
+    "sectionTitle": "Real Customers, Real Life-Changing Results",
+    "items": [
+      {
+        "name": "William S.",
+        "initials": "WS",
+        "location": "North Carolina, USA",
+        "stars": 5,
+        "text": "NeuroQuiet did wonders to support my hearing. I work as an audio engineer, so protecting my ears against noise is a must. Go for the 6-bottle pack - it's the best investment you'll ever make!",
+        "verified": true
+      },
+      {
+        "name": "Jason R.",
+        "initials": "JR",
+        "location": "Arizona, USA",
+        "stars": 5,
+        "text": "My brain feels clearer and I can finally relax. Thank you, NeuroQuiet!",
+        "verified": true
+      },
+      {
+        "name": "Sabine G.",
+        "initials": "SG",
+        "location": "Texas, USA",
+        "stars": 5,
+        "text": "I treasure my peace and quiet more than anything. So I'm well aware just how important the health of my ears is. Knowing that by taking NeuroQuiet I'm feeding my hearing these essential nutrients helps me sleep better at night. Definitely give this one a try.",
+        "verified": true
+      }
+    ]
+  },
+
+  "pricing": {
+    "sectionTitle": "Take advantage of this limited offer to stock up on<br>NeuroQuiet while supplies last!",
+    "packages": [
+      {
+        "id": "2-bottles",
+        "featured": false,
+        "badge": null,
+        "title": "Try Two",
+        "subtitle": "60 Days, 2 Bottles",
+        "image": "./assets/products/neuroquiet/PRODx2-500px.webp",
+        "pricePerBottle": 69,
+        "totalBottles": 2,
+        "oldTotal": 358,
+        "newTotal": 138,
+        "savings": "YOU SAVE $220",
+        "bonuses": false,
+        "shipping": "+ SHIPPING",
+        "shippingFree": false
+      },
+      {
+        "id": "6-bottles",
+        "featured": true,
+        "badge": "Best Value",
+        "title": "Best Value",
+        "subtitle": "180 Days, 6 Bottles",
+        "image": "./assets/products/neuroquiet/PRODx6-500px.webp",
+        "pricePerBottle": 49,
+        "totalBottles": 6,
+        "oldTotal": 1074,
+        "newTotal": 294,
+        "savings": "YOU SAVE $780",
+        "bonuses": true,
+        "shipping": "+ FREE US SHIPPING",
+        "shippingFree": true
+      },
+      {
+        "id": "3-bottles",
+        "featured": false,
+        "badge": "Most Popular",
+        "title": "Most Popular",
+        "subtitle": "90 Days, 3 Bottles",
+        "image": "./assets/products/neuroquiet/PRODx3-500px.webp",
+        "pricePerBottle": 59,
+        "totalBottles": 3,
+        "oldTotal": 537,
+        "newTotal": 177,
+        "savings": "YOU SAVE $360",
+        "bonuses": true,
+        "shipping": "+ FREE US SHIPPING",
+        "shippingFree": true
+      }
+    ],
+    "reviewStats": {
+      "stars": 5,
+      "score": "4.98/5",
+      "reviewCount": "2000+"
+    }
+  },
+
+  "comparison": {
+    "enabled": true,
+    "sectionTitle": "NeuroQuiet vs Competitors",
+    "headers": ["", "NeuroQuiet", "Other Competitors"],
+    "rows": [
+      {"feature": "Boosts cognitive function", "us": true, "them": false},
+      {"feature": "Eases stress and promotes relaxation", "us": true, "them": false},
+      {"feature": "Boosts vitality", "us": true, "them": false},
+      {"feature": "Supports ear health", "us": true, "them": true},
+      {"feature": "90-day money-back", "us": true, "them": false}
+    ]
+  },
+
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Is NeuroQuiet right for Me?",
+        "answer": "NeuroQuiet has provided amazing hearing support for men and women in their 30s, 40, 50s and even 70s. Because it was engineered based on teachings of modern science, NeuroQuiet formula is very gentle yet very powerful at the same time using pure plant ingredients and natural minerals. And you can rest assured knowing it's assembled in the United States."
+      },
+      {
+        "question": "What kind of results can I expect from NeuroQuiet?",
+        "answer": "Results may vary from person to person. NeuroQuiet is formulated with natural ingredients designed to support hearing health and cognitive function. Many customers report positive experiences, though individual results will depend on various factors including consistent use and personal health conditions."
+      },
+      {
+        "question": "How long will it take to see results?",
+        "answer": "Individual results vary. Some customers notice benefits within the first few weeks, while others may take longer. We recommend consistent use for at least 90 days for optimal results, which is why we offer our 90-day money-back guarantee."
+      },
+      {
+        "question": "What is the best way to take NeuroQuiet?",
+        "answer": "Follow the dosage instructions on the bottle label. For best results, take consistently as directed. Always consult with your healthcare provider before starting any new supplement regimen."
+      },
+      {
+        "question": "What if NeuroQuiet doesn't work for me?",
+        "answer": "We offer a 90-day money-back guarantee. If you're not completely satisfied with your results, simply contact our customer support team for a full refund (minus shipping and handling fees). Return the product, even empty bottles, within 90 days of purchase."
+      },
+      {
+        "question": "Where can I buy NeuroQuiet and how quickly can I get it?",
+        "answer": "NeuroQuiet is available exclusively through this website. Orders are processed within 1-3 business days. Domestic shipping typically takes 5-7 business days, while international orders may take 10-21 business days. Free shipping is included on 3 and 6-bottle packages for US orders."
+      },
+      {
+        "question": "Is my purchase secure? How many times will you charge my card?",
+        "answer": "Yes, your purchase is 100% secure. We use industry-standard SSL encryption to protect your information. Your card will be charged only once for your order. There are no hidden fees or recurring charges unless you explicitly opt-in for a subscription program."
+      }
+    ]
+  },
+
+  "guarantee": {
+    "icon": "🛡️",
+    "title": "100% Satisfaction Guaranteed<br>90-Day Money Back Guarantee",
+    "text": "NeuroQuiet comes with a 100% money back guarantee - 90 full days from your original purchase. If you're not totally and completely satisfied with our product or your results within the first 90 days simply let us know by calling our toll-free number or dropping us an email and we'll gladly give you a full refund within 48 hours of the product being returned. That's right - simply return the product, even your empty bottles, anytime within 90 days of your purchase and you'll receive a full, no-questions-asked refund (minus shipping and handling fees).",
+    "days": 90
+  },
+
+  "finalCta": {
+    "title": "Ready to Experience NeuroQuiet?",
+    "subtitle": "Join thousands of satisfied customers • 90-Day Guarantee • Free Shipping on 3+ Bottles",
+    "button": "Order Now - Limited Stock →",
+    "package": "6-bottles"
+  },
+
+  "socialProof": {
+    "enabled": true,
+    "notifications": [
+      {"name": "Sarah M.", "location": "California", "action": "Just purchased 6 bottles", "avatar": "SM"},
+      {"name": "Michael T.", "location": "Texas", "action": "Just purchased 3 bottles", "avatar": "MT"},
+      {"name": "Jennifer R.", "location": "Florida", "action": "Just purchased 6 bottles", "avatar": "JR"},
+      {"name": "David L.", "location": "New York", "action": "Just purchased 3 bottles", "avatar": "DL"},
+      {"name": "Lisa K.", "location": "Ohio", "action": "Just purchased 6 bottles", "avatar": "LK"},
+      {"name": "Robert P.", "location": "Arizona", "action": "Just purchased 2 bottles", "avatar": "RP"},
+      {"name": "Amanda W.", "location": "Michigan", "action": "Just purchased 6 bottles", "avatar": "AW"},
+      {"name": "James H.", "location": "Georgia", "action": "Just purchased 3 bottles", "avatar": "JH"}
+    ]
+  },
+
+  "exitIntent": {
+    "enabled": true,
+    "icon": "⏰",
+    "title": "Wait! Don't Miss Out on This Limited Offer!",
+    "text": "You're about to leave without taking advantage of our biggest discount ever.",
+    "offerText": "🎁 SAVE UP TO 78% TODAY",
+    "button": "Claim My Discount Now →",
+    "guarantee": "✓ 90-Day Money-Back Guarantee • Free Shipping on 3+ Bottles",
+    "package": "6-bottles"
+  },
+
+  "footer": {
+    "scientificReferences": true,
+    "referencesTitle": "Scientific References",
+    "referencesDisclaimer": "The company is not endorsed by, sponsored by, or affiliated with any of these organizations",
+    "references": "Moomiyo: A Natural Adaptogen - Shakirov, A. - 2021 • Therapeutic Effects of Moomiyo on the Immune System - Ivanov, A. - 2020 • The Role of Moomiyo in Enhancing Physical Performance - Kolesnikov, V. - 2019 • Alpha-Glycerylphosphorylcholine Increases Motivation in Healthy Adults - Kato, H., et al. - 2021 • Effect of a New Cognition Enhancer, Alpha-Glycerylphosphorylcholine - Canal, N., et al. - 1991 • Safety Assessment of Alpha-GPC as a Food Ingredient - Gatti, G., et al. - 2011 • Alpha-GPC for Cognitive Decline in Alzheimer's Disease - Barbagallo Sangiorgi, G., et al. - 1994 • The Effects of Alpha-GPC on Mood and Cognitive Function - Parker, A.G., et al. - 2015 • GABA and Its Role in Neurotransmission - Smith, J.L., et al. - 2018 • Neuroprotective Effects of GABA on Brain Cells - Lee, T.H., et al. - 2017 • L-Dopa from Mucuna Pruriens and Its Clinical Applications - Gupta, A., et al. - 2019 • The Efficacy of L-Dopa in Parkinson's Disease Treatment - Zhang, Y., et al. - 2020 • L-Arginine and Its Role in Cardiovascular Health - Wu, G., et al. - 2016 • The Impact of L-Arginine on Exercise Performance - Bescos, R., et al. - 2012 • L-Tyrosine Supplementation and Cognitive Performance Under Stress - Deijen, J.B., et al. - 2000 • Effects of L-Tyrosine on Neurotransmitter Levels and Mood - Neri, D.F., et al. - 2015 • Nutraceuticals in Cognitive Disorders - Patel, P.J., et al. - 2022 • Adaptogens and Their Role in Stress Management - Choi, J.H., et al. - 2020 • Natural Products as Cognitive Enhancers - Singh, R.P., et al. - 2023 • The Science Behind Dietary Supplements for Brain Health - Thompson, C.L., et al. - 2021",
+    "links": [
+      {"text": "Privacy Policy", "url": "privacy-policy-en.html"},
+      {"text": "Terms of Service", "url": "terms-of-service-en.html"},
+      {"text": "Disclaimer", "url": "disclaimer-en.html"}
+    ],
+    "copyright": "© 2024 NeuroQuiet. All rights reserved.",
+    "disclaimer": "*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary."
+  }
+}

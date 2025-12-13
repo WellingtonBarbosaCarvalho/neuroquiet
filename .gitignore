@@ -1,0 +1,55 @@
+# ===== Claude Code / IDEs =====
+.claude/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== Sistema Operacional =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ===== Node.js (caso adicione depois) =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ===== Ambientes / Secrets =====
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ===== Arquivos temporários =====
+*.tmp
+*.temp
+*.log
+*.cache
+
+# ===== Builds / Dist (caso adicione build process) =====
+dist/
+build/
+.cache/
+
+# ===== Documentação local (opcional - descomente se não quiser versionar) =====
+# ACCESSIBILITY-FIXES.md
+# CACHE-OPTIMIZATION-README.md
+# CONVERSION-OPTIMIZATION-2024.md
+# FINAL-OPTIMIZATIONS.md
+# FONT-OPTIMIZATION-README.md
+
+# ===== Scripts temporários de setup =====
+download-images.bat
+download-images.sh
+download-fonts.bat

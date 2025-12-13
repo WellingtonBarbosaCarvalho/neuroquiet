@@ -1,0 +1,348 @@
+{
+  "productName": "KeySlim Drops",
+  "productTagline": "Accelerate fat burning naturally",
+  "domain": "keyslimoffer.online",
+
+  "meta": {
+    "title": "KeySlim Drops Official | Accelerate Fat Burning - Limited Time Offer",
+    "description": "KeySlim Drops - Accelerate fat burning with natural ingredients. Save up to 78% + Free Shipping. 60-day money-back guarantee.",
+    "keywords": "keyslim, weight loss, fat burning, natural supplement, liquid drops",
+    "themeColor": "#2563eb",
+    "ogImage": "https://www.keyslimoffer.online/assets/img/PRODx6-500px.webp"
+  },
+
+  "tracking": {
+    "googleAdsId": "AW-XXXXXXXXXX",
+    "googleAdsConversionLabel": "XXXXXXXXXX",
+    "clickbankLink": "https://XXXXXXXXXX.hop.clickbank.net"
+  },
+
+  "colors": {
+    "primary": "#2563eb",
+    "secondary": "#3b82f6",
+    "accent": "#f59e0b",
+    "danger": "#dc2626"
+  },
+
+  "header": {
+    "logo": "KeySlim Drops",
+    "trustBadges": [
+      {"icon": "🔒", "text": "Secure"},
+      {"icon": "📦", "text": "Free Shipping"},
+      {"icon": "⭐", "text": "5.0/5"}
+    ]
+  },
+
+  "countdown": {
+    "enabled": true,
+    "hours": 8,
+    "message": "SPECIAL OFFER ENDS IN:",
+    "subMessage": "LIMITED STOCK AVAILABLE"
+  },
+
+  "hero": {
+    "headline": "Do THIS Simple \"Drip & Drop\" Routine To",
+    "headlineHighlight": "Accelerate Fat Burning",
+    "subtitle": "Claim your discounted package below while stocks last",
+    "hasVSL": true,
+    "vslEmbedCode": "<!-- INSIRA O CÓDIGO DO VSL AQUI -->",
+    "benefits": [
+      "<strong>Accelerate fat burning</strong> naturally",
+      "<strong>Reduce belly fat</strong> and stubborn areas",
+      "<strong>Boost energy levels</strong> throughout the day",
+      "<strong>Made in USA</strong> - FDA-registered facilities"
+    ],
+    "rating": {
+      "stars": 5,
+      "score": "5.0/5",
+      "text": "Our customers say 5.0/5"
+    },
+    "productCard": {
+      "badge": "🔥 ULTIMATE DISCOUNT - Save 78%",
+      "title": "Ultimate Discount Package",
+      "image": "./assets/products/keyslim/PRODx6-500px.webp",
+      "oldPrice": "$99/bottle",
+      "price": "$49",
+      "priceLabel": "/bottle",
+      "savings": "💰 YOU SAVE $561",
+      "features": [
+        "180-Day Supply (6 Bottles)",
+        "+ 3 FREE BONUSES",
+        "FREE US Shipping",
+        "60-Day Money-Back Guarantee"
+      ],
+      "cta": "🛒 Add To Cart Now",
+      "guarantee": "🛡️ <strong>100% Satisfaction Guaranteed</strong>",
+      "customerStat": "⚡ 94% of customers order 6 bottles (Recommended)",
+      "stock": {
+        "enabled": true,
+        "initial": 52,
+        "minimum": 28,
+        "message": "Only <strong id=\"stock-count\">52</strong> bottles left at this price!"
+      }
+    }
+  },
+
+  "trustBadges": [
+    {"icon": "🔒", "title": "Secure Checkout", "description": "256-bit SSL"},
+    {"icon": "🇺🇸", "title": "Made in USA", "description": "FDA-Registered"},
+    {"icon": "✅", "title": "GMP Certified", "description": "Quality Assured"},
+    {"icon": "📦", "title": "Free Shipping", "description": "On 3+ Bottles"},
+    {"icon": "💯", "title": "60-Day Guarantee", "description": "Risk-Free Trial"}
+  ],
+
+  "creator": {
+    "enabled": false
+  },
+
+  "benefits": {
+    "sectionTitle": "Transform Your Body with KeySlim",
+    "items": [
+      {
+        "icon": "🔥",
+        "title": "Accelerate Fat Burning",
+        "description": "Natural ingredients work together to boost your metabolism and burn stubborn fat"
+      },
+      {
+        "icon": "⚡",
+        "title": "Boost Energy Levels",
+        "description": "Feel more energized throughout the day without jitters or crashes"
+      },
+      {
+        "icon": "😊",
+        "title": "Improve Well-Being",
+        "description": "Sleep better, feel better about yourself, and enjoy a healthier lifestyle"
+      }
+    ]
+  },
+
+  "bonuses": {
+    "enabled": true,
+    "sectionTitle": "Order 6 Bottles Or 3 Bottles And Get 3 Free Bonuses!",
+    "items": [
+      {
+        "badge": "FREE BONUS #1",
+        "icon": "📚",
+        "title": "Ultimate Fat Loss Guide",
+        "subtitle": "(Digital Download)"
+      },
+      {
+        "badge": "FREE BONUS #2",
+        "icon": "🏃",
+        "title": "Quick Metabolism Boosters",
+        "subtitle": "(Digital Download)"
+      },
+      {
+        "badge": "FREE BONUS #3",
+        "icon": "🥗",
+        "title": "Healthy Eating Blueprint",
+        "subtitle": "(Digital Download)"
+      }
+    ],
+    "shippingBanner": {
+      "title": "📦 Every 6 Bottle Order Gets FREE Shipping Too!",
+      "subtitle": "*94% of customers order 6 bottles (Our recommended option)"
+    }
+  },
+
+  "ingredients": {
+    "sectionTitle": "Discover the powerful ingredients in KeySlim Drops",
+    "subtitle": "Support your weight loss journey with scientifically-backed natural ingredients:",
+    "items": [
+      {"name": "GABA", "description": "Promotes relaxation and supports healthy metabolism"},
+      {"name": "L-Glutamine", "description": "Supports muscle recovery and reduces cravings"},
+      {"name": "Forskolin", "description": "Helps activate fat-burning enzymes in the body"},
+      {"name": "Grape Seed Extract", "description": "Powerful antioxidant that supports overall health"},
+      {"name": "Tryptophan", "description": "Promotes better sleep and mood balance"},
+      {"name": "Panax Ginseng", "description": "Boosts energy and supports metabolic function"},
+      {"name": "Chromium Picolinate", "description": "Helps regulate blood sugar and reduce cravings"}
+    ]
+  },
+
+  "testimonials": {
+    "sectionTitle": "Real Customers, Real Life-Changing Results",
+    "items": [
+      {
+        "name": "Marie",
+        "initials": "M",
+        "location": "6 days ago",
+        "stars": 5,
+        "text": "This brought my weight to where it was 30 or 35 years ago. No more flabby belly! No more loose and crepey skin! No more oversized dresses!",
+        "verified": true
+      },
+      {
+        "name": "Jessica",
+        "initials": "J",
+        "location": "8 days ago",
+        "stars": 5,
+        "text": "I was cursed with a huge belly and flabby arms all my life. Not anymore! The way everybody looks at me now is priceless.",
+        "verified": true
+      },
+      {
+        "name": "Mike",
+        "initials": "M",
+        "location": "18 days ago",
+        "stars": 5,
+        "text": "Since taking this I have lost 20-25 lbs in 60 days. I've also noticed more energy, I'm sleeping better... KeySlim has helped me feel so much better about myself.",
+        "verified": true
+      }
+    ]
+  },
+
+  "pricing": {
+    "sectionTitle": "Choose Your Package & Start Your Transformation Today",
+    "packages": [
+      {
+        "id": "1-bottle",
+        "featured": false,
+        "badge": null,
+        "title": "BASIC",
+        "subtitle": "30 Days Supply",
+        "image": "./assets/products/keyslim/PRODx1-500px.webp",
+        "pricePerBottle": 79,
+        "totalBottles": 1,
+        "oldTotal": 99,
+        "newTotal": 79,
+        "savings": "You save $20",
+        "bonuses": false,
+        "shipping": "Plus Shipping Fees",
+        "shippingFree": false
+      },
+      {
+        "id": "6-bottles",
+        "featured": true,
+        "badge": "ULTIMATE DISCOUNT",
+        "title": "ULTIMATE DISCOUNT",
+        "subtitle": "180 Days Supply",
+        "image": "./assets/products/keyslim/PRODx6-500px.webp",
+        "pricePerBottle": 49,
+        "totalBottles": 6,
+        "oldTotal": 594,
+        "newTotal": 294,
+        "savings": "You save $561",
+        "bonuses": true,
+        "shipping": "Free US Shipping",
+        "shippingFree": true
+      },
+      {
+        "id": "3-bottles",
+        "featured": false,
+        "badge": "POPULAR PACKAGE",
+        "title": "POPULAR PACKAGE",
+        "subtitle": "90 Days Supply",
+        "image": "./assets/products/keyslim/PRODx3-500px.webp",
+        "pricePerBottle": 59,
+        "totalBottles": 3,
+        "oldTotal": 297,
+        "newTotal": 177,
+        "savings": "You save $381",
+        "bonuses": true,
+        "shipping": "Free US Shipping",
+        "shippingFree": true
+      }
+    ],
+    "reviewStats": {
+      "stars": 5,
+      "score": "5.0/5",
+      "reviewCount": "1500+"
+    }
+  },
+
+  "comparison": {
+    "enabled": true,
+    "sectionTitle": "KeySlim Drops vs Competitors",
+    "headers": ["", "KeySlim Drops", "Other Competitors"],
+    "rows": [
+      {"feature": "Accelerates fat burning", "us": true, "them": false},
+      {"feature": "Boosts energy naturally", "us": true, "them": false},
+      {"feature": "Liquid form (better absorption)", "us": true, "them": false},
+      {"feature": "Reduces stubborn belly fat", "us": true, "them": true},
+      {"feature": "60-day money-back", "us": true, "them": false}
+    ]
+  },
+
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Is KeySlim Drops right for me?",
+        "answer": "KeySlim Drops has helped thousands of men and women of all ages achieve their weight loss goals. The natural formula is designed to support fat burning, boost energy, and reduce stubborn belly fat. It's made in the USA in FDA-registered facilities with high-quality ingredients."
+      },
+      {
+        "question": "How do I take KeySlim Drops?",
+        "answer": "Simply take the recommended dosage as indicated on the bottle label. The liquid form allows for better absorption compared to pills. For best results, use consistently as directed and combine with a healthy lifestyle."
+      },
+      {
+        "question": "How long will it take to see results?",
+        "answer": "Results vary by individual. Many customers report noticing changes within the first few weeks, while optimal results typically appear after 60-90 days of consistent use. That's why we offer our 60-day money-back guarantee."
+      },
+      {
+        "question": "What if KeySlim Drops doesn't work for me?",
+        "answer": "We offer a 60-day money-back guarantee. If you're not completely satisfied with your results, simply contact our customer support team for a full refund. Return the product within 60 days of purchase for a no-questions-asked refund."
+      },
+      {
+        "question": "Is my purchase secure?",
+        "answer": "Yes, your purchase is 100% secure. We use industry-standard SSL encryption to protect your information. Your card will be charged only once for your order with no hidden fees or recurring charges."
+      },
+      {
+        "question": "How quickly will I receive my order?",
+        "answer": "Orders are processed within 1-3 business days. Domestic shipping typically takes 5-7 business days. International orders may take 10-21 business days. Free shipping is included on 3 and 6-bottle packages for US orders."
+      }
+    ]
+  },
+
+  "guarantee": {
+    "icon": "🛡️",
+    "title": "100% Satisfaction<br>60-Day Money Back Guarantee",
+    "text": "Your order today is protected by my iron-clad 60-day 100% money-back guarantee. If you are not astonished how fast your deep stubborn fat stores melt away... let us know and we'll refund every single penny.",
+    "days": 60
+  },
+
+  "finalCta": {
+    "title": "Ready to Start Your Transformation?",
+    "subtitle": "Join thousands of satisfied customers • 60-Day Guarantee • Free Shipping on 3+ Bottles",
+    "button": "Order Now - Limited Stock →",
+    "package": "6-bottles"
+  },
+
+  "socialProof": {
+    "enabled": true,
+    "notifications": [
+      {"name": "Jennifer L.", "location": "Florida", "action": "Just purchased 6 bottles", "avatar": "JL"},
+      {"name": "Robert M.", "location": "California", "action": "Just purchased 3 bottles", "avatar": "RM"},
+      {"name": "Amanda K.", "location": "Texas", "action": "Just purchased 6 bottles", "avatar": "AK"},
+      {"name": "David S.", "location": "New York", "action": "Just purchased 6 bottles", "avatar": "DS"},
+      {"name": "Maria G.", "location": "Ohio", "action": "Just purchased 3 bottles", "avatar": "MG"},
+      {"name": "Steven P.", "location": "Arizona", "action": "Just purchased 6 bottles", "avatar": "SP"},
+      {"name": "Lisa W.", "location": "Michigan", "action": "Just purchased 6 bottles", "avatar": "LW"},
+      {"name": "Thomas H.", "location": "Georgia", "action": "Just purchased 3 bottles", "avatar": "TH"}
+    ]
+  },
+
+  "exitIntent": {
+    "enabled": true,
+    "icon": "⏰",
+    "title": "Wait! Don't Miss Out on This Limited Offer!",
+    "text": "You're about to leave without taking advantage of our biggest discount ever.",
+    "offerText": "🎁 SAVE UP TO 78% TODAY",
+    "button": "Claim My Discount Now →",
+    "guarantee": "✓ 60-Day Money-Back Guarantee • Free Shipping on 3+ Bottles",
+    "package": "6-bottles"
+  },
+
+  "footer": {
+    "scientificReferences": false,
+    "links": [
+      {"text": "Contact", "url": "contact.html"},
+      {"text": "Terms of Use", "url": "terms-of-service-en.html"},
+      {"text": "Disclaimer", "url": "disclaimer-en.html"},
+      {"text": "References", "url": "references.html"},
+      {"text": "Privacy Policy", "url": "privacy-policy-en.html"},
+      {"text": "Shipping Policy", "url": "shipping-policy.html"},
+      {"text": "Refund Policy", "url": "refund-policy.html"},
+      {"text": "Unsubscribe", "url": "unsubscribe.html"}
+    ],
+    "copyright": "© 2025 KeySlim Drops. All rights reserved.",
+    "disclaimer": "*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Always consult your healthcare provider before starting any new supplement regimen."
+  }
+}
