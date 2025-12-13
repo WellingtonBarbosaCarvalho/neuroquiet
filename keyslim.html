@@ -1103,7 +1103,22 @@
         console.log('⏰ Loaded at:', new Date().toLocaleTimeString());
 
         // ===== GOOGLE ADS CONVERSION TRACKING =====
-        // IMPORTANTE: SUBSTITUA COM SEUS IDs DO GOOGLE ADS E CLICKBANK
+        // Função oficial do Google Ads
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17757356280/oJXqCL33zMsbEPiBr5NC',
+                'transaction_id': '',
+                'event_callback': callback
+            });
+            return false;
+        }
+
+        // Função customizada para adicionar value e transaction_id
         function trackConversion(packageType) {
             console.log('🔔 trackConversion called with:', packageType);
 
@@ -1122,10 +1137,9 @@
                 console.log('✅ gtag found, firing conversion event...');
 
                 try {
-                    // DESCOMENTE DEPOIS DE CRIAR A CAMPANHA NO GOOGLE ADS
-                    /*
+                    // Rastrear conversão com valor e transaction_id
                     gtag('event', 'conversion', {
-                        'send_to': 'AW-SEU-ID/SEU-LABEL', // SUBSTITUA AQUI
+                        'send_to': 'AW-17757356280/oJXqCL33zMsbEPiBr5NC',
                         'transaction_id': transactionId,
                         'value': value,
                         'currency': 'USD',
@@ -1136,24 +1150,17 @@
                     });
 
                     console.log('📤 Conversion event sent to Google Ads');
-                    */
 
-                    // Redirecionar direto enquanto Google Ads não está configurado
-                    console.log('⚠️ Google Ads tracking not configured yet, redirecting...');
-                    window.location.href = affiliateLink;
+                    // Fallback redirect (caso callback não funcione)
+                    setTimeout(function() {
+                        console.log('⏱️ Fallback redirect triggered');
+                        window.location.href = affiliateLink;
+                    }, 1500);
 
                 } catch (error) {
                     console.error('❌ Error tracking conversion:', error);
                     window.location.href = affiliateLink;
                 }
-
-                /* DESCOMENTE DEPOIS DE CONFIGURAR GOOGLE ADS
-                // Fallback redirect
-                setTimeout(function() {
-                    console.log('⏱️ Fallback redirect triggered');
-                    window.location.href = affiliateLink;
-                }, 1500);
-                */
             } else {
                 console.warn('⚠️ gtag not loaded, redirecting immediately');
                 window.location.href = affiliateLink;
