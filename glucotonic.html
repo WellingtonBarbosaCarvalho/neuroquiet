@@ -405,140 +405,184 @@
         }
 
         /* ===== PRICING SECTION ===== */
+        .pricing-section-wrapper {
+            background: linear-gradient(135deg, #047857 0%, #059669 100%);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-section-wrapper::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: white;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+        }
+        .pricing-section-wrapper .section-header h2 {
+            color: white;
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 10px;
+        }
+        .pricing-section-wrapper .section-header h2 .highlight {
+            color: #fbbf24;
+            display: block;
+        }
+        .pricing-section-wrapper .section-header p {
+            color: rgba(255,255,255,0.9);
+        }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         .pricing-card {
-            background: var(--bg-white);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            padding: 40px 30px;
+            background: #f0f9ff;
+            border-radius: 16px;
+            padding: 0;
             text-align: center;
             transition: var(--transition);
             position: relative;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
         .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-        .pricing-card.popular {
-            border-color: var(--warning);
-            border-width: 3px;
-            transform: scale(1.05);
-        }
-        .pricing-card.popular .popular-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--warning);
-            color: white;
-            padding: 8px 24px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 14px;
-            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
         .pricing-card.best-value {
-            border-color: var(--accent);
-            border-width: 3px;
+            background: #0c4a6e;
+            transform: scale(1.02);
         }
-        .pricing-card.best-value .popular-badge {
-            background: var(--accent);
+        .pricing-card.best-value:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+        .pricing-card.best-value .card-header,
+        .pricing-card.best-value .card-body {
+            background: transparent;
+        }
+        .pricing-card.best-value h3,
+        .pricing-card.best-value .package-desc {
+            color: white;
+        }
+        .pricing-card .card-header {
+            background: #e0f2fe;
+            padding: 20px;
+            border-radius: 16px 16px 0 0;
+        }
+        .pricing-card.best-value .card-header {
+            background: #0c4a6e;
         }
         .pricing-card h3 {
-            font-size: 24px;
-            color: var(--text-dark);
-            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 5px;
         }
         .pricing-card .package-desc {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 20px;
+            color: #6b7280;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .pricing-card .card-body {
+            background: white;
+            padding: 30px 25px;
+        }
+        .pricing-card.best-value .card-body {
+            background: #e0f2fe;
         }
         .pricing-card .product-image {
             margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .pricing-card .product-image img {
-            max-width: 150px;
+            max-width: 200px;
             height: auto;
         }
         .pricing-card .price-container {
-            margin: 30px 0;
-        }
-        .pricing-card .price-old {
-            text-decoration: line-through;
-            color: var(--text-light);
-            font-size: 18px;
-            display: block;
+            margin: 25px 0 15px;
         }
         .pricing-card .price-new {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
+            font-size: 72px;
+            font-weight: 900;
+            color: #1f2937;
             line-height: 1;
+            letter-spacing: -2px;
         }
         .pricing-card .price-unit {
-            font-size: 16px;
-            color: var(--text-light);
+            font-size: 18px;
+            color: #6b7280;
+            font-weight: 600;
             margin-top: 5px;
         }
         .pricing-card .savings {
-            background: var(--success);
+            background: #dc2626;
             color: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
             display: inline-block;
             margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .pricing-card .bonus-badge {
-            background: var(--warning);
+            background: #0891b2;
             color: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            display: block;
             margin: 15px 0;
         }
         .pricing-card .no-bonus {
-            color: var(--text-light);
+            color: #9ca3af;
             font-size: 14px;
             margin: 15px 0;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .pricing-card .total-price {
+        .btn-cart {
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 18px 40px;
             font-size: 18px;
-            font-weight: 600;
-            margin: 20px 0 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+            letter-spacing: 0.5px;
         }
-        .pricing-card .total-price .old-price {
-            text-decoration: line-through;
-            color: var(--text-light);
-            margin-right: 10px;
-        }
-        .pricing-card .total-price .new-price {
-            color: var(--primary);
-            font-size: 24px;
+        .btn-cart:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
         }
         .pricing-card .shipping-info {
-            color: var(--success);
-            font-weight: 600;
             font-size: 14px;
-            margin: 10px 0;
+            font-weight: 600;
+            margin: 15px 0 10px;
         }
         .pricing-card .shipping-info.paid {
-            color: var(--text-light);
+            color: #6b7280;
+        }
+        .pricing-card .guarantee {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 12px;
         }
 
         /* ===== FAQ SECTION ===== */
@@ -964,75 +1008,81 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="section section-alt" id="pricing">
+    <section class="pricing-section-wrapper" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Claim Your Discounted GlucoTonic Below</h2>
-                <p>While stock lasts - Save up to 73% today!</p>
+                <h2>Claim your Discounted GlucoTonic Below<br><span class="highlight">While Stock Lasts</span></h2>
             </div>
             <div class="pricing-grid">
                 <!-- 2 Bottles Package -->
                 <div class="pricing-card">
-                    <h3>Try Two</h3>
-                    <p class="package-desc">60 Day Supply</p>
-                    <div class="product-image">
-                        <img src="./assets/products/glucotonic/PRODx2-500px.webp" alt="GlucoTonic 2 Bottles" width="150" height="150" loading="lazy">
+                    <div class="card-header">
+                        <h3>Try Two</h3>
+                        <p class="package-desc">60 Days, 2 Bottles</p>
                     </div>
-                    <div class="price-container">
-                        <span class="price-new">$69</span>
-                        <p class="price-unit">Per Bottle</p>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotonic/PRODx2-500px.webp" alt="GlucoTonic 2 Bottles" width="200" height="200" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">$69</span>
+                            <p class="price-unit">/ Bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $220</div>
+                        <div class="no-bonus">No bonuses</div>
+                        <button class="btn-cart" onclick="buyNow('2-bottles')">ADD TO CART</button>
+                        <p class="shipping-info paid">+ Shipping</p>
+                        <p class="guarantee">90 Day Money-Back Guarantee</p>
                     </div>
-                    <div class="savings">YOU SAVE $220</div>
-                    <div class="no-bonus">No bonuses</div>
-                    <p class="total-price">TOTAL: <span class="old-price">$358</span> <span class="new-price">$138</span></p>
-                    <p class="shipping-info paid">+ Shipping</p>
-                    <p style="font-size: 14px; margin: 15px 0;">90 Day Money-Back Guarantee</p>
-                    <button class="btn btn-primary" onclick="buyNow('2-bottles')">ADD TO CART</button>
-                </div>
-
-                <!-- 3 Bottles Package - MOST POPULAR -->
-                <div class="pricing-card popular">
-                    <div class="popular-badge">⭐ MOST POPULAR</div>
-                    <h3>Most Popular</h3>
-                    <p class="package-desc">90 Day Supply</p>
-                    <div class="product-image">
-                        <img src="./assets/products/glucotonic/PRODx3-500px.webp" alt="GlucoTonic 3 Bottles" width="150" height="150" loading="lazy">
-                    </div>
-                    <div class="price-container">
-                        <span class="price-new">$59</span>
-                        <p class="price-unit">Per Bottle</p>
-                    </div>
-                    <div class="savings">YOU SAVE $360</div>
-                    <div class="bonus-badge">+ 2 FREE BONUSES</div>
-                    <p class="total-price">TOTAL: <span class="old-price">$537</span> <span class="new-price">$177</span></p>
-                    <p class="shipping-info">FREE US Shipping</p>
-                    <p style="font-size: 14px; margin: 15px 0;">90 Day Money-Back Guarantee</p>
-                    <button class="btn btn-danger" onclick="buyNow('3-bottles')">ADD TO CART</button>
                 </div>
 
                 <!-- 6 Bottles Package - BEST VALUE -->
                 <div class="pricing-card best-value">
-                    <div class="popular-badge">🏆 BEST VALUE</div>
-                    <h3>Best Value</h3>
-                    <p class="package-desc">180 Day Supply</p>
-                    <div class="product-image">
-                        <img src="./assets/products/glucotonic/PRODx6-500px.webp" alt="GlucoTonic 6 Bottles" width="150" height="150" loading="lazy">
+                    <div class="card-header">
+                        <h3>Best Value</h3>
+                        <p class="package-desc">180 Days, 6 Bottles</p>
                     </div>
-                    <div class="price-container">
-                        <span class="price-new">$49</span>
-                        <p class="price-unit">Per Bottle</p>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotonic/PRODx6-500px.webp" alt="GlucoTonic 6 Bottles" width="200" height="200" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">$49</span>
+                            <p class="price-unit">/ Bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $780</div>
+                        <div class="bonus-badge">+ 2 FREE BONUSES</div>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')">ADD TO CART</button>
+                        <p class="shipping-info">FREE US Shipping</p>
+                        <p class="guarantee">90 Day Money-Back Guarantee</p>
                     </div>
-                    <div class="savings">YOU SAVE $780</div>
-                    <div class="bonus-badge">+ 2 FREE BONUSES</div>
-                    <p class="total-price">TOTAL: <span class="old-price">$1074</span> <span class="new-price">$294</span></p>
-                    <p class="shipping-info">FREE US Shipping</p>
-                    <p style="font-size: 14px; margin: 15px 0;">90 Day Money-Back Guarantee</p>
-                    <button class="btn btn-primary" onclick="buyNow('6-bottles')">ADD TO CART</button>
+                </div>
+
+                <!-- 3 Bottles Package - MOST POPULAR -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Most Popular</h3>
+                        <p class="package-desc">90 Days, 3 Bottles</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotonic/PRODx3-500px.webp" alt="GlucoTonic 3 Bottles" width="200" height="200" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">$59</span>
+                            <p class="price-unit">/ Bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $360</div>
+                        <div class="bonus-badge">+ 2 FREE BONUSES</div>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')">ADD TO CART</button>
+                        <p class="shipping-info">FREE US Shipping</p>
+                        <p class="guarantee">90 Day Money-Back Guarantee</p>
+                    </div>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 30px; font-size: 18px;">
-                <span style="color: var(--warning); font-size: 24px;">★★★★★</span>
-                <span style="margin-left: 10px; font-weight: 600;">Our customers say 4.98/5 based on 2000+ reviews</span>
+            <p style="text-align: center; margin-top: 40px; font-size: 18px; color: white; position: relative; z-index: 1;">
+                <span style="font-size: 24px;">★★★★★</span>
+                <span style="margin-left: 10px; font-weight: 600;">Our customers say 4.98/5 Stars based on 2000+ reviews</span>
             </p>
         </div>
     </section>

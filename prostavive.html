@@ -142,52 +142,71 @@
 
         /* ===== COUNTDOWN BANNER STYLES ===== */
         .countdown-banner {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f59e0b 100%);
             color: white;
-            padding: 12px 20px;
+            padding: 14px 20px;
             text-align: center;
             font-weight: 700;
             position: sticky;
             top: 0;
             z-index: 9999;
-            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.4);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
             animation: slideDown 0.5s ease-out;
+            border-bottom: 3px solid #fbbf24;
         }
         @keyframes slideDown {
             from { transform: translateY(-100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         .countdown-banner-content {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            font-size: 14px;
+            gap: 15px;
+            font-size: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .countdown-banner-content > span {
+            background: rgba(0,0,0,0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
         }
         .countdown-banner .timer-container {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             font-size: 18px;
             font-weight: 700;
         }
         .countdown-banner .timer-unit {
-            background: rgba(255,255,255,0.2);
-            padding: 4px 10px;
-            border-radius: 6px;
-            min-width: 45px;
+            background: white;
+            color: #dc2626;
+            padding: 8px 12px;
+            border-radius: 8px;
+            min-width: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            border: 2px solid #fbbf24;
+            animation: pulse 2s ease-in-out infinite;
         }
         .countdown-banner .timer-unit span:first-child {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
+            line-height: 1;
         }
         .countdown-banner .timer-unit span:last-child {
-            font-size: 10px;
+            font-size: 9px;
             text-transform: uppercase;
-            opacity: 0.9;
+            color: #991b1b;
+            font-weight: 600;
+            margin-top: 2px;
         }
 
         /* ===== CONTAINER ===== */
@@ -386,114 +405,169 @@
         }
 
         /* ===== PRICING SECTION ===== */
+        .pricing-section-wrapper {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-section-wrapper::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: white;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+        }
+        .pricing-section-wrapper .section-header h2 {
+            color: white;
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 10px;
+        }
+        .pricing-section-wrapper .section-header h2 .highlight {
+            color: #fbbf24;
+            display: block;
+        }
+        .pricing-section-wrapper .section-header p {
+            color: rgba(255,255,255,0.9);
+        }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         .pricing-card {
-            background: var(--bg-white);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            padding: 40px 30px;
+            background: #f0f9ff;
+            border-radius: 16px;
+            padding: 0;
             text-align: center;
             transition: var(--transition);
             position: relative;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
         .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
         .pricing-card.popular {
-            border-color: var(--accent);
-            border-width: 3px;
-            transform: scale(1.05);
+            background: #0c4a6e;
+            transform: scale(1.02);
         }
-        .pricing-card.popular .popular-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
+        .pricing-card.popular:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+        .pricing-card.popular .card-header,
+        .pricing-card.popular .card-body {
+            background: transparent;
+        }
+        .pricing-card.popular h3,
+        .pricing-card.popular .package-desc {
             color: white;
-            padding: 8px 24px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 14px;
-            box-shadow: var(--shadow-md);
+        }
+        .pricing-card .card-header {
+            background: #e0f2fe;
+            padding: 20px;
+            border-radius: 16px 16px 0 0;
+        }
+        .pricing-card.popular .card-header {
+            background: #0c4a6e;
         }
         .pricing-card h3 {
-            font-size: 24px;
-            color: var(--text-dark);
-            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 5px;
         }
         .pricing-card .package-desc {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 20px;
+            color: #6b7280;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .pricing-card .card-body {
+            background: white;
+            padding: 30px 25px;
+        }
+        .pricing-card.popular .card-body {
+            background: #e0f2fe;
         }
         .pricing-card .product-image {
             margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .pricing-card .product-image img {
-            max-width: 150px;
+            max-width: 200px;
             height: auto;
         }
         .pricing-card .price-container {
-            margin: 30px 0;
-        }
-        .pricing-card .price-old {
-            text-decoration: line-through;
-            color: var(--text-light);
-            font-size: 18px;
-            display: block;
+            margin: 25px 0 15px;
         }
         .pricing-card .price-new {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
+            font-size: 72px;
+            font-weight: 900;
+            color: #1f2937;
             line-height: 1;
+            letter-spacing: -2px;
         }
         .pricing-card .price-unit {
-            font-size: 16px;
-            color: var(--text-light);
+            font-size: 18px;
+            color: #6b7280;
+            font-weight: 600;
             margin-top: 5px;
         }
         .pricing-card .savings {
-            background: var(--success);
+            background: #dc2626;
             color: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
             display: inline-block;
             margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .pricing-card .features {
             list-style: none;
-            margin: 25px 0;
+            margin: 20px 0;
             text-align: left;
+            padding: 0 10px;
         }
         .pricing-card .features li {
-            padding: 10px 0;
-            font-size: 15px;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            padding: 8px 0;
+            font-size: 14px;
+            color: #1f2937;
+            font-weight: 500;
         }
-        .pricing-card .features li::before {
-            content: "✓";
-            color: var(--success);
-            font-weight: 700;
+        .btn-cart {
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 18px 40px;
             font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+            letter-spacing: 0.5px;
+        }
+        .btn-cart:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
+        }
+        .pricing-card .guarantee {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 12px;
         }
 
         /* ===== FAQ SECTION ===== */
@@ -735,7 +809,7 @@
     <!-- Countdown Banner -->
     <div class="countdown-banner">
         <div class="countdown-banner-content">
-            <span>⏰ LIMITED TIME OFFER ENDS IN:</span>
+            <span>🔥 SPECIAL DISCOUNT ENDS IN:</span>
             <div class="timer-container">
                 <div class="timer-unit">
                     <span id="hours">00</span>
@@ -750,6 +824,7 @@
                     <span>Secs</span>
                 </div>
             </div>
+            <span>🎁 SAVE UP TO 73%</span>
         </div>
     </div>
 
@@ -865,78 +940,70 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="section" id="pricing">
+    <section class="pricing-section-wrapper" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Choose Your Package</h2>
-                <p>Save up to 73% with our multi-bottle packages + FREE shipping</p>
+                <h2>Claim your Discounted ProstaVive Below<br><span class="highlight">While Stock Lasts</span></h2>
             </div>
             <div class="pricing-grid">
                 <!-- 1 Bottle Package -->
                 <div class="pricing-card">
-                    <h3>1 Bottle</h3>
-                    <p class="package-desc">30-day supply</p>
-                    <div class="product-image">
-                        <img src="./assets/products/prostavive/PRODx1-500px.webp" alt="ProstaVive 1 Bottle" width="150" height="150" loading="lazy">
+                    <div class="card-header">
+                        <h3>Try One</h3>
+                        <p class="package-desc">30 Days, 1 Bottle</p>
                     </div>
-                    <div class="price-container">
-                        <span class="price-old">$149</span>
-                        <span class="price-new">$79</span>
-                        <p class="price-unit">per bottle</p>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/prostavive/PRODx1-500px.webp" alt="ProstaVive 1 Bottle" width="200" height="200" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">$79</span>
+                            <p class="price-unit">/ Bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $70</div>
+                        <button class="btn-cart" onclick="buyNow('1-bottle')">ADD TO CART</button>
+                        <p class="guarantee">60 Day Money-Back Guarantee</p>
                     </div>
-                    <div class="savings">Save $70</div>
-                    <ul class="features">
-                        <li>30-day supply</li>
-                        <li>60-day guarantee</li>
-                        <li>Shipping: $9.95</li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="buyNow('1-bottle')">ORDER NOW</button>
-                </div>
-
-                <!-- 3 Bottles Package -->
-                <div class="pricing-card">
-                    <h3>3 Bottles</h3>
-                    <p class="package-desc">90-day supply</p>
-                    <div class="product-image">
-                        <img src="./assets/products/prostavive/PRODx3-500px.webp" alt="ProstaVive 3 Bottles" width="150" height="150" loading="lazy">
-                    </div>
-                    <div class="price-container">
-                        <span class="price-old">$447</span>
-                        <span class="price-new">$59</span>
-                        <p class="price-unit">per bottle ($177 total)</p>
-                    </div>
-                    <div class="savings">Save $270 + FREE Shipping</div>
-                    <ul class="features">
-                        <li>90-day supply</li>
-                        <li>60-day guarantee</li>
-                        <li>FREE US shipping</li>
-                        <li>Best value</li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="buyNow('3-bottles')">ORDER NOW</button>
                 </div>
 
                 <!-- 6 Bottles Package - MOST POPULAR -->
                 <div class="pricing-card popular">
-                    <div class="popular-badge">⭐ MOST POPULAR</div>
-                    <h3>6 Bottles</h3>
-                    <p class="package-desc">180-day supply</p>
-                    <div class="product-image">
-                        <img src="./assets/products/prostavive/PRODx6-500px.webp" alt="ProstaVive 6 Bottles" width="150" height="150" loading="lazy">
+                    <div class="card-header">
+                        <h3>Best Value</h3>
+                        <p class="package-desc">180 Days, 6 Bottles</p>
                     </div>
-                    <div class="price-container">
-                        <span class="price-old">$894</span>
-                        <span class="price-new">$39</span>
-                        <p class="price-unit">per bottle ($234 total)</p>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/prostavive/PRODx6-500px.webp" alt="ProstaVive 6 Bottles" width="200" height="200" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">$39</span>
+                            <p class="price-unit">/ Bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $660</div>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')">ADD TO CART</button>
+                        <p class="guarantee">60 Day Money-Back Guarantee</p>
                     </div>
-                    <div class="savings">Save $660 + FREE Shipping</div>
-                    <ul class="features">
-                        <li>180-day supply</li>
-                        <li>60-day guarantee</li>
-                        <li>FREE US shipping</li>
-                        <li>Maximum savings</li>
-                        <li>Best for long-term results</li>
-                    </ul>
-                    <button class="btn btn-danger" onclick="buyNow('6-bottles')">ORDER NOW</button>
+                </div>
+
+                <!-- 3 Bottles Package -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Most Popular</h3>
+                        <p class="package-desc">90 Days, 3 Bottles</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/prostavive/PRODx3-500px.webp" alt="ProstaVive 3 Bottles" width="200" height="200" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">$59</span>
+                            <p class="price-unit">/ Bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $270</div>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')">ADD TO CART</button>
+                        <p class="guarantee">60 Day Money-Back Guarantee</p>
+                    </div>
                 </div>
             </div>
         </div>
