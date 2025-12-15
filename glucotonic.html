@@ -142,52 +142,71 @@
 
         /* ===== COUNTDOWN BANNER STYLES ===== */
         .countdown-banner {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f59e0b 100%);
             color: white;
-            padding: 12px 20px;
+            padding: 14px 20px;
             text-align: center;
             font-weight: 700;
             position: sticky;
             top: 0;
             z-index: 9999;
-            box-shadow: 0 4px 20px rgba(5, 150, 105, 0.4);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
             animation: slideDown 0.5s ease-out;
+            border-bottom: 3px solid #fbbf24;
         }
         @keyframes slideDown {
             from { transform: translateY(-100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         .countdown-banner-content {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            font-size: 14px;
+            gap: 15px;
+            font-size: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .countdown-banner-content > span {
+            background: rgba(0,0,0,0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
         }
         .countdown-banner .timer-container {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             font-size: 18px;
             font-weight: 700;
         }
         .countdown-banner .timer-unit {
-            background: rgba(255,255,255,0.2);
-            padding: 4px 10px;
-            border-radius: 6px;
-            min-width: 45px;
+            background: white;
+            color: #dc2626;
+            padding: 8px 12px;
+            border-radius: 8px;
+            min-width: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            border: 2px solid #fbbf24;
+            animation: pulse 2s ease-in-out infinite;
         }
         .countdown-banner .timer-unit span:first-child {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
+            line-height: 1;
         }
         .countdown-banner .timer-unit span:last-child {
-            font-size: 10px;
+            font-size: 9px;
             text-transform: uppercase;
-            opacity: 0.9;
+            color: #991b1b;
+            font-weight: 600;
+            margin-top: 2px;
         }
 
         /* ===== CONTAINER ===== */
@@ -802,7 +821,7 @@
     <!-- Countdown Banner -->
     <div class="countdown-banner">
         <div class="countdown-banner-content">
-            <span>⏰ LIMITED TIME OFFER ENDS IN:</span>
+            <span>🔥 SPECIAL DISCOUNT ENDS IN:</span>
             <div class="timer-container">
                 <div class="timer-unit">
                     <span id="hours">00</span>
@@ -817,6 +836,7 @@
                     <span>Secs</span>
                 </div>
             </div>
+            <span>🎁 SAVE UP TO 73%</span>
         </div>
     </div>
 
