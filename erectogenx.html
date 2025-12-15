@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ErectogenX - Natürliche Unterstützung für männliche Vitalität. Bis zu 73% sparen + Kostenloser Versand.">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ErectogenX Official | Männliche Vitalität - Limitiertes Angebot</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17757356280"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17757356280');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #dc2626;
+            --dark-red: #991b1b;
+            --light-red: #ef4444;
+            --black: #000000;
+            --dark-gray: #1f2937;
+            --medium-gray: #374151;
+            --light-gray: #f3f4f6;
+            --white: #ffffff;
+            --text-dark: #111827;
+            --text-medium: #4b5563;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== COUNTDOWN BANNER ===== */
+        .countdown-banner {
+            background: var(--dark-gray);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .countdown-banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+        }
+
+        .countdown-banner-content > span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .countdown-banner .timer-container {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .countdown-banner .timer-unit {
+            background: var(--medium-gray);
+            color: var(--primary-red);
+            padding: 6px 12px;
+            border-radius: 6px;
+            min-width: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #4b5563;
+        }
+
+        .countdown-banner .timer-unit span:first-child {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .countdown-banner .timer-unit span:last-child {
+            font-size: 9px;
+            text-transform: uppercase;
+            color: #9ca3af;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-section-wrapper {
+            background: #f9f9f9;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-banner {
+            background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
+            padding: 20px 20px 35px;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid var(--primary-red);
+        }
+
+        .pricing-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 15px solid var(--primary-red);
+        }
+
+        .pricing-banner h2 {
+            color: white;
+            font-size: clamp(24px, 4.5vw, 36px);
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .pricing-banner h2 .highlight {
+            color: var(--primary-red);
+            display: inline;
+            font-weight: 900;
+        }
+
+        .pricing-banner p {
+            color: rgba(255,255,255,0.95);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px 40px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 0;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(220, 38, 38, 0.2);
+            border-color: var(--primary-red);
+        }
+
+        .pricing-card.best-value {
+            border: 3px solid var(--primary-red);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.best-value:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .pricing-card.best-value .card-header {
+            background: var(--primary-red);
+        }
+
+        .pricing-card.best-value h3,
+        .pricing-card.best-value .card-subtitle {
+            color: white;
+        }
+
+        .pricing-card .card-header {
+            background: var(--light-gray);
+            padding: 18px 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card .card-subtitle {
+            color: #6b7280;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 25px 20px 22px;
+        }
+
+        .product-image {
+            margin: 0 auto 18px;
+            max-width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-gray);
+            border-radius: 12px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .price-container {
+            margin: 15px 0;
+        }
+
+        .price-new {
+            font-size: 54px;
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .price-unit {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        .savings {
+            background: var(--primary-red);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            display: inline-block;
+            margin: 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .bonus-badge {
+            background: var(--dark-gray);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            display: inline-block;
+            margin: 12px 0;
+        }
+
+        .no-bonus {
+            color: #9ca3af;
+            font-size: 13px;
+            margin: 12px 0;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-cart {
+            background: var(--primary-red);
+            color: white;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .btn-cart:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
+        }
+
+        .payment-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin: 10px 0 8px;
+            font-size: 10px;
+            color: #9ca3af;
+        }
+
+        .payment-icons span {
+            font-size: 20px;
+        }
+
+        .shipping-info {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 8px 0 6px;
+            color: var(--primary-red);
+        }
+
+        .shipping-info.paid {
+            color: #6b7280;
+        }
+
+        .guarantee {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        .pricing-footer {
+            text-align: center;
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-footer .rating {
+            font-size: 28px;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+
+        .pricing-footer p {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .pricing-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-footer-links a {
+            color: var(--primary-red);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+
+        .pricing-footer-links a:hover {
+            color: var(--dark-red);
+        }
+
+        /* ===== TRUST BADGES ===== */
+        .trust-badges {
+            background: white;
+            padding: 40px 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .trust-badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-badge-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .trust-badge h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .trust-badge p {
+            color: var(--text-medium);
+            font-size: 14px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .countdown-banner {
+                padding: 10px 15px;
+            }
+            .countdown-banner-content {
+                font-size: 11px;
+                gap: 12px;
+            }
+            .countdown-banner .timer-container {
+                gap: 8px;
+            }
+            .countdown-banner .timer-unit {
+                min-width: 45px;
+                padding: 5px 10px;
+            }
+            .countdown-banner .timer-unit span:first-child {
+                font-size: 16px;
+            }
+
+            .pricing-banner {
+                padding: 20px 15px 35px;
+            }
+            .pricing-banner h2 {
+                font-size: 20px;
+            }
+            .pricing-banner::after {
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 12px solid var(--primary-red);
+                bottom: -12px;
+            }
+            .pricing-container {
+                padding: 30px 15px 40px;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .pricing-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .pricing-card.best-value {
+                transform: scale(1);
+            }
+            .pricing-card.best-value:hover {
+                transform: scale(1) translateY(-8px);
+            }
+            .price-new {
+                font-size: 52px;
+            }
+            .pricing-footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .price-new {
+                font-size: 48px;
+            }
+            .card-body {
+                padding: 25px 20px;
+            }
+            .btn-cart {
+                font-size: 16px;
+                padding: 16px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Countdown Banner -->
+    <div class="countdown-banner">
+        <div class="countdown-banner-content">
+            <span>🔥 SONDERRABATT ENDET IN:</span>
+            <div class="timer-container">
+                <div class="timer-unit">
+                    <span id="hours">00</span>
+                    <span>Std</span>
+                </div>
+                <div class="timer-unit">
+                    <span id="minutes">00</span>
+                    <span>Min</span>
+                </div>
+                <div class="timer-unit">
+                    <span id="seconds">00</span>
+                    <span>Sek</span>
+                </div>
+            </div>
+            <span>🎁 BIS ZU 73% SPAREN</span>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section-wrapper" id="pricing">
+        <div class="pricing-banner">
+            <h2>Sichern Sie sich Ihr ErectogenX <span class="highlight">Solange der Vorrat reicht</span></h2>
+            <p>Limitiertes Angebot - Bis zu 73% Rabatt heute</p>
+        </div>
+
+        <div class="pricing-container">
+            <div class="pricing-grid">
+                <!-- 1 Flasche -->
+                <article class="pricing-card">
+                    <div class="card-header">
+                        <h3>1 Flasche</h3>
+                        <p class="card-subtitle">30-Tage-Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/erectogenx/PRODx1-500px.webp" alt="ErectogenX 1 Flasche" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€69</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <div class="savings">SIE SPAREN €30</div>
+                        <div class="no-bonus">Keine Bonusse</div>
+                        <button class="btn-cart" onclick="buyNow('1-bottle')">IN DEN WARENKORB</button>
+                        <div class="payment-icons">
+                            <span>💳</span>
+                            <span style="font-size: 20px;">💳</span>
+                            <span style="font-size: 22px;">💳</span>
+                        </div>
+                        <p class="shipping-info paid">+ Versand</p>
+                        <p class="guarantee">60-Tage Geld-zurück-Garantie</p>
+                    </div>
+                </article>
+
+                <!-- 6 Flaschen - BEST VALUE -->
+                <article class="pricing-card best-value">
+                    <span class="card-badge">BEST VALUE</span>
+                    <div class="card-header">
+                        <h3>6 Flaschen</h3>
+                        <p class="card-subtitle">180-Tage-Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/erectogenx/PRODx6-500px.webp" alt="ErectogenX 6 Flaschen" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€49</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <div class="savings">SIE SPAREN €300</div>
+                        <span class="bonus-badge">+ KOSTENLOSER VERSAND</span>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB</button>
+                        <div class="payment-icons">
+                            <span>💳</span>
+                            <span style="font-size: 20px;">💳</span>
+                            <span style="font-size: 22px;">💳</span>
+                        </div>
+                        <p class="shipping-info">KOSTENLOSER Versand nach Deutschland</p>
+                        <p class="guarantee">60-Tage Geld-zurück-Garantie</p>
+                    </div>
+                </article>
+
+                <!-- 3 Flaschen - MOST POPULAR -->
+                <article class="pricing-card">
+                    <span class="card-badge">BELIEBT</span>
+                    <div class="card-header">
+                        <h3>3 Flaschen</h3>
+                        <p class="card-subtitle">90-Tage-Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/erectogenx/PRODx3-500px.webp" alt="ErectogenX 3 Flaschen" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€59</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <div class="savings">SIE SPAREN €120</div>
+                        <span class="bonus-badge">+ KOSTENLOSER VERSAND</span>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB</button>
+                        <div class="payment-icons">
+                            <span>💳</span>
+                            <span style="font-size: 20px;">💳</span>
+                            <span style="font-size: 22px;">💳</span>
+                        </div>
+                        <p class="shipping-info">KOSTENLOSER Versand nach Deutschland</p>
+                        <p class="guarantee">60-Tage Geld-zurück-Garantie</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pricing-footer">
+                <div class="rating">★★★★★</div>
+                <p>Unsere Kunden sagen 4.9/5 Sterne basierend auf 1.500+ verifizierten Bewertungen</p>
+                <div class="pricing-footer-links">
+                    <a href="#testimonials">Bewertungen ansehen</a>
+                    <a href="#faq">FAQ ansehen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="trust-badges-grid">
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🛡️</div>
+                <h3>60-Tage-Garantie</h3>
+                <p>100% Zufriedenheit oder Geld zurück</p>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🚚</div>
+                <h3>Kostenloser Versand</h3>
+                <p>Bei allen 3 & 6 Flaschen-Paketen</p>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🏭</div>
+                <h3>Hergestellt in Europa</h3>
+                <p>Hochmoderne Produktionsanlage</p>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">⭐</div>
+                <h3>1.500+ Bewertungen</h3>
+                <p>4.9/5 durchschnittliche Bewertung</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Countdown Timer
+        function startCountdown() {
+            const endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                }
+            }
+
+            updateTimer();
+            const timer = setInterval(updateTimer, 1000);
+        }
+
+        startCountdown();
+
+        // Buy Now Function
+        function buyNow(packageType) {
+            console.log('Package selected:', packageType);
+            trackConversion(packageType);
+        }
+
+        function trackConversion(packageType) {
+            var value;
+            var affiliateLink;
+
+            if (packageType === '6-bottles') {
+                value = 294; // 6 x €49
+                affiliateLink = 'https://www.checkout-ds24.com/product/637527?aff=sentinela&cid=57944957658&utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=';
+            } else if (packageType === '3-bottles') {
+                value = 177; // 3 x €59
+                affiliateLink = 'https://www.checkout-ds24.com/product/637526?aff=sentinela&cid=59917742265&utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=';
+            } else if (packageType === '1-bottle') {
+                value = 69; // 1 x €69
+                affiliateLink = 'https://www.checkout-ds24.com/product/637523?aff=sentinela&cid=53257974762&utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=';
+            }
+
+            var transactionId = Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17757356280/CONVERSION_LABEL_HERE', // TODO: Update with ErectogenX conversion label
+                    'transaction_id': transactionId,
+                    'value': value,
+                    'currency': 'EUR',
+                    'event_callback': function() {
+                        window.location.href = affiliateLink;
+                    }
+                });
+            }
+
+            setTimeout(function() {
+                window.location.href = affiliateLink;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
