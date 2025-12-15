@@ -83,70 +83,62 @@
     <style>
         /* ===== COUNTDOWN BANNER STYLES ===== */
         .countdown-banner {
-            background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f59e0b 100%);
+            background: #1f2937;
             color: white;
-            padding: 14px 20px;
+            padding: 12px 20px;
             text-align: center;
-            font-weight: 700;
+            font-weight: 600;
             position: sticky;
             top: 0;
             z-index: 9999;
-            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
-            animation: slideDown 0.5s ease-out;
-            border-bottom: 3px solid #fbbf24;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #374151;
         }
         @keyframes slideDown {
             from { transform: translateY(-100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
         .countdown-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
-            font-size: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-size: 13px;
         }
         .countdown-content > span {
-            background: rgba(0,0,0,0.2);
-            padding: 6px 16px;
-            border-radius: 20px;
-            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.3px;
         }
         .countdown-timer {
             display: inline-flex;
             gap: 10px;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 600;
         }
         .timer-segment {
-            background: white;
-            color: #dc2626;
-            padding: 8px 12px;
-            border-radius: 8px;
+            background: #374151;
+            color: #f7d633;
+            padding: 6px 12px;
+            border-radius: 6px;
             min-width: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            border: 2px solid #fbbf24;
-            animation: pulse 2s ease-in-out infinite;
+            border: 1px solid #4b5563;
         }
         .timer-number {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 700;
             line-height: 1;
         }
         .timer-label {
             font-size: 9px;
             text-transform: uppercase;
-            color: #991b1b;
-            font-weight: 600;
+            color: #9ca3af;
+            font-weight: 500;
             margin-top: 2px;
         }
 
@@ -565,142 +557,269 @@
         .testimonial-text { color: var(--text-med); font-size: 0.95rem; line-height: 1.6; font-style: italic; margin-bottom: 10px; }
         .testimonial-verified { font-size: 0.8rem; color: var(--success); font-weight: 700; }
 
-        /* Pricing */
         /* ===== PRICING SECTION ===== */
         .pricing-section-wrapper {
-            background: linear-gradient(135deg, #0C434C 0%, #083238 100%);
-            padding: 80px 20px;
+            background: #f9f9f9;
+            padding: 0;
             position: relative;
             overflow: hidden;
         }
-        .pricing-section-wrapper::before {
+        .pricing-banner {
+            background: linear-gradient(135deg, #46b8aa 0%, #3a9d91 100%);
+            padding: 20px 20px 35px;
+            text-align: center;
+            position: relative;
+        }
+        .pricing-banner::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: white;
-            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 15px solid #46b8aa;
         }
-        .pricing-section-wrapper h2 {
+        .pricing-banner h2 {
             color: white;
-            font-size: clamp(32px, 5vw, 48px);
+            font-size: clamp(24px, 4.5vw, 36px);
+            font-weight: 800;
             margin-bottom: 10px;
-            text-align: center;
+            line-height: 1.2;
         }
-        .pricing-section-wrapper h2 .highlight {
-            color: #FFC107;
-            display: block;
+        .pricing-banner h2 .highlight {
+            color: #f7d633;
+            display: inline;
+            font-weight: 900;
         }
-        .pricing-section { margin-bottom: 40px; position: relative; z-index: 1; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 30px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .pricing-banner p {
+            color: rgba(255,255,255,0.95);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px 40px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
         .pricing-card {
-            background: #f0f9ff;
+            background: white;
+            border: 2px solid #e5e7eb;
             border-radius: 16px;
             padding: 0;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             overflow: hidden;
         }
-        .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-        .pricing-card.featured {
-            background: #0c4a6e;
-            transform: scale(1.02);
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-color: #46b8aa;
         }
-        .pricing-card.featured:hover { transform: scale(1.02) translateY(-5px); }
-        .pricing-card.featured .card-header,
-        .pricing-card.featured .card-body {
-            background: transparent;
+        .pricing-card.featured {
+            border: 3px solid #46b8aa;
+            transform: scale(1.05);
+        }
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        .pricing-card.featured .card-header {
+            background: #46b8aa;
         }
         .pricing-card.featured .card-title,
         .pricing-card.featured .card-subtitle {
             color: white;
         }
         .card-header {
-            background: #e0f2fe;
-            padding: 20px;
-            border-radius: 16px 16px 0 0;
+            background: #f3f4f6;
+            padding: 18px 20px;
+            border-bottom: 2px solid #e5e7eb;
         }
-        .pricing-card.featured .card-header {
-            background: #0c4a6e;
+        .card-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #dc2626;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
-        .card-badge { position: absolute; top: -12px; right: 20px; background: var(--danger); color: var(--white); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        .card-title { font-size: 28px; font-weight: 800; color: #1f2937; margin-bottom: 5px; }
-        .card-subtitle { color: #6b7280; font-size: 15px; font-weight: 500; }
+        .card-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card-subtitle {
+            color: #6b7280;
+            font-size: 16px;
+            font-weight: 600;
+        }
         .card-body {
-            background: white;
-            padding: 30px 25px;
+            padding: 25px 20px 22px;
         }
-        .pricing-card.featured .card-body {
-            background: #e0f2fe;
+        .product-image {
+            margin: 0 auto 18px;
+            max-width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .product-image { margin: 20px auto; display: flex; align-items: center; justify-content: center; }
-        .product-image img { width: 200px; height: 200px; object-fit: contain; }
-        .price-container { margin: 25px 0 15px; }
-        .price { font-size: 72px; font-weight: 900; color: #1f2937; line-height: 1; letter-spacing: -2px; }
-        .price-label { font-size: 18px; color: #6b7280; font-weight: 600; margin-top: 5px; }
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .price-container {
+            margin: 15px 0;
+        }
+        .price {
+            font-size: 54px;
+            font-weight: 900;
+            color: #1f2937;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+        .price-label {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 600;
+            margin-top: 6px;
+        }
         .savings {
             background: #dc2626;
             color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 6px 16px;
+            border-radius: 6px;
             font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 15px;
+            font-size: 13px;
+            display: inline-block;
+            margin: 12px 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         .bonus-badge {
-            background: #0891b2;
+            background: #46b8aa;
             color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
             font-weight: 700;
-            font-size: 15px;
-            margin-bottom: 15px;
-            display: block;
+            font-size: 13px;
+            display: inline-block;
+            margin: 12px 0;
         }
         .no-bonus {
             color: #9ca3af;
-            font-size: 14px;
-            margin-bottom: 15px;
-            height: 44px;
+            font-size: 13px;
+            margin: 12px 0;
+            min-height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .cta-button {
-            background: #fbbf24;
+            background: #f7d633;
             color: #1f2937;
-            border: none;
-            padding: 18px 40px;
-            font-size: 18px;
+            padding: 14px 32px;
+            font-size: 16px;
             font-weight: 800;
-            border-radius: 12px;
+            text-transform: uppercase;
+            border-radius: 10px;
+            border: none;
             cursor: pointer;
-            width: 100%;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(247, 214, 51, 0.4);
+            letter-spacing: 1px;
             text-decoration: none;
             display: block;
             text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
         .cta-button:hover {
-            background: #f59e0b;
+            background: #f5d020;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
+            box-shadow: 0 6px 20px rgba(247, 214, 51, 0.6);
         }
-        .guarantee { margin-top: 12px; font-size: 13px; color: #6b7280; }
+        .payment-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin: 10px 0 8px;
+            font-size: 10px;
+            color: #9ca3af;
+        }
+        .payment-icons span {
+            font-size: 20px;
+        }
+        .shipping-info {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 8px 0 6px;
+            color: #46b8aa;
+        }
+        .shipping-info.paid {
+            color: #6b7280;
+        }
+        .guarantee {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+        .pricing-footer {
+            text-align: center;
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .pricing-footer .rating {
+            font-size: 28px;
+            color: #f59e0b;
+            margin-bottom: 10px;
+        }
+        .pricing-footer p {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .pricing-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .pricing-footer-links a {
+            color: #46b8aa;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        .pricing-footer-links a:hover {
+            color: #3a9d91;
+        }
         .total-price { font-size: 0.9rem; color: var(--text-med); margin-top: 10px; }
         .old-price { text-decoration: line-through; color: var(--text-light); }
         .new-price { color: var(--danger); font-weight: 700; }
-        .shipping-info { font-size: 14px; font-weight: 600; margin-top: 10px; }
-        .shipping-info.paid { color: #6b7280; font-weight: 400; }
 
         /* Comparison */
         .comparison-section { background: var(--white); border-radius: 20px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
@@ -762,20 +881,34 @@
         .sticky-cta-mobile { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--white); padding: 15px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); z-index: 1000; }
 
         @media (max-width: 768px) {
-            .hero-container { grid-template-columns: 1fr; gap: 30px; }
-            .hero-product-card { order: -1; }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .pricing-card.featured { transform: none; order: -1; }
+            .countdown-banner { padding: 10px 15px; }
+            .countdown-content { font-size: 11px; gap: 12px; }
+            .countdown-timer { gap: 8px; }
+            .timer-segment { min-width: 45px; padding: 5px 10px; }
+            .timer-number { font-size: 16px; }
+
+            .pricing-banner { padding: 20px 15px 35px; }
+            .pricing-banner h2 { font-size: 20px; }
+            .pricing-banner::after {
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 12px solid #46b8aa;
+                bottom: -12px;
+            }
+            .pricing-container { padding: 30px 15px 40px; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 25px; }
+            .pricing-card { max-width: 400px; margin: 0 auto; }
+            .pricing-card.featured { transform: scale(1); }
+            .pricing-card.featured:hover { transform: scale(1) translateY(-8px); }
+            .pricing-card .price { font-size: 52px; }
+            .pricing-footer-links { flex-direction: column; gap: 15px; }
+
             .sticky-cta-mobile { display: block; }
-            main { padding-bottom: 80px; }
+            .main { padding-bottom: 80px; }
             .final-cta h2 { font-size: 1.8rem; }
             .comparison-table { font-size: 0.85rem; }
             .comparison-table th, .comparison-table td { padding: 10px 5px; }
 
-            .countdown-banner { padding: 10px 15px; }
-            .countdown-content { font-size: 0.8rem; flex-direction: column; gap: 8px; }
-            .countdown-timer { font-size: 0.9rem; }
-            .timer-number { font-size: 1.1rem; }
             .social-proof-notification {
                 bottom: 100px;
                 left: 10px;
@@ -791,8 +924,13 @@
 
             @keyframes pulse-ring { 0%, 100% { transform: none; box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6); } 50% { transform: none; box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6); } }
             .benefit-card:hover { transform: none; }
-            .pricing-card:hover { transform: none; }
-            .hero-product-card:hover { transform: none; box-shadow: 0 15px 50px rgba(255, 193, 7, 0.25), 0 0 0 1px rgba(255, 193, 7, 0.1); }
+            .pricing-card:hover { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-card .price { font-size: 48px; }
+            .pricing-card .card-body { padding: 25px 20px; }
+            .cta-button { font-size: 16px; padding: 16px 30px; }
         }
 
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
@@ -822,72 +960,108 @@
         </div>
     </div>
 
-    <header>
-        <div class="header-content">
-            <a href="#" class="logo">KeySlim Drops</a>
-            <div class="header-trust">
-                <div class="trust-item"><span class="icon">🔒</span><span>Secure</span></div>
-                <div class="trust-item"><span class="icon">📦</span><span>Free Shipping</span></div>
-                <div class="trust-item"><span class="icon">⭐</span><span>5.0/5</span></div>
-            </div>
+    <!-- Pricing Section - FIRST VISUAL ELEMENT -->
+    <section class="pricing-section-wrapper" id="pricing">
+        <div class="pricing-banner">
+            <h2>Claim Your Discounted KeySlim Below <span class="highlight">While Stock Lasts</span></h2>
+            <p>Limited Time Offer - Save Up To 78% Today</p>
         </div>
-    </header>
 
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-left">
-                <h1>Do THIS Simple "Drip & Drop" Routine To<br><span class="highlight">Accelerate Fat Burning</span></h1>
-                <p class="hero-subtitle">Claim your discounted package below while stocks last</p>
-                <ul class="hero-benefits">
-                    <li><strong>Accelerate fat burning</strong> naturally</li>
-                    <li><strong>Reduce belly fat</strong> and stubborn areas</li>
-                    <li><strong>Boost energy levels</strong> throughout the day</li>
-                    <li><strong>Made in USA</strong> - FDA-registered facilities</li>
-                </ul>
-                <div class="hero-rating">
-                    <div class="stars-large">
-                        <span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span><span class="star-large">★</span>
+        <div class="pricing-container">
+            <div class="pricing-grid">
+                <article class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Try One</h3>
+                        <p class="card-subtitle">30 Day Supply</p>
                     </div>
-                    <span class="rating-text-large">Our customers say 5.0/5</span>
-                </div>
-            </div>
-            <div class="hero-right">
-                <article class="hero-product-card">
-                    <span class="popular-badge">🔥 ULTIMATE DISCOUNT - Save 78%</span>
-                    <div class="product-image-hero">
-                        <!-- NOTA: Adicione a imagem PRODx6-500px.webp em assets/products/keyslim/ -->
-                        <img src="./assets/products/keyslim/PRODx6-500px.webp" alt="KeySlim Drops 6 Bottles" width="250" height="250" loading="eager" fetchpriority="high">
-                    </div>
-                    <h2 class="card-title-hero">Ultimate Discount Package</h2>
-                    <div class="price-hero">
-                        <span class="old-price">Was $99/bottle</span>
-                        <div><span class="new-price">$49</span><span class="per-bottle">/bottle</span></div>
-                    </div>
-                    <div class="savings-hero">💰 YOU SAVE $561</div>
-                    <ul class="features-hero">
-                        <li>180-Day Supply (6 Bottles)</li>
-                        <li>+ 3 FREE BONUSES</li>
-                        <li>FREE US Shipping</li>
-                        <li>60-Day Money-Back Guarantee</li>
-                    </ul>
-                    <a href="javascript:void(0);" onclick="trackConversion('6-bottles'); return false;" class="cta-button-hero">🛒 Add To Cart Now</a>
-                    <div class="payment-methods">
-                        <span class="payment-icon" data-card="mastercard">MC</span>
-                        <span class="payment-icon" data-card="visa">VISA</span>
-                        <span class="payment-icon" data-card="amex">AMEX</span>
-                        <span class="payment-icon" data-card="discover">DISC</span>
-                    </div>
-                    <p class="guarantee-hero">🛡️ <strong>100% Satisfaction Guaranteed</strong></p>
-                    <div class="customer-stat">⚡ 94% of customers order 6 bottles (Recommended)</div>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>Only <strong id="stock-count">52</strong> bottles left at this price!</span>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/keyslim/PRODx1-500px.webp" alt="KeySlim 1 Bottle" width="180" height="180" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price">$79</span>
+                            <p class="price-label">per bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $20</div>
+                        <div class="no-bonus">No bonus included</div>
+                        <a href="javascript:void(0);" onclick="trackConversion('1-bottle'); return false;" class="cta-button">ADD TO CART</a>
+                        <div class="payment-icons">
+                            <span>💳</span>
+                            <span style="font-size: 20px;">💳</span>
+                            <span style="font-size: 22px;">💳</span>
+                        </div>
+                        <p class="shipping-info paid">+ Small Shipping Fee</p>
+                        <p class="guarantee">60-Day Money-Back Guarantee</p>
                     </div>
                 </article>
+
+                <article class="pricing-card featured">
+                    <span class="card-badge">BEST VALUE</span>
+                    <div class="card-header">
+                        <h3 class="card-title">Best Value</h3>
+                        <p class="card-subtitle">180 Day Supply</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/keyslim/PRODx6-500px.webp" alt="KeySlim 6 Bottles" width="180" height="180" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price">$49</span>
+                            <p class="price-label">per bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $561</div>
+                        <span class="bonus-badge">+ 3 FREE E-BOOKS</span>
+                        <a href="javascript:void(0);" onclick="trackConversion('6-bottles'); return false;" class="cta-button">ADD TO CART</a>
+                        <div class="payment-icons">
+                            <span>💳</span>
+                            <span style="font-size: 20px;">💳</span>
+                            <span style="font-size: 22px;">💳</span>
+                        </div>
+                        <p class="shipping-info">FREE US Shipping</p>
+                        <p class="guarantee">60-Day Money-Back Guarantee</p>
+                    </div>
+                </article>
+
+                <article class="pricing-card">
+                    <span class="card-badge">POPULAR</span>
+                    <div class="card-header">
+                        <h3 class="card-title">Most Popular</h3>
+                        <p class="card-subtitle">90 Day Supply</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/keyslim/PRODx3-500px.webp" alt="KeySlim 3 Bottles" width="180" height="180" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price">$59</span>
+                            <p class="price-label">per bottle</p>
+                        </div>
+                        <div class="savings">YOU SAVE $381</div>
+                        <span class="bonus-badge">+ 3 FREE E-BOOKS</span>
+                        <a href="javascript:void(0);" onclick="trackConversion('3-bottles'); return false;" class="cta-button">ADD TO CART</a>
+                        <div class="payment-icons">
+                            <span>💳</span>
+                            <span style="font-size: 20px;">💳</span>
+                            <span style="font-size: 22px;">💳</span>
+                        </div>
+                        <p class="shipping-info">FREE US Shipping</p>
+                        <p class="guarantee">60-Day Money-Back Guarantee</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pricing-footer">
+                <div class="rating">★★★★★</div>
+                <p>Our customers say 5.0/5 Stars based on 1,500+ verified reviews</p>
+                <div class="pricing-footer-links">
+                    <a href="#testimonials">View Reviews</a>
+                    <a href="#faq">View FAQ's</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Trust Badges -->
     <section class="trust-section">
         <div class="trust-container">
             <div class="trust-badge"><div class="trust-icon">🔒</div><div class="trust-title">Secure Checkout</div><div class="trust-description">256-bit SSL</div></div>
@@ -962,7 +1136,7 @@
             </div>
         </section>
 
-        <section class="testimonials-section">
+        <section class="testimonials-section" id="testimonials">
             <h2 class="section-title">Real Customers, Real Life-Changing Results</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -1004,71 +1178,6 @@
             </div>
         </section>
 
-        <section class="pricing-section-wrapper">
-            <h2 class="section-title">Claim your Discounted KeySlim Below<br><span class="highlight">While Stock Lasts</span></h2>
-            <div class="pricing-section">
-                <div class="pricing-grid">
-                    <article class="pricing-card">
-                        <div class="card-header">
-                            <h3 class="card-title">Try One</h3>
-                            <p class="card-subtitle">30 Days, 1 Bottle</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="product-image">
-                                <img src="./assets/products/keyslim/PRODx1-500px.webp" alt="KeySlim Drops 1 Bottle" width="200" height="200" loading="lazy">
-                            </div>
-                            <div class="price-container"><span class="price">$79</span><span class="price-label">/ Bottle</span></div>
-                            <div class="savings">YOU SAVE $20</div>
-                            <div class="no-bonus">No bonuses</div>
-                            <a href="javascript:void(0);" onclick="trackConversion('1-bottle'); return false;" class="cta-button">ADD TO CART</a>
-                            <p class="shipping-info paid">+ Shipping</p>
-                            <p class="guarantee">60 Day Money-Back Guarantee</p>
-                        </div>
-                    </article>
-                    <article class="pricing-card featured">
-                        <span class="card-badge">BEST VALUE</span>
-                        <div class="card-header">
-                            <h3 class="card-title">Best Value</h3>
-                            <p class="card-subtitle">180 Days, 6 Bottles</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="product-image">
-                                <img src="./assets/products/keyslim/PRODx6-500px.webp" alt="KeySlim Drops 6 Bottles" width="200" height="200" loading="lazy">
-                            </div>
-                            <div class="price-container"><span class="price">$49</span><span class="price-label">/ Bottle</span></div>
-                            <div class="savings">YOU SAVE $561</div>
-                            <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                            <a href="javascript:void(0);" onclick="trackConversion('6-bottles'); return false;" class="cta-button">ADD TO CART</a>
-                            <p class="shipping-info">FREE US Shipping</p>
-                            <p class="guarantee">60 Day Money-Back Guarantee</p>
-                        </div>
-                    </article>
-                    <article class="pricing-card">
-                        <span class="card-badge">POPULAR</span>
-                        <div class="card-header">
-                            <h3 class="card-title">Most Popular</h3>
-                            <p class="card-subtitle">90 Days, 3 Bottles</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="product-image">
-                                <img src="./assets/products/keyslim/PRODx3-500px.webp" alt="KeySlim Drops 3 Bottles" width="200" height="200" loading="lazy">
-                            </div>
-                            <div class="price-container"><span class="price">$59</span><span class="price-label">/ Bottle</span></div>
-                            <div class="savings">YOU SAVE $381</div>
-                            <span class="bonus-badge">+ 3 FREE BONUSES</span>
-                            <a href="javascript:void(0);" onclick="trackConversion('3-bottles'); return false;" class="cta-button">ADD TO CART</a>
-                            <p class="shipping-info">FREE US Shipping</p>
-                            <p class="guarantee">60 Day Money-Back Guarantee</p>
-                        </div>
-                    </article>
-                </div>
-                <p style="text-align: center; margin-top: 40px; color: white; font-size: 18px;">
-                    <span class="stars-large" style="font-size: 24px;">★★★★★</span>
-                    <span style="margin-left: 10px; font-weight: 700;">Our customers say 5.0/5 based on 1500+ reviews</span>
-                </p>
-            </div>
-        </section>
-
         <section class="comparison-section">
             <h2 class="section-title">KeySlim Drops vs Competitors</h2>
             <table class="comparison-table">
@@ -1083,7 +1192,7 @@
             </table>
         </section>
 
-        <section class="faq-section">
+        <section class="faq-section" id="faq">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-item">
                 <h3 class="faq-question">Is KeySlim Drops right for me?</h3>
@@ -1204,15 +1313,29 @@
         function trackConversion(packageType) {
             console.log('🔔 trackConversion called with:', packageType);
 
-            // Get value based on package
-            var value = packageType === '6-bottles' ? 294 : packageType === '3-bottles' ? 177 : 79;
+            // Calculate value and affiliate link based on package
+            var value;
+            var affiliateLink;
+
+            if (packageType === '6-bottles') {
+                value = 294; // 6 x $49
+                affiliateLink = 'https://www.checkout-ds24.com/product/527380&vtid=vsl1&?aff=sentinela';
+            } else if (packageType === '3-bottles') {
+                value = 177; // 3 x $59
+                affiliateLink = 'https://www.checkout-ds24.com/product/527379&vtid=vsl1&?aff=sentinela';
+            } else if (packageType === '1-bottle') {
+                value = 79; // 1 x $79
+                affiliateLink = 'https://www.checkout-ds24.com/product/527378&vtid=vsl1&?aff=sentinela';
+            } else {
+                value = 79;
+                affiliateLink = 'https://www.checkout-ds24.com/product/527378&vtid=vsl1&?aff=sentinela';
+            }
+
             var transactionId = Date.now() + '-' + Math.random().toString(36).substr(2, 9);
 
             console.log('💰 Value:', value, 'USD');
             console.log('🆔 Transaction ID:', transactionId);
-
-            // Link de checkout direto Digistore
-            var affiliateLink = 'https://www.checkout-ds24.com/product/527380&vtid=vsl1&?aff=sentinela';
+            console.log('🔗 Affiliate Link:', affiliateLink);
 
             // Check if gtag is available
             if (typeof gtag !== 'undefined') {
