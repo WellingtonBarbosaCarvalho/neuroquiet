@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#0f172a" stroke="#f59e0b" stroke-width="3"/>
+
+  <!-- Letter P in bold gold -->
+  <text x="50" y="72" font-family="Arial, sans-serif" font-size="60" font-weight="900" fill="#f59e0b" text-anchor="middle">P</text>
+
+  <!-- Small pulse/energy effect -->
+  <circle cx="75" cy="25" r="8" fill="#f59e0b">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
