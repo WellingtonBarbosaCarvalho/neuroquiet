@@ -60,16 +60,16 @@
 
         /* ===== COUNTDOWN BANNER ===== */
         .countdown-banner {
-            background: var(--dark-gray);
+            background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
             color: white;
-            padding: 12px 20px;
+            padding: 14px 20px;
             text-align: center;
             font-weight: 600;
             position: sticky;
             top: 0;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-bottom: 1px solid var(--medium-gray);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+            border-bottom: 2px solid var(--primary-red);
         }
 
         .countdown-banner-content {
@@ -77,143 +77,207 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
-            font-size: 13px;
+            gap: 25px;
+            font-size: 14px;
         }
 
         .countdown-banner-content > span {
             display: flex;
             align-items: center;
-            gap: 8px;
-            letter-spacing: 0.3px;
+            gap: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         .countdown-banner .timer-container {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             font-size: 14px;
             font-weight: 600;
         }
 
         .countdown-banner .timer-unit {
-            background: var(--medium-gray);
-            color: var(--primary-red);
-            padding: 6px 12px;
-            border-radius: 6px;
-            min-width: 50px;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            min-width: 55px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 1px solid #4b5563;
+            border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
         }
 
         .countdown-banner .timer-unit span:first-child {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 900;
             line-height: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .countdown-banner .timer-unit span:last-child {
-            font-size: 9px;
+            font-size: 10px;
             text-transform: uppercase;
-            color: #9ca3af;
-            font-weight: 500;
-            margin-top: 2px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            margin-top: 3px;
+            letter-spacing: 1px;
         }
 
         /* ===== PRICING SECTION ===== */
         .pricing-section-wrapper {
-            background: #f9f9f9;
+            background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
             padding: 0;
             position: relative;
             overflow: hidden;
         }
 
+        .pricing-section-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: radial-gradient(ellipse at top, rgba(220, 38, 38, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
         .pricing-banner {
-            background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
-            padding: 20px 20px 35px;
+            background: linear-gradient(135deg, #000000 0%, #1f2937 50%, #000000 100%);
+            padding: 12px 15px 20px;
             text-align: center;
             position: relative;
             border-bottom: 3px solid var(--primary-red);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .pricing-banner::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
             height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-top: 15px solid var(--primary-red);
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 12px solid var(--primary-red);
+            filter: drop-shadow(0 2px 6px rgba(220, 38, 38, 0.4));
         }
 
         .pricing-banner h2 {
             color: white;
-            font-size: clamp(24px, 4.5vw, 36px);
-            font-weight: 800;
-            margin-bottom: 10px;
-            line-height: 1.2;
+            font-size: clamp(20px, 4vw, 32px);
+            font-weight: 900;
+            margin-bottom: 6px;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(220, 38, 38, 0.4);
         }
 
         .pricing-banner h2 .highlight {
             color: var(--primary-red);
             display: inline;
             font-weight: 900;
+            text-shadow: 0 0 15px rgba(220, 38, 38, 0.7), 0 0 30px rgba(220, 38, 38, 0.3);
         }
 
         .pricing-banner p {
             color: rgba(255,255,255,0.95);
-            font-size: 16px;
+            font-size: 14px;
             max-width: 700px;
             margin: 0 auto;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .stock-alert {
+            display: inline-block;
+            background: rgba(220, 38, 38, 0.15);
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
         }
 
         .pricing-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 20px 40px;
+            padding: 25px 15px 40px;
+            position: relative;
+            z-index: 1;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 25px;
             max-width: 1100px;
-            margin: 0 auto 40px;
+            margin: 0 auto 35px;
         }
 
+        /* Individual pricing card */
         .pricing-card {
             background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
+            border: 3px solid #e5e7eb;
+            border-radius: 20px;
             padding: 0;
             text-align: center;
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             overflow: visible;
         }
 
         .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(220, 38, 38, 0.2);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.25);
             border-color: var(--primary-red);
         }
 
         .pricing-card.best-value {
-            border: 3px solid var(--primary-red);
-            transform: scale(1.05);
+            background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+            border: 4px solid var(--primary-red);
+            transform: scale(1.08);
+            box-shadow: 0 15px 50px rgba(220, 38, 38, 0.3);
+            position: relative;
+        }
+
+        .pricing-card.best-value::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(15px);
         }
 
         .pricing-card.best-value:hover {
-            transform: scale(1.05) translateY(-8px);
+            transform: scale(1.08) translateY(-12px);
+            box-shadow: 0 25px 70px rgba(220, 38, 38, 0.4);
         }
 
         .pricing-card.best-value .card-header {
-            background: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
         }
 
         .pricing-card.best-value h3,
@@ -221,55 +285,73 @@
             color: white;
         }
 
+        /* Card header */
         .pricing-card .card-header {
-            background: var(--light-gray);
-            padding: 18px 20px;
-            border-bottom: 2px solid #e5e7eb;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            padding: 16px 18px;
+            border-bottom: 2px solid #d1d5db;
+            border-radius: 17px 17px 0 0;
         }
 
         .card-badge {
             position: absolute;
-            top: -8px;
+            top: -10px;
             right: 20px;
-            background: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
             color: white;
-            padding: 5px 15px;
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: 0.7rem;
+            font-weight: 900;
             text-transform: uppercase;
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 12px rgba(220, 38, 38, 0.4);
+            letter-spacing: 0.8px;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .pricing-card h3 {
-            font-size: 26px;
-            font-weight: 800;
+            font-size: 24px;
+            font-weight: 900;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         .pricing-card .card-subtitle {
             color: #6b7280;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 700;
         }
 
+        /* Card body */
         .card-body {
-            padding: 25px 20px 22px;
+            padding: 20px 18px 20px;
         }
 
+        /* Product image placeholder */
         .product-image {
-            margin: 0 auto 18px;
-            max-width: 140px;
-            height: 140px;
+            margin: 0 auto 14px;
+            max-width: 120px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--light-gray);
-            border-radius: 12px;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            border-radius: 14px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover .product-image {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
         .product-image img {
@@ -277,100 +359,141 @@
             height: auto;
         }
 
+        /* Price display */
         .price-container {
-            margin: 15px 0;
+            margin: 12px 0;
         }
 
         .price-new {
-            font-size: 54px;
+            font-size: 48px;
             font-weight: 900;
             color: var(--text-dark);
             line-height: 1;
             letter-spacing: -2px;
+            background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .price-unit {
-            font-size: 14px;
-            color: #6b7280;
-            font-weight: 600;
-            margin-top: 6px;
-        }
-
-        .savings {
-            background: var(--primary-red);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 6px;
-            font-weight: 700;
             font-size: 13px;
-            display: inline-block;
-            margin: 12px 0;
+            color: #6b7280;
+            font-weight: 700;
+            margin-top: 6px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .bonus-badge {
-            background: var(--dark-gray);
+        /* YOU SAVE badge */
+        .savings {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
             color: white;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 6px;
-            font-weight: 700;
-            font-size: 13px;
+            font-weight: 800;
+            font-size: 12px;
             display: inline-block;
-            margin: 12px 0;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 3px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Bonus badge */
+        .bonus-badge {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 11px;
+            display: inline-block;
+            margin: 10px 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+            letter-spacing: 0.5px;
         }
 
         .no-bonus {
             color: #9ca3af;
-            font-size: 13px;
-            margin: 12px 0;
-            min-height: 36px;
+            font-size: 12px;
+            margin: 10px 0;
+            min-height: 34px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 600;
         }
 
+        /* Add to cart button */
         .btn-cart {
-            background: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
             color: white;
-            padding: 14px 32px;
-            font-size: 16px;
-            font-weight: 800;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 900;
             text-transform: uppercase;
             border-radius: 10px;
             border: none;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             width: 100%;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
-            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+            letter-spacing: 1.2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cart::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-cart:hover::before {
+            left: 100%;
         }
 
         .btn-cart:hover {
-            background: var(--dark-red);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
+            background: linear-gradient(135deg, var(--dark-red) 0%, #7f1d1d 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(220, 38, 38, 0.6);
         }
 
+        .btn-cart:active {
+            transform: translateY(-1px);
+        }
+
+        /* Payment icons */
         .payment-icons {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
-            margin: 10px 0 8px;
-            font-size: 10px;
+            margin: 10px 0 6px;
+            font-size: 9px;
             color: #9ca3af;
+            font-weight: 600;
         }
 
         .payment-icons span {
-            font-size: 20px;
+            font-size: 18px;
+            filter: grayscale(50%);
         }
 
+        /* Shipping info */
         .shipping-info {
-            font-size: 13px;
-            font-weight: 600;
-            margin: 8px 0 6px;
+            font-size: 12px;
+            font-weight: 700;
+            margin: 6px 0 4px;
             color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
         }
 
         .shipping-info.paid {
@@ -378,155 +501,207 @@
         }
 
         .guarantee {
-            font-size: 11px;
+            font-size: 10px;
             color: #6b7280;
-            margin-top: 6px;
-            line-height: 1.4;
+            margin-top: 4px;
+            line-height: 1.3;
+            font-weight: 600;
         }
 
+        /* Pricing footer */
         .pricing-footer {
             text-align: center;
-            padding: 30px 20px;
-            max-width: 800px;
+            padding: 40px 20px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
         .pricing-footer .rating {
-            font-size: 28px;
+            font-size: 32px;
             color: var(--primary-red);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            letter-spacing: 3px;
         }
 
         .pricing-footer p {
-            font-size: 16px;
+            font-size: 17px;
             color: #4b5563;
-            margin-bottom: 20px;
-            font-weight: 600;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
 
         .pricing-footer-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 35px;
             flex-wrap: wrap;
         }
 
         .pricing-footer-links a {
             color: var(--primary-red);
             font-size: 16px;
-            font-weight: 600;
-            text-decoration: underline;
+            font-weight: 700;
+            text-decoration: none;
             transition: var(--transition);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 2px solid transparent;
         }
 
         .pricing-footer-links a:hover {
             color: var(--dark-red);
+            border-color: var(--primary-red);
+            background: rgba(220, 38, 38, 0.05);
         }
 
         /* ===== TRUST BADGES ===== */
         .trust-badges {
-            background: white;
-            padding: 40px 20px;
-            border-bottom: 1px solid #e5e7eb;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            padding: 50px 20px;
+            border-top: 1px solid #e5e7eb;
         }
 
         .trust-badges-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .trust-badge {
             text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.2);
         }
 
         .trust-badge-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
+            font-size: 54px;
+            margin-bottom: 18px;
         }
 
         .trust-badge h3 {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 21px;
+            font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .trust-badge p {
             color: var(--text-medium);
-            font-size: 14px;
+            font-size: 15px;
+            font-weight: 500;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .countdown-banner {
-                padding: 10px 15px;
+                padding: 12px 15px;
             }
             .countdown-banner-content {
-                font-size: 11px;
-                gap: 12px;
+                font-size: 12px;
+                gap: 15px;
             }
             .countdown-banner .timer-container {
-                gap: 8px;
+                gap: 10px;
             }
             .countdown-banner .timer-unit {
-                min-width: 45px;
-                padding: 5px 10px;
+                min-width: 50px;
+                padding: 7px 12px;
             }
             .countdown-banner .timer-unit span:first-child {
-                font-size: 16px;
+                font-size: 18px;
             }
 
             .pricing-banner {
-                padding: 20px 15px 35px;
+                padding: 10px 12px 18px;
             }
             .pricing-banner h2 {
-                font-size: 20px;
+                font-size: 18px;
+            }
+            .pricing-banner p {
+                font-size: 13px;
+            }
+            .stock-alert {
+                font-size: 10px;
+                padding: 4px 12px;
+                margin-top: 6px;
             }
             .pricing-banner::after {
-                border-left: 20px solid transparent;
-                border-right: 20px solid transparent;
-                border-top: 12px solid var(--primary-red);
-                bottom: -12px;
+                border-left: 18px solid transparent;
+                border-right: 18px solid transparent;
+                border-top: 10px solid var(--primary-red);
+                bottom: -10px;
             }
             .pricing-container {
-                padding: 30px 15px 40px;
+                padding: 20px 12px 30px;
             }
             .pricing-grid {
                 grid-template-columns: 1fr;
-                gap: 25px;
+                gap: 20px;
+                max-width: 380px;
+                margin: 0 auto 30px;
             }
             .pricing-card {
-                max-width: 400px;
-                margin: 0 auto;
+                max-width: 100%;
             }
             .pricing-card.best-value {
                 transform: scale(1);
             }
             .pricing-card.best-value:hover {
-                transform: scale(1) translateY(-8px);
+                transform: scale(1) translateY(-10px);
             }
             .price-new {
-                font-size: 52px;
+                font-size: 44px;
+            }
+            .card-body {
+                padding: 18px 16px;
+            }
+            .product-image {
+                max-width: 110px;
+                height: 110px;
             }
             .pricing-footer-links {
                 flex-direction: column;
                 gap: 15px;
             }
+            .trust-badges-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
         }
 
         @media (max-width: 480px) {
             .price-new {
-                font-size: 48px;
+                font-size: 42px;
             }
             .card-body {
-                padding: 25px 20px;
+                padding: 16px 14px;
             }
             .btn-cart {
-                font-size: 16px;
-                padding: 16px 30px;
+                font-size: 14px;
+                padding: 13px 24px;
+            }
+            .product-image {
+                max-width: 100px;
+                height: 100px;
+            }
+            .pricing-card h3 {
+                font-size: 22px;
+            }
+            .card-header {
+                padding: 14px 16px;
             }
         }
     </style>
@@ -559,6 +734,7 @@
         <div class="pricing-banner">
             <h2>Sichern Sie sich Ihr ErectogenX <span class="highlight">Solange der Vorrat reicht</span></h2>
             <p>Limitiertes Angebot - Bis zu 73% Rabatt heute</p>
+            <div class="stock-alert">⚠️ Nur noch 47 Pakete verfügbar</div>
         </div>
 
         <div class="pricing-container">
@@ -582,17 +758,17 @@
                         <button class="btn-cart" onclick="buyNow('1-bottle')">IN DEN WARENKORB</button>
                         <div class="payment-icons">
                             <span>💳</span>
-                            <span style="font-size: 20px;">💳</span>
-                            <span style="font-size: 22px;">💳</span>
+                            <span>💳</span>
+                            <span>💳</span>
                         </div>
                         <p class="shipping-info paid">+ Versand</p>
-                        <p class="guarantee">60-Tage Geld-zurück-Garantie</p>
+                        <p class="guarantee">✓ 60-Tage Geld-zurück-Garantie</p>
                     </div>
                 </article>
 
                 <!-- 6 Flaschen - BEST VALUE -->
                 <article class="pricing-card best-value">
-                    <span class="card-badge">BEST VALUE</span>
+                    <span class="card-badge">⭐ BEST VALUE</span>
                     <div class="card-header">
                         <h3>6 Flaschen</h3>
                         <p class="card-subtitle">180-Tage-Vorrat</p>
@@ -605,22 +781,22 @@
                             <span class="price-new">€49</span>
                             <p class="price-unit">pro Flasche</p>
                         </div>
-                        <div class="savings">SIE SPAREN €300</div>
-                        <span class="bonus-badge">+ KOSTENLOSER VERSAND</span>
+                        <div class="savings">🔥 SIE SPAREN €300</div>
+                        <span class="bonus-badge">🎁 KOSTENLOSER VERSAND</span>
                         <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB</button>
                         <div class="payment-icons">
                             <span>💳</span>
-                            <span style="font-size: 20px;">💳</span>
-                            <span style="font-size: 22px;">💳</span>
+                            <span>💳</span>
+                            <span>💳</span>
                         </div>
-                        <p class="shipping-info">KOSTENLOSER Versand nach Deutschland</p>
-                        <p class="guarantee">60-Tage Geld-zurück-Garantie</p>
+                        <p class="shipping-info">🚚 KOSTENLOSER Versand</p>
+                        <p class="guarantee">✓ 60-Tage Geld-zurück-Garantie</p>
                     </div>
                 </article>
 
                 <!-- 3 Flaschen - MOST POPULAR -->
                 <article class="pricing-card">
-                    <span class="card-badge">BELIEBT</span>
+                    <span class="card-badge">💎 BELIEBT</span>
                     <div class="card-header">
                         <h3>3 Flaschen</h3>
                         <p class="card-subtitle">90-Tage-Vorrat</p>
@@ -634,15 +810,15 @@
                             <p class="price-unit">pro Flasche</p>
                         </div>
                         <div class="savings">SIE SPAREN €120</div>
-                        <span class="bonus-badge">+ KOSTENLOSER VERSAND</span>
+                        <span class="bonus-badge">🎁 KOSTENLOSER VERSAND</span>
                         <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB</button>
                         <div class="payment-icons">
                             <span>💳</span>
-                            <span style="font-size: 20px;">💳</span>
-                            <span style="font-size: 22px;">💳</span>
+                            <span>💳</span>
+                            <span>💳</span>
                         </div>
-                        <p class="shipping-info">KOSTENLOSER Versand nach Deutschland</p>
-                        <p class="guarantee">60-Tage Geld-zurück-Garantie</p>
+                        <p class="shipping-info">🚚 KOSTENLOSER Versand</p>
+                        <p class="guarantee">✓ 60-Tage Geld-zurück-Garantie</p>
                     </div>
                 </article>
             </div>
@@ -737,7 +913,7 @@
 
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'conversion', {
-                    'send_to': 'AW-17757356280/CONVERSION_LABEL_HERE', // TODO: Update with ErectogenX conversion label
+                    'send_to': 'AW-17757356280/CONVERSION_LABEL_HERE',
                     'transaction_id': transactionId,
                     'value': value,
                     'currency': 'EUR',
