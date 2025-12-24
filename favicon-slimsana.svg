@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9a8d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#pinkGrad)"/>
+
+  <!-- Decorative Ring -->
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#db2777" stroke-width="2" opacity="0.3"/>
+
+  <!-- Heart Shape (saúde e bem-estar) -->
+  <path d="M 50 35
+           C 50 30, 45 25, 38 25
+           C 30 25, 27 32, 27 38
+           C 27 48, 50 60, 50 60
+           C 50 60, 73 48, 73 38
+           C 73 32, 70 25, 62 25
+           C 55 25, 50 30, 50 35 Z"
+        fill="#db2777" opacity="0.9" filter="url(#shadow)"/>
+
+  <!-- Central "S" Badge -->
+  <circle cx="50" cy="50" r="18" fill="#ffffff" opacity="0.95"/>
+  <circle cx="50" cy="50" r="16" fill="none" stroke="#db2777" stroke-width="2"/>
+
+  <!-- Letter S -->
+  <text x="50" y="60"
+        font-family="Arial, sans-serif"
+        font-size="24"
+        font-weight="bold"
+        fill="#db2777"
+        text-anchor="middle">S</text>
+
+  <!-- Sparkle elements (transformação) -->
+  <circle cx="30" cy="30" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="70" cy="28" r="2.5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="75" cy="50" r="1.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="25" cy="52" r="2" fill="#ffffff" opacity="0.8"/>
+</svg>
