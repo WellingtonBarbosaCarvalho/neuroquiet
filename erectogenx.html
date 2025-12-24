@@ -379,12 +379,13 @@
 
         /* Total price */
         .total-price {
-            font-size: 13px;
-            color: #6b7280;
+            font-size: 12px;
+            color: var(--text-dark);
             font-weight: 700;
             margin-top: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
         }
 
         /* Add to cart button */
@@ -450,23 +451,22 @@
 
         /* Shipping info */
         .shipping-info {
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 600;
             margin: 6px 0 4px;
-            color: var(--primary-red);
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
+            color: #6b7280;
+            letter-spacing: 0.3px;
         }
 
         .shipping-info.paid {
-            color: #6b7280;
+            color: #9ca3af;
         }
 
+        /* Guarantee badge */
         .guarantee {
             font-size: 10px;
             color: #6b7280;
-            margin-top: 4px;
-            line-height: 1.3;
+            margin-top: 8px;
             font-weight: 600;
         }
 
@@ -1028,8 +1028,8 @@
     <!-- Pricing Section -->
     <section class="pricing-section-wrapper" id="pricing">
         <div class="pricing-banner">
-            <h2>Wählen Sie Ihr <span class="highlight">ErectogenX Paket</span></h2>
-            <p>Alle Pakete inkl. 60-Tage Geld-zurück-Garantie</p>
+            <h2>Schritt 1: Wählen Sie Ihr <span class="highlight">Rabattpaket</span> aus</h2>
+            <p>100% Zufriedenheitsgarantie oder Geld zurück</p>
         </div>
 
         <div class="pricing-container">
@@ -1038,25 +1038,19 @@
                 <article class="pricing-card">
                     <div class="card-header">
                         <h3>1 Flasche</h3>
-                        <p class="card-subtitle">Reicht für 1 Monat</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
                             <img src="./assets/products/erectogenx/PRODx1-500px.webp" alt="ErectogenX 1 Flasche - Monatsvorrat zur Unterstützung männlicher Vitalität" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
-                            <span class="price-old">€99</span>
                             <span class="price-new">€69</span>
                             <p class="price-unit">pro Flasche</p>
-                            <p class="price-daily">€2,30 pro Tag</p>
                         </div>
-                        <ul class="card-benefits">
-                            <li>30-Tage-Vorrat</li>
-                            <li>Versandkosten: €4,95</li>
-                            <li>60-Tage Geld-zurück-Garantie</li>
-                        </ul>
-                        <button class="btn-cart" onclick="buyNow('1-bottle')">Jetzt bestellen</button>
-                        <p class="total-price">Gesamt: €69</p>
+                        <button class="btn-cart" onclick="buyNow('1-bottle')">IN DEN WARENKORB</button>
+                        <p class="total-price">GESAMT: 69€</p>
+                        <p class="shipping-info paid">+ Versand</p>
+                        <p class="guarantee">60-Tage-Garantie</p>
                     </div>
                 </article>
 
@@ -1065,26 +1059,18 @@
                     <span class="card-badge">Empfohlen</span>
                     <div class="card-header">
                         <h3>6 Flaschen</h3>
-                        <p class="card-subtitle">Reicht für 6 Monate</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
                             <img src="./assets/products/erectogenx/PRODx6-500px.webp" alt="ErectogenX 6 Flaschen - Halbjahresvorrat zur Unterstützung männlicher Vitalität mit kostenlosem Versand" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
-                            <span class="price-old">€99</span>
                             <span class="price-new">€49</span>
                             <p class="price-unit">pro Flasche</p>
-                            <p class="price-daily">€1,63 pro Tag</p>
                         </div>
-                        <ul class="card-benefits">
-                            <li>180-Tage-Vorrat</li>
-                            <li>Kostenloser Versand</li>
-                            <li>Beste Ersparnis: 50% günstiger</li>
-                            <li>60-Tage Geld-zurück-Garantie</li>
-                        </ul>
-                        <button class="btn-cart" onclick="buyNow('6-bottles')">Jetzt bestellen</button>
-                        <p class="total-price">Gesamt: €294</p>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB</button>
+                        <p class="total-price">GESAMT: 294€ + KOSTENLOSER VERSAND nach Deutschland</p>
+                        <p class="guarantee">60-Tage-Garantie</p>
                     </div>
                 </article>
 
@@ -1093,26 +1079,18 @@
                     <span class="card-badge">Beliebt</span>
                     <div class="card-header">
                         <h3>3 Flaschen</h3>
-                        <p class="card-subtitle">Reicht für 3 Monate</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
                             <img src="./assets/products/erectogenx/PRODx3-500px.webp" alt="ErectogenX 3 Flaschen - Quartalsvorrat zur Unterstützung männlicher Vitalität mit kostenlosem Versand" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
-                            <span class="price-old">€99</span>
                             <span class="price-new">€59</span>
                             <p class="price-unit">pro Flasche</p>
-                            <p class="price-daily">€1,97 pro Tag</p>
                         </div>
-                        <ul class="card-benefits">
-                            <li>90-Tage-Vorrat</li>
-                            <li>Kostenloser Versand</li>
-                            <li>40% Ersparnis pro Flasche</li>
-                            <li>60-Tage Geld-zurück-Garantie</li>
-                        </ul>
-                        <button class="btn-cart" onclick="buyNow('3-bottles')">Jetzt bestellen</button>
-                        <p class="total-price">Gesamt: €177</p>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB</button>
+                        <p class="total-price">GESAMT: 177€ + KOSTENLOSER VERSAND nach Deutschland</p>
+                        <p class="guarantee">60-Tage-Garantie</p>
                     </div>
                 </article>
             </div>
