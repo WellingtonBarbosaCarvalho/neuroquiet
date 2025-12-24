@@ -22,10 +22,11 @@ This folder contains the product images for SlimSana (German version).
 
 ## Color Scheme:
 
-- Primary Pink: #ec4899
-- Dark Pink: #db2777
-- Purple: #a855f7
-- Light Pink: #f9a8d4
+- Primary Green: #10b981 (Emerald)
+- Dark Green: #059669
+- Gold: #d97706
+- Light Gold: #fbbf24
+- White: #ffffff
 
 ## Usage:
 

@@ -1,45 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f9a8d4;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
     </linearGradient>
     <filter id="shadow">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
     </filter>
   </defs>
 
   <!-- Background Circle -->
-  <circle cx="50" cy="50" r="48" fill="url(#pinkGrad)"/>
+  <circle cx="50" cy="50" r="48" fill="url(#greenGrad)"/>
 
   <!-- Decorative Ring -->
-  <circle cx="50" cy="50" r="38" fill="none" stroke="#db2777" stroke-width="2" opacity="0.3"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.2"/>
 
-  <!-- Heart Shape (saúde e bem-estar) -->
-  <path d="M 50 35
-           C 50 30, 45 25, 38 25
-           C 30 25, 27 32, 27 38
-           C 27 48, 50 60, 50 60
-           C 50 60, 73 48, 73 38
-           C 73 32, 70 25, 62 25
-           C 55 25, 50 30, 50 35 Z"
-        fill="#db2777" opacity="0.9" filter="url(#shadow)"/>
+  <!-- Golden Accent Arc (top) -->
+  <path d="M 25 35 Q 50 15, 75 35"
+        fill="none"
+        stroke="url(#goldGrad)"
+        stroke-width="4"
+        stroke-linecap="round"
+        opacity="0.8"/>
 
-  <!-- Central "S" Badge -->
-  <circle cx="50" cy="50" r="18" fill="#ffffff" opacity="0.95"/>
-  <circle cx="50" cy="50" r="16" fill="none" stroke="#db2777" stroke-width="2"/>
+  <!-- Golden Accent Arc (bottom) -->
+  <path d="M 25 65 Q 50 85, 75 65"
+        fill="none"
+        stroke="url(#goldGrad)"
+        stroke-width="4"
+        stroke-linecap="round"
+        opacity="0.8"/>
+
+  <!-- Central "S" Circle Badge -->
+  <circle cx="50" cy="50" r="22" fill="#ffffff" filter="url(#shadow)"/>
 
   <!-- Letter S -->
-  <text x="50" y="60"
+  <text x="50" y="62"
         font-family="Arial, sans-serif"
-        font-size="24"
+        font-size="32"
         font-weight="bold"
-        fill="#db2777"
+        fill="url(#greenGrad)"
         text-anchor="middle">S</text>
 
-  <!-- Sparkle elements (transformação) -->
-  <circle cx="30" cy="30" r="2" fill="#ffffff" opacity="0.8"/>
-  <circle cx="70" cy="28" r="2.5" fill="#ffffff" opacity="0.9"/>
-  <circle cx="75" cy="50" r="1.5" fill="#ffffff" opacity="0.7"/>
-  <circle cx="25" cy="52" r="2" fill="#ffffff" opacity="0.8"/>
+  <!-- Gold Sparkles -->
+  <circle cx="68" cy="32" r="3" fill="url(#goldGrad)" opacity="0.9"/>
+  <circle cx="32" cy="32" r="2.5" fill="url(#goldGrad)" opacity="0.8"/>
+  <circle cx="68" cy="68" r="2.5" fill="url(#goldGrad)" opacity="0.8"/>
+  <circle cx="32" cy="68" r="3" fill="url(#goldGrad)" opacity="0.9"/>
 </svg>
