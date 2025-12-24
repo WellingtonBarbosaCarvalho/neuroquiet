@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GlucoTrust - Natürliche Unterstützung für gesunde Blutzuckerwerte. Mit wissenschaftlich fundierten Inhaltsstoffen. 60-Tage Geld-zurück-Garantie.">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GlucoTrust | Unterstützung gesunder Blutzuckerwerte</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon-glucotrust.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-glucotrust.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-glucotrust.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon-glucotrust.svg">
+    <link rel="shortcut icon" href="./favicon-glucotrust.svg">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17757356280"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17757356280');
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "GlucoTrust",
+      "description": "Natürliche Unterstützung für gesunde Blutzuckerwerte mit Gymnema Sylvestra, Biotin, Chromium und mehr",
+      "brand": {
+        "@type": "Brand",
+        "name": "GlucoTrust"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2500",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "TBD",
+        "highPrice": "TBD",
+        "offerCount": "3",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #059669;
+            --dark-green: #047857;
+            --light-green: #10b981;
+            --cream: #fffbeb;
+            --dark-gray: #1f2937;
+            --medium-gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --white: #ffffff;
+            --text-dark: #111827;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '🌿';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.05;
+            top: 20px;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
+
+        .hero-section::after {
+            content: '🌿';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.05;
+            bottom: 20px;
+            right: 10%;
+            transform: rotate(15deg);
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 3vw, 24px);
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 30px;
+        }
+
+        .hero-intro {
+            font-size: 16px;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .author-intro {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .hero-product-name {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--primary-green);
+            margin: 30px 0;
+        }
+
+        /* ===== INGREDIENTS SECTION ===== */
+        .ingredients-section {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .ingredients-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .ingredient-card {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+            border: 2px solid #d1fae5;
+            border-radius: 16px;
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .ingredient-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(5, 150, 105, 0.15);
+            border-color: var(--primary-green);
+        }
+
+        .ingredient-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .ingredient-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .ingredient-description {
+            font-size: 15px;
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-section-wrapper {
+            background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-section-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: radial-gradient(ellipse at top, rgba(5, 150, 105, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .pricing-banner {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            padding: 12px 15px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-top: 12px solid var(--dark-green);
+        }
+
+        .pricing-banner h2 {
+            font-size: clamp(20px, 4vw, 28px);
+            font-weight: 800;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .pricing-banner .highlight {
+            color: var(--cream);
+        }
+
+        .pricing-banner p {
+            font-size: 14px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 15px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto 35px;
+        }
+
+        /* Individual pricing card */
+        .pricing-card {
+            background: white;
+            border: 3px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 0;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            overflow: visible;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(5, 150, 105, 0.25);
+            border-color: var(--primary-green);
+        }
+
+        .pricing-card.best-value {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+            border: 4px solid var(--primary-green);
+            transform: scale(1.08);
+            box-shadow: 0 15px 50px rgba(5, 150, 105, 0.3);
+            position: relative;
+        }
+
+        .pricing-card.best-value::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-green), var(--dark-green));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(15px);
+        }
+
+        .pricing-card.best-value:hover {
+            transform: scale(1.08) translateY(-12px);
+            box-shadow: 0 25px 70px rgba(5, 150, 105, 0.4);
+        }
+
+        .pricing-card.best-value .card-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            box-shadow: 0 4px 20px rgba(5, 150, 105, 0.3);
+        }
+
+        .pricing-card.best-value h3 {
+            color: white;
+        }
+
+        /* Card header */
+        .pricing-card .card-header {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            padding: 16px 18px;
+            border-bottom: 2px solid #d1d5db;
+            border-radius: 17px 17px 0 0;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            z-index: 10;
+            box-shadow: 0 3px 12px rgba(5, 150, 105, 0.4);
+            letter-spacing: 0.8px;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .card-subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Card body */
+        .card-body {
+            padding: 20px 18px 20px;
+        }
+
+        /* Product image */
+        .product-image {
+            margin: 0 auto 14px;
+            max-width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            border-radius: 14px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover .product-image {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Price display */
+        .price-container {
+            margin: 16px 0 20px;
+        }
+
+        .price-new {
+            font-size: 52px;
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .price-unit {
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 700;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Total price */
+        .total-price {
+            font-size: 12px;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-top: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
+        }
+
+        /* Add to cart button */
+        .btn-cart {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(5, 150, 105, 0.4);
+            letter-spacing: 1.2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cart::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-cart:hover::before {
+            left: 100%;
+        }
+
+        .btn-cart:hover {
+            background: linear-gradient(135deg, var(--dark-green) 0%, #065f46 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(5, 150, 105, 0.6);
+        }
+
+        .btn-cart:active {
+            transform: translateY(-1px);
+        }
+
+        /* Shipping info */
+        .shipping-info {
+            font-size: 11px;
+            font-weight: 600;
+            margin: 6px 0 4px;
+            color: #6b7280;
+            letter-spacing: 0.3px;
+        }
+
+        .shipping-info.paid {
+            color: #9ca3af;
+        }
+
+        /* Guarantee badge */
+        .guarantee {
+            font-size: 10px;
+            color: #6b7280;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .bonus-badge {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 11px;
+            display: inline-block;
+            margin: 10px 0;
+            box-shadow: 0 3px 12px rgba(245, 158, 11, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        /* Pricing footer */
+        .pricing-footer {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .rating {
+            font-size: 24px;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .pricing-footer p {
+            font-size: 14px;
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+
+        /* ===== BONUSES SECTION ===== */
+        .bonuses-section {
+            background: var(--cream);
+            padding: 80px 20px;
+        }
+
+        .bonuses-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .bonuses-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 16px;
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+
+        .bonuses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .bonus-card {
+            background: white;
+            border: 2px solid #d1fae5;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(5, 150, 105, 0.15);
+            border-color: var(--primary-green);
+        }
+
+        .bonus-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 900;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .bonus-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .bonus-description {
+            font-size: 14px;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        /* ===== GUARANTEE SECTION ===== */
+        .guarantee-section {
+            background: var(--light-gray);
+            padding: 60px 20px;
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 16px;
+            text-align: center;
+            border: 3px solid var(--primary-green);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.2);
+        }
+
+        .guarantee-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-box h2 {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .guarantee-box p {
+            font-size: 16px;
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-disclaimer {
+            font-size: 12px;
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 13px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 12px;
+            color: #6b7280;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+        }
+
+        .footer-copyright p {
+            margin-bottom: 10px;
+        }
+
+        .footer-copyright a {
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .pricing-card.best-value {
+                transform: scale(1);
+            }
+            .pricing-card.best-value:hover {
+                transform: translateY(-12px);
+            }
+            .pricing-banner h2 {
+                font-size: 18px;
+            }
+            .pricing-banner p {
+                font-size: 13px;
+            }
+            .ingredients-grid,
+            .bonuses-grid {
+                grid-template-columns: 1fr;
+            }
+            .guarantee-box {
+                padding: 40px 25px;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <h1 class="hero-title">Entdecken Sie eine Methode zur Unterstützung<br>Gesunder Blutzuckerwerte</h1>
+
+            <p class="author-intro">Hallo, mein Name ist James Walker und ich möchte Ihnen eine Formel vorstellen, die einen gesunden Blutzuckerspiegel durch die Verwendung von fantastischen Nährstoffen unterstützt.</p>
+
+            <div class="hero-intro">
+                <p>Diese Formel kann Ihnen auch zu einem tieferen, erholsameren Schlaf verhelfen.</p>
+                <p>Und sie kann sogar Heißhungerattacken reduzieren, was das Abnehmen erleichtern kann, ohne dass Sie sich an eine fade Diät halten müssen.</p>
+            </div>
+
+            <div class="hero-product-name">Es wird GlucoTrust genannt...</div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients-section" id="ingredients">
+        <div class="ingredients-container">
+            <h2 class="section-title">Die kraftvollen Inhaltsstoffe in jeder Kapsel</h2>
+
+            <div class="ingredients-grid">
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌿</div>
+                    <h3 class="ingredient-name">Gymnema Sylvestra</h3>
+                    <p class="ingredient-description">Stammt von einer blattartigen Rebe und wird seit Hunderten von Jahren in Indien verwendet. Bekannt für die Unterstützung eines gesunden Blutzuckerspiegels und zur Zügelung von Heißhunger.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">💪</div>
+                    <h3 class="ingredient-name">Biotin</h3>
+                    <p class="ingredient-description">Vom griechischen Wort "biotos" (Leben). Hilft Ihrem Körper, Nahrung in Energie umzuwandeln und Kohlenhydrate, Fette und Proteine effektiver zu verstoffwechseln. Fördert auch gesundes Haar, Haut, Leber und Sehvermögen.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">⚡</div>
+                    <h3 class="ingredient-name">Chromium</h3>
+                    <p class="ingredient-description">Unterstützt Ihren Stoffwechsel und hilft ihm, schneller an der Fettverbrennung zu arbeiten.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🧠</div>
+                    <h3 class="ingredient-name">Manganese</h3>
+                    <p class="ingredient-description">Stimuliert die Insulinproduktion, die den Blutzucker in Energie umwandelt. Fördert auch die gesunde Funktion von Gehirn und Nervensystem.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌱</div>
+                    <h3 class="ingredient-name">Licorice-Wurzel</h3>
+                    <p class="ingredient-description">Eines der ältesten pflanzlichen Heilmittel der Welt. Bekannt als Mittel zur Gewichtsabnahme, zügelt den Appetit und ist reich an Flavonoiden.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">✨</div>
+                    <h3 class="ingredient-name">Zimt</h3>
+                    <p class="ingredient-description">Seit Tausenden von Jahren als "König der Gewürze" bekannt. Fördert gesunden Blutdruck, unterstützt die Verdauung und hat antivirale, antibakterielle und entzündungshemmende Eigenschaften.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🔬</div>
+                    <h3 class="ingredient-name">Zink</h3>
+                    <p class="ingredient-description">Kann die Insulinproduktion in der Bauchspeicheldrüse anregen.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🫐</div>
+                    <h3 class="ingredient-name">Wacholderbeeren</h3>
+                    <p class="ingredient-description">Wurden in den Gräbern der alten Pharaonen vergraben. Ihre heilende Wirkung beruht auf Antioxidantien, die das Immunsystem unterstützen.</p>
+                </div>
+            </div>
+
+            <div class="hero-intro" style="margin-top: 50px;">
+                <p><strong>GlucoTrust enthält außerdem mehrere schlaffördernde Inhaltsstoffe.</strong></p>
+                <p>Während des Tiefschlafs ist Ihr Körper in der Lage, wichtige Hormone auszugleichen, wie z. B. Cortisol, das Hormon, das Bauchfett speichert.</p>
+                <p>Tiefschlaf hält den Cortisolspiegel in Schach und steigert gleichzeitig Leptin, das Hormon zur Kontrolle des Hungergefühls.</p>
+                <p>Darüber hinaus enthält jede Kapsel eine Mischung aus <strong>15 Kräutern</strong>, die den natürlichen Hormonhaushalt Ihres Körpers regulieren.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section-wrapper" id="pricing">
+        <div class="pricing-banner">
+            <h2>Wählen Sie Ihr <span class="highlight">GlucoTrust Paket</span></h2>
+            <p>100% Zufriedenheitsgarantie oder Geld zurück</p>
+        </div>
+
+        <div class="pricing-container">
+            <div class="pricing-grid">
+                <!-- 1 Flasche -->
+                <article class="pricing-card">
+                    <div class="card-header">
+                        <h3>1 Flasche</h3>
+                        <p class="card-subtitle">30 Tage Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotrust/PRODx1-500px.webp" alt="GlucoTrust 1 Flasche - Monatsvorrat zur Unterstützung gesunder Blutzuckerwerte" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€TBD</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <button class="btn-cart" onclick="buyNow('1-bottle')">IN DEN WARENKORB</button>
+                        <p class="shipping-info paid">9 € Versandgebühr</p>
+                        <p class="guarantee">60-Tage-Garantie</p>
+                    </div>
+                </article>
+
+                <!-- 6 Flaschen - MEISTGEKAUFT -->
+                <article class="pricing-card best-value">
+                    <span class="card-badge">Meistgekauft</span>
+                    <div class="card-header">
+                        <h3>6 Flaschen</h3>
+                        <p class="card-subtitle">180 Tage Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotrust/PRODx6-500px.webp" alt="GlucoTrust 6 Flaschen - Halbjahresvorrat zur Unterstützung gesunder Blutzuckerwerte mit kostenlosem Versand" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€TBD</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <span class="bonus-badge">🎁 3 GRATIS EBOOKS</span>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB</button>
+                        <p class="total-price">GRATIS Versand</p>
+                        <p class="guarantee">60-Tage-Garantie</p>
+                    </div>
+                </article>
+
+                <!-- 3 Flaschen - BELIEBT -->
+                <article class="pricing-card">
+                    <span class="card-badge">Beliebt</span>
+                    <div class="card-header">
+                        <h3>3 Flaschen</h3>
+                        <p class="card-subtitle">90 Tage Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotrust/PRODx3-500px.webp" alt="GlucoTrust 3 Flaschen - Quartalsvorrat zur Unterstützung gesunder Blutzuckerwerte mit kostenlosem Versand" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€TBD</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <span class="bonus-badge">🎁 3 GRATIS EBOOKS</span>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB</button>
+                        <p class="total-price">GRATIS Versand</p>
+                        <p class="guarantee">60-Tage-Garantie</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pricing-footer">
+                <p style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 20px;">Ich empfehle Ihnen, jetzt Ihren Vorrat an GlucoTrust zu bestellen und diese Preise voll auszunutzen...</p>
+                <p>Treffen Sie unten Ihre geldsparende Auswahl, und wir schicken Ihnen Ihre Bestellung sofort zu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses Section -->
+    <section class="bonuses-section" id="bonuses">
+        <div class="bonuses-container">
+            <h2 class="section-title">Spezielles Bonuspaket</h2>
+            <p class="bonuses-intro">Wenn Sie einen 180- oder 90-Tage-Vorrat von GlucoTrust bestellen, erhalten Sie diese digitalen Boni, die Sie in wenigen Augenblicken nutzen können. Sie helfen Ihnen, auf den richtigen Weg zu kommen, noch bevor Ihre Bestellung eintrifft.</p>
+
+            <div class="bonuses-grid">
+                <div class="bonus-card">
+                    <div class="bonus-number">1</div>
+                    <h3 class="bonus-title">100 wohlschmeckende, fettverbrennende grüne Smoothie-Rezepte</h3>
+                    <p class="bonus-description">Hier erfahren Sie, wie Sie leckere und nährstoffreiche Smoothies zubereiten können. Sie erhalten sage und schreibe 100 Smoothie-Rezepte mit Zutaten, die Sie in Ihrem örtlichen Lebensmittelgeschäft finden können.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-number">2</div>
+                    <h3 class="bonus-title">Der ultimative Leitfaden für Superfoods</h3>
+                    <p class="bonus-description">Verarbeitete Lebensmittel können zu toxischen Ablagerungen und Gewichtszunahme führen, während Superfoods Ihren Körper in jeder Hinsicht unterstützen. Dieser Bericht enthüllt gängige Lebensmittel und Snacks, die einen enormen gesundheitlichen Nutzen haben.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-number">3</div>
+                    <h3 class="bonus-title">Der 3-Tage-Durchbruch bei der Leberreinigung</h3>
+                    <p class="bonus-description">Ihre Leber fungiert als Filter, der die von Ihnen aufgenommene Nahrung absorbiert und verarbeitet. Dieser Bonus zeigt Ihnen, wie Sie Ihre Leber in nur drei Tagen sicher und natürlich reinigen können.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section" id="guarantee">
+        <div class="guarantee-box">
+            <div class="guarantee-icon">🛡️</div>
+            <h2>60-Tage Geld-zurück-Garantie</h2>
+            <p>Sie können mit vollem Vertrauen bestellen, da Sie wissen, dass dies ein risikofreies Angebot ist.</p>
+            <p>Wenn Sie heute eine beliebige Menge GlucoTrust bestellen - eine, drei oder sechs Flaschen - haben Sie eine <strong>100%ige Geld-zurück-Garantie für 60 Tage</strong>. Das sind zwei volle Monate.</p>
+            <p>Und diese Garantie gilt „ohne Fragen zu stellen".</p>
+            <p>Das heißt, wenn Sie sich für eine Rückerstattung entscheiden, müssen Sie nicht erklären, warum. Es spielt auch keine Rolle, ob Sie es nie ausprobieren. Ihre Zahlung wird Ihnen einfach zurückerstattet.</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="pricing-section-wrapper" style="padding-bottom: 60px;">
+        <div class="pricing-container">
+            <h2 class="section-title" style="margin-bottom: 40px;">Wählen Sie jetzt Ihr Sparpaket</h2>
+
+            <div class="pricing-grid">
+                <!-- Repeat pricing cards here -->
+                <article class="pricing-card">
+                    <div class="card-header">
+                        <h3>1 Flasche</h3>
+                        <p class="card-subtitle">30 Tage Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotrust/PRODx1-500px.webp" alt="GlucoTrust 1 Flasche" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€TBD</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <button class="btn-cart" onclick="buyNow('1-bottle')">IN DEN WARENKORB</button>
+                        <p class="shipping-info paid">9 € Versandgebühr</p>
+                    </div>
+                </article>
+
+                <article class="pricing-card best-value">
+                    <span class="card-badge">Meistgekauft</span>
+                    <div class="card-header">
+                        <h3>6 Flaschen</h3>
+                        <p class="card-subtitle">180 Tage Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotrust/PRODx6-500px.webp" alt="GlucoTrust 6 Flaschen" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€TBD</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <span class="bonus-badge">🎁 3 GRATIS EBOOKS</span>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB</button>
+                        <p class="total-price">GRATIS Versand</p>
+                    </div>
+                </article>
+
+                <article class="pricing-card">
+                    <span class="card-badge">Beliebt</span>
+                    <div class="card-header">
+                        <h3>3 Flaschen</h3>
+                        <p class="card-subtitle">90 Tage Vorrat</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-image">
+                            <img src="./assets/products/glucotrust/PRODx3-500px.webp" alt="GlucoTrust 3 Flaschen" width="140" height="140" loading="lazy">
+                        </div>
+                        <div class="price-container">
+                            <span class="price-new">€TBD</span>
+                            <p class="price-unit">pro Flasche</p>
+                        </div>
+                        <span class="bonus-badge">🎁 3 GRATIS EBOOKS</span>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB</button>
+                        <p class="total-price">GRATIS Versand</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pricing-footer">
+                <p style="font-size: 16px; font-weight: 600; color: var(--text-dark);">Vielen Dank für Ihre Aufmerksamkeit. Ich hoffe, dass ich bald Ihre Erfolgsgeschichte hören werde!</p>
+                <p style="margin-top: 20px; font-weight: 700;">ProNutraQuest</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-disclaimer">
+                <p>Die auf dieser Website bereitgestellten Informationen dienen ausschließlich allgemeinen Informationszwecken und ersetzen keine professionelle medizinische Beratung, Diagnose oder Behandlung. Bitte konsultieren Sie bei bestehenden gesundheitlichen Problemen, während der Einnahme von Medikamenten, bei Schwangerschaft oder Stillzeit Ihren Arzt vor der Anwendung. Vernachlässigen Sie niemals professionellen medizinischen Rat oder verzögern Sie dessen Einholung aufgrund von etwas, das Sie auf dieser Website gelesen haben. Unsere Produkte sind Nahrungsergänzungsmittel und keine Arzneimittel; sie sind nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder zu verhindern. Es wird keinerlei Haftung vom Hersteller übernommen. Jeder Mensch hat eine individuelle gesundheitliche Situation, daher können die Ergebnisse bei der Einnahme unserer Nahrungsergänzungsmittel von Person zu Person variieren. Die Gewichtsabnahme wird als Teil einer gesunden kalorienreduzierten Ernährung und eines Trainingsprogramms erreicht. Einige Namen und persönliche Identifikationsinformationen auf dieser Website wurden geändert, um die Privatsphäre von Personen zu schützen. Sprecher/Personen können fiktive Personen mit Pseudonymen sein. Weitere Details entnehmen Sie bitte unserem ausführlichen Disclaimer.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#impressum">Impressum</a>
+                <a href="#datenschutz">Datenschutz</a>
+                <a href="#disclaimer">Disclaimer</a>
+                <a href="#agb">AGB</a>
+                <a href="#versand">Versand</a>
+                <a href="#ruckerstattung">Rückerstattung/Rückgabe</a>
+                <a href="#kontakt">Kontakt</a>
+                <a href="#produkt-label">Produkt-Label</a>
+                <a href="#affiliates">Affiliates</a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>GlucoTrust | Sicher Bestellen</p>
+                <p>2025 © Digistore24 MSLW Limited (Irland) und/oder seine Lizenzgeber. Lesen Sie das <a href="#impressum">Impressum hier</a>, die <a href="#agb">allgemeinen Nutzungsbedingungen hier</a> und die <a href="#datenschutz">Datenschutzerklärung hier</a>. <a href="#kontakt">Kontaktieren Sie uns hier</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Buy Now Function
+        function buyNow(packageType) {
+            console.log('Package selected:', packageType);
+            trackConversion(packageType);
+        }
+
+        function trackConversion(packageType) {
+            var value;
+            var affiliateLink;
+
+            // TODO: Adicionar links e preços corretos
+            if (packageType === '6-bottles') {
+                value = 0; // TBD
+                affiliateLink = 'https://www.digistore24.com/product/PRODUCT_ID';
+            } else if (packageType === '3-bottles') {
+                value = 0; // TBD
+                affiliateLink = 'https://www.digistore24.com/product/PRODUCT_ID';
+            } else if (packageType === '1-bottle') {
+                value = 0; // TBD
+                affiliateLink = 'https://www.digistore24.com/product/PRODUCT_ID';
+            }
+
+            var transactionId = Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17757356280/CONVERSION_LABEL_HERE',
+                    'transaction_id': transactionId,
+                    'value': value,
+                    'currency': 'EUR',
+                    'event_callback': function() {
+                        window.location.href = affiliateLink;
+                    }
+                });
+            }
+
+            setTimeout(function() {
+                window.location.href = affiliateLink;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
