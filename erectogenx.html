@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ErectogenX - Natürliche Unterstützung für männliche Vitalität. Bis zu 73% sparen + Kostenloser Versand.">
+    <meta name="description" content="ErectogenX - Natürliche Unterstützung für männliche Vitalität mit wissenschaftlich fundierten Inhaltsstoffen. 60-Tage Geld-zurück-Garantie.">
     <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ErectogenX Official | Männliche Vitalität - Limitiertes Angebot</title>
+    <title>ErectogenX | Natürliche Unterstützung für männliche Vitalität</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./favicon-erectogenx.svg">
@@ -22,6 +22,36 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-17757356280');
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "ErectogenX",
+      "description": "Natürliche Unterstützung für männliche Vitalität mit wissenschaftlich fundierten Inhaltsstoffen",
+      "brand": {
+        "@type": "Brand",
+        "name": "ErectogenX"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1500",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "49",
+        "highPrice": "69",
+        "offerCount": "3",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
     </script>
 
     <style>
@@ -56,74 +86,6 @@
             max-width: 100%;
             height: auto;
             display: block;
-        }
-
-        /* ===== COUNTDOWN BANNER ===== */
-        .countdown-banner {
-            background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
-            color: white;
-            padding: 14px 20px;
-            text-align: center;
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
-            border-bottom: 2px solid var(--primary-red);
-        }
-
-        .countdown-banner-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            font-size: 14px;
-        }
-
-        .countdown-banner-content > span {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .countdown-banner .timer-container {
-            display: flex;
-            gap: 12px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .countdown-banner .timer-unit {
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-            color: white;
-            padding: 8px 14px;
-            border-radius: 8px;
-            min-width: 55px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 2px solid rgba(255,255,255,0.2);
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
-        }
-
-        .countdown-banner .timer-unit span:first-child {
-            font-size: 20px;
-            font-weight: 900;
-            line-height: 1;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .countdown-banner .timer-unit span:last-child {
-            font-size: 10px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.9);
-            font-weight: 600;
-            margin-top: 3px;
-            letter-spacing: 1px;
         }
 
         /* ===== PRICING SECTION ===== */
@@ -193,25 +155,6 @@
             letter-spacing: 0.3px;
         }
 
-        .stock-alert {
-            display: inline-block;
-            background: rgba(220, 38, 38, 0.15);
-            border: 1px solid var(--primary-red);
-            color: var(--primary-red);
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-top: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.9; transform: scale(1.02); }
-        }
 
         .pricing-container {
             max-width: 1200px;
@@ -361,11 +304,20 @@
 
         /* Price display */
         .price-container {
-            margin: 12px 0;
+            margin: 16px 0 20px;
+        }
+
+        .price-old {
+            font-size: 18px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-decoration: line-through;
+            display: block;
+            margin-bottom: 4px;
         }
 
         .price-new {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 900;
             color: var(--text-dark);
             line-height: 1;
@@ -374,6 +326,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            display: inline-block;
         }
 
         .price-unit {
@@ -385,44 +338,53 @@
             letter-spacing: 0.5px;
         }
 
-        /* YOU SAVE badge */
-        .savings {
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-weight: 800;
+        .price-daily {
             font-size: 12px;
-            display: inline-block;
-            margin: 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            box-shadow: 0 3px 12px rgba(220, 38, 38, 0.3);
-        }
-
-        /* Bonus badge */
-        .bonus-badge {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-weight: 800;
-            font-size: 11px;
-            display: inline-block;
-            margin: 10px 0;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.25);
-            letter-spacing: 0.5px;
-        }
-
-        .no-bonus {
             color: #9ca3af;
-            font-size: 12px;
-            margin: 10px 0;
-            min-height: 34px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-weight: 600;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* Card benefits list */
+        .card-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .card-benefits li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-dark);
+            font-weight: 500;
+            border-bottom: 1px solid #f3f4f6;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .card-benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .card-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        /* Total price */
+        .total-price {
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 700;
+            margin-top: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Add to cart button */
@@ -554,6 +516,30 @@
             background: rgba(220, 38, 38, 0.05);
         }
 
+        /* ===== COMMON STYLES ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-medium);
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
         /* ===== TRUST BADGES ===== */
         .trust-badges {
             background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
@@ -632,11 +618,6 @@
             .pricing-banner p {
                 font-size: 13px;
             }
-            .stock-alert {
-                font-size: 10px;
-                padding: 4px 12px;
-                margin-top: 6px;
-            }
             .pricing-banner::after {
                 border-left: 18px solid transparent;
                 border-right: 18px solid transparent;
@@ -704,37 +685,351 @@
                 padding: 14px 16px;
             }
         }
+
+        /* ===== WHY SECTION ===== */
+        .why-section {
+            background: white;
+            padding: 60px 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .why-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-content .intro-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .why-content p {
+            font-size: 16px;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* ===== INGREDIENTS SECTION ===== */
+        .ingredients-section {
+            background: var(--light-gray);
+            padding: 60px 20px;
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
+
+        .ingredient-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .ingredient-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.15);
+            border-color: var(--primary-red);
+        }
+
+        .ingredient-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .ingredient-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 12px;
+        }
+
+        .ingredient-card p {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        .results-box {
+            background: linear-gradient(135deg, var(--dark-red) 0%, var(--black) 100%);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .results-box h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--primary-red);
+        }
+
+        .results-box p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 4px solid var(--black);
+            border-bottom: 4px solid var(--black);
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(26px, 5vw, 38px);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--black);
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+        }
+
+        /* ===== GUARANTEE SECTION ===== */
+        .guarantee-section {
+            background: var(--light-gray);
+            padding: 60px 20px;
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 16px;
+            text-align: center;
+            border: 3px solid var(--primary-red);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+        }
+
+        .guarantee-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-box h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .guarantee-box p {
+            font-size: 16px;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            background: white;
+            padding: 60px 20px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-red);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* ===== REFERENCES SECTION ===== */
+        .references-section {
+            background: var(--light-gray);
+            padding: 60px 20px;
+        }
+
+        .references-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .reference-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-red);
+            transition: var(--transition);
+        }
+
+        .reference-item:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .reference-item p {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .reference-item a {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .reference-item a:hover {
+            color: var(--dark-red);
+            text-decoration: underline;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 40px 20px 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #374151;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .footer-disclaimer {
+            max-width: 800px;
+            margin: 0 auto 25px;
+            text-align: center;
+        }
+
+        .footer-disclaimer p {
+            font-size: 12px;
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #374151;
+        }
+
+        .footer-copyright p {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .ingredients-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .guarantee-box {
+                padding: 40px 25px;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Countdown Banner -->
-    <div class="countdown-banner">
-        <div class="countdown-banner-content">
-            <span>🔥 SONDERRABATT ENDET IN:</span>
-            <div class="timer-container">
-                <div class="timer-unit">
-                    <span id="hours">00</span>
-                    <span>Std</span>
-                </div>
-                <div class="timer-unit">
-                    <span id="minutes">00</span>
-                    <span>Min</span>
-                </div>
-                <div class="timer-unit">
-                    <span id="seconds">00</span>
-                    <span>Sek</span>
-                </div>
-            </div>
-            <span>🎁 BIS ZU 73% SPAREN</span>
-        </div>
-    </div>
 
     <!-- Pricing Section -->
     <section class="pricing-section-wrapper" id="pricing">
         <div class="pricing-banner">
-            <h2>Sichern Sie sich Ihr ErectogenX <span class="highlight">Solange der Vorrat reicht</span></h2>
-            <p>Limitiertes Angebot - Bis zu 73% Rabatt heute</p>
-            <div class="stock-alert">⚠️ Nur noch 47 Pakete verfügbar</div>
+            <h2>Wählen Sie Ihr <span class="highlight">ErectogenX Paket</span></h2>
+            <p>Alle Pakete inkl. 60-Tage Geld-zurück-Garantie</p>
         </div>
 
         <div class="pricing-container">
@@ -743,82 +1038,81 @@
                 <article class="pricing-card">
                     <div class="card-header">
                         <h3>1 Flasche</h3>
-                        <p class="card-subtitle">30-Tage-Vorrat</p>
+                        <p class="card-subtitle">Reicht für 1 Monat</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
-                            <img src="./assets/products/erectogenx/PRODx1-500px.webp" alt="ErectogenX 1 Flasche" width="140" height="140" loading="lazy">
+                            <img src="./assets/products/erectogenx/PRODx1-500px.webp" alt="ErectogenX 1 Flasche - Monatsvorrat zur Unterstützung männlicher Vitalität" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
+                            <span class="price-old">€99</span>
                             <span class="price-new">€69</span>
                             <p class="price-unit">pro Flasche</p>
+                            <p class="price-daily">€2,30 pro Tag</p>
                         </div>
-                        <div class="savings">SIE SPAREN €30</div>
-                        <div class="no-bonus">Keine Bonusse</div>
-                        <button class="btn-cart" onclick="buyNow('1-bottle')">IN DEN WARENKORB</button>
-                        <div class="payment-icons">
-                            <span>💳</span>
-                            <span>💳</span>
-                            <span>💳</span>
-                        </div>
-                        <p class="shipping-info paid">+ Versand</p>
-                        <p class="guarantee">✓ 60-Tage Geld-zurück-Garantie</p>
+                        <ul class="card-benefits">
+                            <li>30-Tage-Vorrat</li>
+                            <li>Versandkosten: €4,95</li>
+                            <li>60-Tage Geld-zurück-Garantie</li>
+                        </ul>
+                        <button class="btn-cart" onclick="buyNow('1-bottle')">Jetzt bestellen</button>
+                        <p class="total-price">Gesamt: €69</p>
                     </div>
                 </article>
 
-                <!-- 6 Flaschen - BEST VALUE -->
+                <!-- 6 Flaschen - EMPFOHLEN -->
                 <article class="pricing-card best-value">
-                    <span class="card-badge">⭐ BEST VALUE</span>
+                    <span class="card-badge">Empfohlen</span>
                     <div class="card-header">
                         <h3>6 Flaschen</h3>
-                        <p class="card-subtitle">180-Tage-Vorrat</p>
+                        <p class="card-subtitle">Reicht für 6 Monate</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
-                            <img src="./assets/products/erectogenx/PRODx6-500px.webp" alt="ErectogenX 6 Flaschen" width="140" height="140" loading="lazy">
+                            <img src="./assets/products/erectogenx/PRODx6-500px.webp" alt="ErectogenX 6 Flaschen - Halbjahresvorrat zur Unterstützung männlicher Vitalität mit kostenlosem Versand" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
+                            <span class="price-old">€99</span>
                             <span class="price-new">€49</span>
                             <p class="price-unit">pro Flasche</p>
+                            <p class="price-daily">€1,63 pro Tag</p>
                         </div>
-                        <div class="savings">🔥 SIE SPAREN €300</div>
-                        <span class="bonus-badge">🎁 KOSTENLOSER VERSAND</span>
-                        <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB</button>
-                        <div class="payment-icons">
-                            <span>💳</span>
-                            <span>💳</span>
-                            <span>💳</span>
-                        </div>
-                        <p class="shipping-info">🚚 KOSTENLOSER Versand</p>
-                        <p class="guarantee">✓ 60-Tage Geld-zurück-Garantie</p>
+                        <ul class="card-benefits">
+                            <li>180-Tage-Vorrat</li>
+                            <li>Kostenloser Versand</li>
+                            <li>Beste Ersparnis: 50% günstiger</li>
+                            <li>60-Tage Geld-zurück-Garantie</li>
+                        </ul>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')">Jetzt bestellen</button>
+                        <p class="total-price">Gesamt: €294</p>
                     </div>
                 </article>
 
-                <!-- 3 Flaschen - MOST POPULAR -->
+                <!-- 3 Flaschen - BELIEBT -->
                 <article class="pricing-card">
-                    <span class="card-badge">💎 BELIEBT</span>
+                    <span class="card-badge">Beliebt</span>
                     <div class="card-header">
                         <h3>3 Flaschen</h3>
-                        <p class="card-subtitle">90-Tage-Vorrat</p>
+                        <p class="card-subtitle">Reicht für 3 Monate</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
-                            <img src="./assets/products/erectogenx/PRODx3-500px.webp" alt="ErectogenX 3 Flaschen" width="140" height="140" loading="lazy">
+                            <img src="./assets/products/erectogenx/PRODx3-500px.webp" alt="ErectogenX 3 Flaschen - Quartalsvorrat zur Unterstützung männlicher Vitalität mit kostenlosem Versand" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
+                            <span class="price-old">€99</span>
                             <span class="price-new">€59</span>
                             <p class="price-unit">pro Flasche</p>
+                            <p class="price-daily">€1,97 pro Tag</p>
                         </div>
-                        <div class="savings">SIE SPAREN €120</div>
-                        <span class="bonus-badge">🎁 KOSTENLOSER VERSAND</span>
-                        <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB</button>
-                        <div class="payment-icons">
-                            <span>💳</span>
-                            <span>💳</span>
-                            <span>💳</span>
-                        </div>
-                        <p class="shipping-info">🚚 KOSTENLOSER Versand</p>
-                        <p class="guarantee">✓ 60-Tage Geld-zurück-Garantie</p>
+                        <ul class="card-benefits">
+                            <li>90-Tage-Vorrat</li>
+                            <li>Kostenloser Versand</li>
+                            <li>40% Ersparnis pro Flasche</li>
+                            <li>60-Tage Geld-zurück-Garantie</li>
+                        </ul>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')">Jetzt bestellen</button>
+                        <p class="total-price">Gesamt: €177</p>
                     </div>
                 </article>
             </div>
@@ -860,34 +1154,205 @@
         </div>
     </section>
 
+    <!-- Why ErectogenX Section -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">Warum ErectogenX?</h2>
+            <div class="why-content">
+                <p class="intro-text">Gewinnen Sie Ihre Kraft zurück und fühlen Sie sich wieder energiegeladen – auf natürliche Weise.<br>Vergessen Sie generische Formeln.</p>
+                <p>ErectogenX wurde mit Ihnen im Hinterkopf entwickelt, mit präzise ausgewählten Inhaltsstoffen, um Ihre Vitalität zu steigern und die männliche Stärke zurückzubringen, von der Sie dachten, sie verloren zu haben.</p>
+                <p>Was sich in jeder Kapsel von ErectogenX befindet, ist nicht einfach ein weiteres generisches Nahrungsergänzungsmittel. Es ist eine einzigartige Formel, die entwickelt wurde, um Ihrem intimen Leben einen echten Schub zu geben. Mit einer strategischen Kombination von Pflanzen und Mineralien, die die Wirkung des anderen verstärken, wurde es mit Präzision entwickelt, um echte Ergebnisse zu liefern.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Ingredients Section -->
+    <section class="ingredients-section">
+        <div class="container">
+            <h2 class="section-title">Wirkstoffe</h2>
+            <p class="section-subtitle">Wissenschaftlich formuliert mit kraftvollen natürlichen Inhaltsstoffen</p>
+
+            <div class="ingredients-grid">
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌿</div>
+                    <h3>Epimedium-Extrakt</h3>
+                    <p>Bekannt als Horny Goat Weed, traditionell zur Unterstützung von Vitalität und männlicher Leistungsfähigkeit verwendet.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌱</div>
+                    <h3>Eurycoma Longifolia-Extrakt</h3>
+                    <p>Auch Tongkat Ali genannt, unterstützt gesunde Testosteronspiegel und Energie.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🍃</div>
+                    <h3>Sägepalmen-Extrakt</h3>
+                    <p>Unterstützt die Gesundheit der Prostata und das hormonelle Gleichgewicht.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌾</div>
+                    <h3>Wilde Yamswurzel-Extrakt</h3>
+                    <p>Natürliche Quelle von Verbindungen, die die Hormonproduktion unterstützen.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌿</div>
+                    <h3>Sarsaparilla-Wurzel-Extrakt</h3>
+                    <p>Traditionelles Kraut, bekannt für die Unterstützung von Vitalität und Ausdauer.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌱</div>
+                    <h3>Brennnesselwurzel</h3>
+                    <p>Unterstützt gesunde Testosteronspiegel und Prostatafunktion.</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">⚡</div>
+                    <h3>Bor-Aminosäure-Chelat 5</h3>
+                    <p>Essentielles Mineral, das Testosteron und Knochengesundheit unterstützt.</p>
+                </div>
+            </div>
+
+            <div class="results-box">
+                <h3>Mit ErectogenX werden Sie sich schon nach wenigen Tagen wieder wie ein vollständiger Mann fühlen.</h3>
+                <p>Auch wenn Sie jahrelang mit diesen "männlichen Problemen" zu kämpfen hatten, kann das jetzt alles der Vergangenheit angehören. Hören Sie auf, sich als jemanden zu sehen, dem Selbstvertrauen und Kraft fehlen. Entdecken Sie die Kraft einer festen, kräftigen und selbstbewussten Erektion wieder.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>💥 Holen Sie sich die Vitalität zurück, von der Sie dachten, sie wäre weg!</h2>
+            <p class="cta-subtitle">HOLEN SIE SICH IHR ERECTOGENX ZUM SONDERPREIS, BEVOR ES AUSVERKAUFT IST!</p>
+            <a href="#pricing" class="cta-button">JETZT RABATT SICHERN</a>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <h2>Was ist, wenn es nicht funktioniert?</h2>
+                <p>Keine Sorge. Sie haben volle 60 Tage Zeit, um ErectogenX auszuprobieren und den Unterschied in Ihrer Energie und Leistung zu spüren.</p>
+                <p>Wenn Sie nicht zufrieden sind, senden Sie uns einfach eine Nachricht und wir erstatten jeden Cent zurück – keine Fragen gestellt, kein Ärger.</p>
+                <p><strong>So zuversichtlich sind wir, dass Sie lieben werden, was ErectogenX für Sie tun wird.</strong></p>
+                <p style="color: var(--primary-red); font-weight: 700; font-size: 18px; margin-top: 20px;">Sie haben nichts zu verlieren und alles zu gewinnen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Häufig gestellte Fragen</h2>
+            <p class="section-subtitle">Wenn Sie noch Fragen haben, klären wir sie hier.</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Funktioniert ErectogenX wirklich?</h3>
+                    <p>ErectogenX gibt fast allen Männern, die es einnehmen, in nur 7 Tagen bessere Erektionen. Bei schwierigeren Fällen kann es länger dauern, besonders für diejenigen, die schon lange leiden. Aber praktisch alle Männer, die es ausprobieren, erleben eine signifikante Verbesserung ihrer Erektionen.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Wie wird ErectogenX hergestellt?</h3>
+                    <p>ErectogenX wird in Europa in hochmodernen Produktionsanlagen hergestellt und folgt strengen GMP-Richtlinien (Good Manufacturing Practice). Wir verwenden nur Premium-Inhaltsstoffe in präzisen Dosierungen, um maximale Wirksamkeit und Sicherheit zu gewährleisten.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Wie funktioniert die 60-Tage-Geld-zurück-Garantie?</h3>
+                    <p>Kontaktieren Sie einfach unser Kundensupport-Team innerhalb von 60 Tagen nach Ihrem Kauf, wenn Sie nicht vollständig zufrieden sind. Wir verarbeiten eine vollständige Rückerstattung – keine Fragen gestellt, keine komplizierten Formulare. Ihre Zufriedenheit ist unsere Priorität.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Wie lange wird ErectogenX öffentlich verfügbar sein?</h3>
+                    <p>Aufgrund der hohen Nachfrage und der begrenzten Verfügbarkeit unserer Premium-Inhaltsstoffe können wir die aktuellen Preise und die Verfügbarkeit nur für begrenzte Zeit garantieren. Wir empfehlen, Ihren Vorrat noch heute zu sichern, solange der Vorrat reicht.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Ist meine Bestellung sicher und anonym?</h3>
+                    <p>Absolut. Alle Bestellungen werden über sichere, verschlüsselte Kanäle verarbeitet. Ihr Kauf erscheint diskret auf Ihrer Abrechnung, und wir versenden in einfacher, unmarkierter Verpackung, um Ihre Privatsphäre zu schützen.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Was sollte ich als nächstes tun?</h3>
+                    <p>Wählen Sie einfach Ihr Paket oben aus und klicken Sie auf "In den Warenkorb". Sie werden zu unserer sicheren Checkout-Seite weitergeleitet, wo Sie Ihre Bestellung abschließen können. Ihr ErectogenX wird innerhalb von 24-48 Stunden versendet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific References Section -->
+    <section class="references-section">
+        <div class="container">
+            <h2 class="section-title">Wissenschaftliche Referenzen</h2>
+
+            <div class="references-list">
+                <div class="reference-item">
+                    <p><strong>1.</strong> Carvajal-Rodríguez, A., & Castañeda, S. (2017). Risikofaktoren im Zusammenhang mit erektiler Dysfunktion: eine klinische Analyse. Colombian Journal of Urology, 26(2), 114–122.</p>
+                    <a href="https://revistaurologia.org.co/pdf/2017/vol26n2/vol26n2a7.pdf" target="_blank" rel="noopener">Studie ansehen →</a>
+                </div>
+
+                <div class="reference-item">
+                    <p><strong>2.</strong> Morgado, J. & González, L. (2019). Bewertung der erektilen Dysfunktion bei Patienten mit Typ-2-Diabetes mellitus. Medicina Clínica Journal, 152(1), 19-25.</p>
+                </div>
+
+                <div class="reference-item">
+                    <p><strong>3.</strong> Delgado-Enciso, I., & Santana-Vega, L. (2020). Nicht-pharmakologische Interventionen bei erektiler Dysfunktion: Eine Überprüfung der wissenschaftlichen Literatur. Spanish Journal of Public Health, 94, e1-e10.</p>
+                    <a href="https://scielo.isciii.es/pdf/resp/v94/1135-5727-resp-94-e202006025.pdf" target="_blank" rel="noopener">Studie ansehen →</a>
+                </div>
+
+                <div class="reference-item">
+                    <p><strong>4.</strong> Caballero, C., & Arias, P. (2021). Psychologische und emotionale Auswirkungen der erektilen Dysfunktion bei jungen Männern. Journal of Clinical Psychology, 43(2), 157–165.</p>
+                </div>
+
+                <div class="reference-item">
+                    <p><strong>5.</strong> Eguileor Marín Z. Erektile Dysfunktion und männliche sexuelle Gesundheit: Risikofaktoren und Empfehlungen. University of Cantabria Repository; 2016.</p>
+                    <a href="https://repositorio.unican.es/xmlui/bitstream/handle/10902/8848/EguileorMarinZ.pdf?sequence=4" target="_blank" rel="noopener">Studie ansehen →</a>
+                </div>
+
+                <div class="reference-item">
+                    <p><strong>6.</strong> Rodríguez-Sánchez, F., Bartolomé, C. Erektile Dysfunktion bei Hypertonie: Die Rolle des Endothels. Int J Hypertens. 2012; 2012:429268.</p>
+                </div>
+
+                <div class="reference-item">
+                    <p><strong>7.</strong> Dr. Antonio Esteve. Neue Entwicklungen in der Behandlung der erektilen Dysfunktion. Dr. Antonio Esteve Foundation; 2018.</p>
+                    <a href="https://www.esteve.org/wp-content/uploads/2018/01/137026.pdf" target="_blank" rel="noopener">Studie ansehen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#contact">Kontakt</a>
+                <a href="#references">Referenzen</a>
+                <a href="#terms">Nutzungsbedingungen</a>
+                <a href="#disclaimer">Haftungsausschluss</a>
+                <a href="#shipping">Versandrichtlinie</a>
+                <a href="#refund">Rückerstattungsrichtlinie</a>
+                <a href="#privacy">Datenschutzrichtlinie</a>
+                <a href="#label">Etikett</a>
+            </div>
+
+            <div class="footer-disclaimer">
+                <p>Die auf dieser Website enthaltenen Aussagen wurden nicht von der Food and Drug Administration bewertet. Die Produkte sind nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder zu verhindern. Wenn Sie schwanger sind, stillen, Medikamente einnehmen oder einen medizinischen Zustand haben, konsultieren Sie Ihren Arzt, bevor Sie unsere Produkte verwenden.</p>
+            </div>
+
+            <div class="footer-copyright">
+                <p>Copyright © 2024 ErectogenX | Alle Rechte vorbehalten</p>
+                <p>2025 © Digistore24 Inc. (United States) Inc. und/oder seine Lizenzgeber. Überprüfen Sie die <a href="#legal" style="color: var(--primary-red);">rechtlichen Hinweise hier</a>, <a href="#terms" style="color: var(--primary-red);">Nutzungsbedingungen hier</a> und <a href="#privacy" style="color: var(--primary-red);">Datenschutzrichtlinie hier</a>. <a href="#contact" style="color: var(--primary-red);">Kontaktieren Sie uns hier</a>.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Countdown Timer
-        function startCountdown() {
-            const endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
-
-            function updateTimer() {
-                const now = new Date().getTime();
-                const distance = endTime - now;
-
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-                if (distance < 0) {
-                    clearInterval(timer);
-                }
-            }
-
-            updateTimer();
-            const timer = setInterval(updateTimer, 1000);
-        }
-
-        startCountdown();
-
         // Buy Now Function
         function buyNow(packageType) {
             console.log('Package selected:', packageType);
