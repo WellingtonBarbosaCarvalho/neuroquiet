@@ -1,22 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    <linearGradient id="lightGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d9f99d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bef264;stop-opacity:1" />
     </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
   </defs>
 
   <!-- Background Circle -->
-  <circle cx="50" cy="50" r="48" fill="url(#greenGrad)"/>
+  <circle cx="50" cy="50" r="48" fill="url(#lightGreenGrad)"/>
 
-  <!-- Leaf/Plant Icon -->
-  <path d="M 50 25 Q 40 35, 40 45 Q 40 55, 50 65 Q 60 55, 60 45 Q 60 35, 50 25 Z"
-        fill="#fffbeb" opacity="0.9"/>
+  <!-- Decorative Ring -->
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#047857" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- Leaf/Plant Icon - Left Leaf -->
+  <path d="M 35 45 Q 30 35, 35 25 Q 40 30, 42 40 Q 40 45, 35 45 Z"
+        fill="#047857" opacity="0.85"/>
+
+  <!-- Leaf/Plant Icon - Right Leaf -->
+  <path d="M 65 45 Q 70 35, 65 25 Q 60 30, 58 40 Q 60 45, 65 45 Z"
+        fill="#047857" opacity="0.85"/>
+
+  <!-- Center Drop/Berry -->
+  <circle cx="50" cy="42" r="8" fill="#065f46" filter="url(#shadow)"/>
 
   <!-- Stem -->
-  <line x1="50" y1="50" x2="50" y2="75" stroke="#fffbeb" stroke-width="3" opacity="0.9"/>
+  <path d="M 50 48 L 50 70 Q 50 75, 45 75 L 42 75"
+        stroke="#047857" stroke-width="3.5" fill="none" stroke-linecap="round"/>
 
-  <!-- Letter G -->
-  <text x="50" y="68" font-family="Arial, sans-serif" font-size="36" font-weight="bold"
-        fill="#fffbeb" text-anchor="middle">G</text>
+  <!-- Leaf Detail Lines -->
+  <line x1="36" y1="30" x2="38" y2="38" stroke="#065f46" stroke-width="1" opacity="0.5"/>
+  <line x1="64" y1="30" x2="62" y2="38" stroke="#065f46" stroke-width="1" opacity="0.5"/>
+
+  <!-- Letter G Badge -->
+  <circle cx="50" cy="68" r="16" fill="#047857" opacity="0.95"/>
+  <text x="50" y="76" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        fill="#d9f99d" text-anchor="middle">G</text>
 </svg>
