@@ -1421,8 +1421,8 @@
     </style>
 
     <script>
-        // Exit Intent Lead Capture Configuration
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby3OZreYq8QqAuq5IVJWPn1XwgqBei6U4dTLyjoqKeZ3Y5aB81N34V78F1GgGllRNEZ/exec';
+        // Exit Intent Lead Capture Configuration - VERSÃO 2
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhT89C7AGEnwneBKsh_1rkkCfRAKnjKrgqEpI3C9Zf7LESqh5guymIXn6nEXFyRg4/exec';
         const PRODUCT_NAME = 'SlimSana';
         const AFFILIATE_LINK = 'https://www.checkout-ds24.com/product/638018?aff=sentinela&cam=EXITPOPUP'; // Link do melhor pacote com desconto
 
@@ -1481,6 +1481,9 @@
             const emailInput = document.getElementById('exitEmail');
             const submitBtn = event.target.querySelector('button[type="submit"]');
 
+            // Identifica o nome da página (ex: slimsana) em vez do domínio inteiro
+            const paginaOrigem = window.location.pathname.split("/").pop().replace(".html", "") || "home";
+
             // Disable button and show loading
             if (submitBtn) {
                 submitBtn.disabled = true;
@@ -1490,10 +1493,10 @@
             console.log('Sending lead data:', {
                 email: emailInput.value,
                 product: PRODUCT_NAME,
-                source: window.location.hostname
+                source: paginaOrigem
             });
 
-            // Send to Google Apps Script
+            // Send to Google Apps Script (Versão 2)
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -1504,7 +1507,7 @@
                 body: JSON.stringify({
                     email: emailInput.value,
                     product: PRODUCT_NAME,
-                    source: window.location.hostname
+                    source: paginaOrigem
                 })
             })
             .then(() => {
@@ -1513,7 +1516,7 @@
                 window.location.href = AFFILIATE_LINK;
             })
             .catch((err) => {
-                console.log('Fetch completed (no-cors mode), redirecting...', err);
+                console.error('Error:', err);
                 // Garante que o usuário vá para a oferta mesmo se a API falhar
                 window.location.href = AFFILIATE_LINK;
             });
