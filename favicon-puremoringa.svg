@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="greenHerbalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9dc4a3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#86B48C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="darkGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6a9270;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#557a5b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="leafShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#greenHerbalGrad)"/>
+
+  <!-- Decorative Ring -->
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.25"/>
+
+  <!-- Moringa Leaves (compound leaf pattern) -->
+  <!-- Center stem -->
+  <path d="M 50 25 L 50 75"
+        stroke="url(#darkGreenGrad)"
+        stroke-width="3"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Left leaves -->
+  <ellipse cx="38" cy="32" rx="8" ry="5" fill="#6a9270" opacity="0.9" transform="rotate(-30 38 32)"/>
+  <ellipse cx="35" cy="42" rx="9" ry="5.5" fill="#6a9270" opacity="0.9" transform="rotate(-35 35 42)"/>
+  <ellipse cx="32" cy="52" rx="8.5" ry="5" fill="#6a9270" opacity="0.9" transform="rotate(-25 32 52)"/>
+  <ellipse cx="36" cy="62" rx="8" ry="5" fill="#6a9270" opacity="0.9" transform="rotate(-30 36 62)"/>
+
+  <!-- Right leaves -->
+  <ellipse cx="62" cy="32" rx="8" ry="5" fill="#557a5b" opacity="0.9" transform="rotate(30 62 32)"/>
+  <ellipse cx="65" cy="42" rx="9" ry="5.5" fill="#557a5b" opacity="0.9" transform="rotate(35 65 42)"/>
+  <ellipse cx="68" cy="52" rx="8.5" ry="5" fill="#557a5b" opacity="0.9" transform="rotate(25 68 52)"/>
+  <ellipse cx="64" cy="62" rx="8" ry="5" fill="#557a5b" opacity="0.9" transform="rotate(30 64 62)"/>
+
+  <!-- Central "P" Badge -->
+  <circle cx="50" cy="50" r="16" fill="#ffffff" opacity="0.95" filter="url(#leafShadow)"/>
+  <text x="50" y="60"
+        font-family="Arial, sans-serif"
+        font-size="24"
+        font-weight="bold"
+        fill="url(#darkGreenGrad)"
+        text-anchor="middle">P</text>
+
+  <!-- Sparkle accents -->
+  <circle cx="28" cy="28" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="72" cy="28" r="2.5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="72" cy="72" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="28" cy="72" r="2.5" fill="#ffffff" opacity="0.9"/>
+</svg>
