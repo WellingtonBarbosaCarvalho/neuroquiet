@@ -1371,5 +1371,297 @@
             }, 2000);
         }
     </script>
+
+    <!-- Exit Intent Lead Capture Popup -->
+    <div id="exitPopup" class="exit-popup-overlay" style="display: none;">
+        <div class="exit-popup-content">
+            <button class="exit-popup-close" onclick="closeExitPopup()">&times;</button>
+            <div class="exit-popup-header">
+                <h2>⏰ Warten Sie!</h2>
+                <p>Erhalten Sie <strong>10% EXTRA-RABATT</strong> direkt in Ihrem Posteingang</p>
+            </div>
+            <form id="exitEmailForm" class="exit-email-form" onsubmit="handleExitEmailSubmit(event)">
+                <input
+                    type="email"
+                    id="exitEmail"
+                    name="email"
+                    placeholder="Ihre E-Mail-Adresse"
+                    required
+                    autocomplete="email"
+                >
+                <button type="submit" class="exit-submit-btn">
+                    Rabatt sichern
+                </button>
+            </form>
+            <p class="exit-popup-privacy">🔒 Ihre Daten sind sicher. Kein Spam.</p>
+        </div>
+    </div>
+
+    <style>
+        /* Exit Popup Styles - ErectogenX Theme */
+        .exit-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .exit-popup-content {
+            background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+            border-radius: 24px;
+            padding: 40px 30px;
+            max-width: 480px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.4);
+            border: 3px solid var(--primary-red);
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .exit-popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            font-size: 32px;
+            color: #6b7280;
+            cursor: pointer;
+            line-height: 1;
+            transition: all 0.2s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .exit-popup-close:hover {
+            background: #f3f4f6;
+            color: var(--dark-red);
+            transform: rotate(90deg);
+        }
+
+        .exit-popup-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .exit-popup-header h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin: 0 0 12px 0;
+            background: linear-gradient(135deg, var(--dark-red) 0%, var(--primary-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .exit-popup-header p {
+            font-size: 18px;
+            color: #374151;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .exit-popup-header strong {
+            color: var(--primary-red);
+            font-size: 20px;
+        }
+
+        .exit-email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .exit-email-form input[type="email"] {
+            padding: 16px 20px;
+            font-size: 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .exit-email-form input[type="email"]:focus {
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+        }
+
+        .exit-submit-btn {
+            padding: 18px 32px;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .exit-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(220, 38, 38, 0.5);
+        }
+
+        .exit-submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .exit-popup-privacy {
+            text-align: center;
+            font-size: 13px;
+            color: #6b7280;
+            margin: 15px 0 0 0;
+        }
+
+        @media (max-width: 640px) {
+            .exit-popup-content {
+                padding: 30px 20px;
+            }
+
+            .exit-popup-header h2 {
+                font-size: 26px;
+            }
+
+            .exit-popup-header p {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script>
+        // Exit Intent Lead Capture Configuration - VERSÃO 2
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhT89C7AGEnwneBKsh_1rkkCfRAKnjKrgqEpI3C9Zf7LESqh5guymIXn6nEXFyRg4/exec';
+        const PRODUCT_NAME = 'ErectogenX';
+        const AFFILIATE_LINK = 'https://www.checkout-ds24.com/product/637527?aff=sentinela&cam=EXITPOPUP'; // Link do melhor pacote (6 garrafas) com desconto
+
+        let exitPopupShown = false;
+
+        // Check if popup was already shown in this session
+        if (sessionStorage.getItem('exitPopupShown') === 'true') {
+            exitPopupShown = true;
+        }
+
+        // Exit Intent Detection
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 10 && !exitPopupShown) {
+                showExitPopup();
+            }
+        });
+
+        // Mobile: Show on scroll up
+        let lastScrollTop = 0;
+        let scrollUpCount = 0;
+        window.addEventListener('scroll', function() {
+            if (window.innerWidth <= 768 && !exitPopupShown) {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop < lastScrollTop && scrollTop > 300) {
+                    scrollUpCount++;
+                    if (scrollUpCount > 3) {
+                        showExitPopup();
+                    }
+                }
+                lastScrollTop = scrollTop;
+            }
+        });
+
+        function showExitPopup() {
+            if (!exitPopupShown) {
+                document.getElementById('exitPopup').style.display = 'flex';
+                exitPopupShown = true;
+                sessionStorage.setItem('exitPopupShown', 'true');
+            }
+        }
+
+        function closeExitPopup() {
+            document.getElementById('exitPopup').style.display = 'none';
+        }
+
+        // Close popup on overlay click
+        document.getElementById('exitPopup')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeExitPopup();
+            }
+        });
+
+        function handleExitEmailSubmit(event) {
+            event.preventDefault();
+
+            const emailInput = document.getElementById('exitEmail');
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+
+            // Identifica o nome da página (ex: erectogenx) em vez do domínio inteiro
+            const paginaOrigem = window.location.pathname.split("/").pop().replace(".html", "") || "home";
+
+            // Disable button and show loading
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Wird gesendet...';
+            }
+
+            console.log('Sending lead data:', {
+                email: emailInput.value,
+                product: PRODUCT_NAME,
+                source: paginaOrigem
+            });
+
+            // Send to Google Apps Script (Versão 2)
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: emailInput.value,
+                    product: PRODUCT_NAME,
+                    source: paginaOrigem
+                })
+            })
+            .then(() => {
+                console.log('Lead sent, redirecting...');
+                // Redirect to affiliate link immediately
+                window.location.href = AFFILIATE_LINK;
+            })
+            .catch((err) => {
+                console.error('Error:', err);
+                // Garante que o usuário vá para a oferta mesmo se a API falhar
+                window.location.href = AFFILIATE_LINK;
+            });
+        }
+    </script>
+
 </body>
 </html>
