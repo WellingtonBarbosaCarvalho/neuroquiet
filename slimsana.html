@@ -1478,36 +1478,43 @@
         function handleExitEmailSubmit(event) {
             event.preventDefault();
 
-            const email = document.getElementById('exitEmail').value;
+            const emailInput = document.getElementById('exitEmail');
             const submitBtn = event.target.querySelector('button[type="submit"]');
 
             // Disable button and show loading
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Wird gesendet...';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Wird gesendet...';
+            }
 
-            // Prepare data
-            const data = {
-                email: email,
+            console.log('Sending lead data:', {
+                email: emailInput.value,
                 product: PRODUCT_NAME,
-                source: window.location.hostname || window.location.href
-            };
+                source: window.location.hostname
+            });
 
             // Send to Google Apps Script
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
+                cache: 'no-cache',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify({
+                    email: emailInput.value,
+                    product: PRODUCT_NAME,
+                    source: window.location.hostname
+                })
             })
             .then(() => {
+                console.log('Lead sent, redirecting...');
                 // Redirect to affiliate link immediately
                 window.location.href = AFFILIATE_LINK;
             })
-            .catch((error) => {
-                console.log('Lead captured (no-cors mode)');
-                // Still redirect even if there's an error (no-cors doesn't return response)
+            .catch((err) => {
+                console.log('Fetch completed (no-cors mode), redirecting...', err);
+                // Garante que o usuário vá para a oferta mesmo se a API falhar
                 window.location.href = AFFILIATE_LINK;
             });
         }
