@@ -1686,13 +1686,54 @@
                 "badge_made_desc": "State-of-the-art production facility",
                 "badge_reviews_title": "1,500+ Reviews",
                 "badge_reviews_desc": "4.9/5 average rating"
+            },
+            "it": {
+                // Popup
+                "popup_headline": "⏰ Aspetta!",
+                "popup_subheadline_prefix": "Ricevi ",
+                "popup_discount": "10% DI SCONTO EXTRA",
+                "popup_subheadline_suffix": " direttamente nella tua casella di posta",
+                "popup_placeholder": "Il tuo indirizzo email",
+                "popup_cta": "Ottieni lo sconto",
+                "popup_privacy": "🔒 I tuoi dati sono al sicuro. Nessuno spam.",
+                "popup_loading": "Invio in corso...",
+                // Pricing Banner
+                "pricing_step": "Passo 1: Scegli il tuo",
+                "pricing_discount_pack": "Pacchetto Sconto",
+                "pricing_out": "",
+                "pricing_guarantee": "Garanzia di soddisfazione 100% o rimborso",
+                // Cards
+                "card_1_bottle": "1 Bottiglia",
+                "card_3_bottles": "3 Bottiglie",
+                "card_6_bottles": "6 Bottiglie",
+                "card_per_bottle": "per bottiglia",
+                "card_add_to_cart": "AGGIUNGI AL CARRELLO",
+                "card_total": "TOTALE:",
+                "card_shipping_paid": "+ Spedizione",
+                "card_free_shipping": "+ SPEDIZIONE GRATUITA in Germania",
+                "card_guarantee": "Garanzia 60 giorni",
+                "badge_recommended": "Consigliato",
+                "badge_popular": "Popolare",
+                // Footer
+                "footer_reviews": "I nostri clienti dicono 4.9/5 stelle basato su 1.500+ recensioni verificate",
+                "footer_view_reviews": "Vedi recensioni",
+                "footer_view_faq": "Vedi FAQ",
+                // Trust Badges
+                "badge_guarantee_title": "Garanzia 60 giorni",
+                "badge_guarantee_desc": "100% soddisfazione o rimborso",
+                "badge_shipping_title": "Spedizione Gratuita",
+                "badge_shipping_desc": "Su tutti i pacchetti da 3 e 6 bottiglie",
+                "badge_made_title": "Prodotto in Europa",
+                "badge_made_desc": "Impianto di produzione all'avanguardia",
+                "badge_reviews_title": "1.500+ Recensioni",
+                "badge_reviews_desc": "4.9/5 valutazione media"
             }
         };
 
-        // Detecta idioma do navegador e aplica traduções
+        // Detecta idioma do navegador e aplica traduções (DE, FR, IT, EN)
         function applyTranslations() {
             const userLang = navigator.language.split('-')[0];
-            const lang = dictionary[userLang] ? userLang : "de"; // ErectogenX prioriza Alemão
+            const lang = dictionary[userLang] ? userLang : "de"; // ErectogenX prioriza Alemão (mercado DACH + Suíça)
 
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
