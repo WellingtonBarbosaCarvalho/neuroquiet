@@ -245,34 +245,24 @@
         /* Card header */
         .card-header {
             background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-            padding: 14px 16px;
-            border-bottom: 2px solid var(--primary-green);
-            border-radius: 17px 17px 0 0;
-            min-height: 65px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 20px 18px;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
         }
 
-        .pricing-card.popular .card-header {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            padding: 14px 16px;
-            border-radius: 17px 17px 0 0;
-            border-bottom: 2px solid var(--gold);
-            min-height: 65px;
+        .pricing-card.best-value .card-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+        }
+
+        .pricing-card.best-value h3 {
+            color: white;
         }
 
         .card-header h3 {
-            font-size: 1.35rem;
+            font-size: 24px;
+            font-weight: 900;
             color: var(--text-dark);
-            margin-bottom: 2px;
-            font-weight: 800;
-        }
-
-        .card-subtitle {
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-            font-weight: 600;
+            letter-spacing: -0.5px;
         }
 
         /* Card body */
@@ -283,107 +273,69 @@
         /* Product image */
         .product-image {
             text-align: center;
-            margin-bottom: 12px;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 20px;
         }
 
         .product-image img {
-            max-width: 120px;
-            max-height: 120px;
-            object-fit: contain;
+            max-width: 100%;
+            height: auto;
         }
 
         /* Price container */
         .price-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            height: 75px;
+            margin: 16px 0 20px;
         }
 
-        /* Price badge */
-        .price-badge {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border: 2px solid var(--text-dark);
-            border-radius: 50%;
-            width: 65px;
-            height: 65px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 6px;
-            flex-shrink: 0;
-        }
-
-        .price-old {
-            font-size: 1.1rem;
+        .price-new {
+            font-size: 52px;
             font-weight: 900;
             color: var(--text-dark);
-            text-decoration: line-through;
             line-height: 1;
-        }
-
-        /* New price */
-        .price-new {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--primary-green);
-            line-height: 1;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
         }
 
         .price-unit {
-            font-size: 0.8rem;
-            color: var(--medium-gray);
-            margin-top: -2px;
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 700;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Total price */
         .total-price {
-            text-align: center;
-            font-size: 0.95rem;
-            color: var(--medium-gray);
-            margin: 10px 0;
-            height: 24px;
-        }
-
-        .total-price .old-price {
-            text-decoration: line-through;
-            color: var(--medium-gray);
-            margin-right: 8px;
-        }
-
-        .total-price .new-price {
-            color: var(--primary-green);
-            font-weight: 900;
-            font-size: 1.15rem;
+            font-size: 12px;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-top: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
         }
 
         /* Add to cart button */
         .btn-cart {
-            width: 100%;
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
             color: white;
             padding: 14px 28px;
-            font-size: 1rem;
+            font-size: 15px;
             font-weight: 900;
             text-transform: uppercase;
             border-radius: 10px;
             border: none;
             cursor: pointer;
-            transition: var(--transition);
-            margin: 10px 0;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            letter-spacing: 1.2px;
             position: relative;
             overflow: hidden;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .btn-cart::before {
@@ -393,8 +345,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255,255,255,0.2);
-            transition: var(--transition);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
         }
 
         .btn-cart:hover::before {
@@ -402,51 +354,129 @@
         }
 
         .btn-cart:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+            background: linear-gradient(135deg, var(--dark-green) 0%, #047857 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(16, 185, 129, 0.6);
         }
 
         .btn-cart:active {
-            transform: translateY(0);
-        }
-
-        /* Payment icons */
-        .payment-icons {
-            text-align: center;
-            margin: 8px 0;
-            height: 30px;
+            transform: translateY(-1px);
         }
 
         /* Shipping info */
         .shipping-info {
-            text-align: center;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 6px 8px;
-            border-radius: 6px;
-            margin: 6px 0;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 6px 0 4px;
+            color: #6b7280;
+            letter-spacing: 0.3px;
         }
 
         .shipping-info.paid {
-            background: #fef3c7;
-            color: #92400e;
+            color: #9ca3af;
         }
 
-        .shipping-info.free {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
+        /* Guarantee badge */
         .guarantee {
+            font-size: 10px;
+            color: #6b7280;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* Pricing footer */
+        .pricing-footer {
             text-align: center;
-            font-size: 0.8rem;
+            padding: 40px 20px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .pricing-footer .rating {
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 12px;
+            letter-spacing: 3px;
+        }
+
+        .pricing-footer p {
+            font-size: 17px;
+            color: #4b5563;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .pricing-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-footer-links a {
+            color: var(--primary-green);
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+        }
+
+        .pricing-footer-links a:hover {
+            color: var(--dark-green);
+            border-color: var(--primary-green);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        /* ===== TRUST BADGES SECTION ===== */
+        .trust-badges {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            padding: 50px 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .trust-badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-badge {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        .trust-badge-icon {
+            font-size: 54px;
+            margin-bottom: 18px;
+        }
+
+        .trust-badge h3 {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .trust-badge p {
             color: var(--medium-gray);
-            margin-top: 6px;
-            height: 20px;
+            font-size: 15px;
+            font-weight: 500;
         }
 
         /* ===== 4-PHASEN SECTION ===== */
@@ -813,97 +843,99 @@
             </div>
 
             <div class="pricing-grid">
-                <!-- 1 Flasche - Starter -->
+                <!-- 1 Flasche -->
                 <article class="pricing-card">
                     <div class="card-header">
                         <h3>1 Flasche</h3>
-                        <p class="card-subtitle">30 Tage Vorrat</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
-                            <img src="./assets/products/slimsana/PRODx1-500px.webp" alt="SlimSana 1 Flasche - 30 Tage Vorrat" width="120" height="120" loading="lazy">
+                            <img src="./assets/products/slimsana/PRODx1-500px.webp" alt="SlimSana 1 Flasche - Monatsvorrat" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
-                            <div class="price-badge">
-                                <span class="price-old">40 €</span>
-                                <span style="font-size: 11px; color: #6b7280; text-transform: uppercase; font-weight: 700;">GESPART</span>
-                            </div>
-                            <div>
-                                <span class="price-new">69 €</span>
-                                <p class="price-unit">pro Flasche</p>
-                            </div>
+                            <span class="price-new">€69</span>
+                            <p class="price-unit">pro Flasche</p>
                         </div>
-                        <button class="btn-cart" onclick="buyNow('1-bottle')">IN DEN WARENKORB 🛒</button>
-                        <p class="total-price">Gesamt: <span class="old-price">109 €</span> <span class="new-price">69 €</span></p>
-                        <div class="payment-icons">
-                            <span style="font-size: 20px;">💳</span>
-                        </div>
-                        <p class="shipping-info paid">9 € Versandgebühr</p>
+                        <button class="btn-cart" onclick="buyNow('1-bottle')">IN DEN WARENKORB</button>
+                        <p class="total-price">GESAMT: 69€</p>
+                        <p class="shipping-info paid">+ Versand</p>
                         <p class="guarantee">60-Tage-Garantie</p>
                     </div>
                 </article>
 
                 <!-- 6 Flaschen - EMPFOHLEN -->
                 <article class="pricing-card best-value">
-                    <span class="card-badge transformation">EMPFOHLEN</span>
+                    <span class="card-badge">Empfohlen</span>
                     <div class="card-header">
                         <h3>6 Flaschen</h3>
-                        <p class="card-subtitle">180 Tage Vorrat</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
-                            <img src="./assets/products/slimsana/PRODx6-500px.webp" alt="SlimSana 6 Flaschen - 180 Tage Vorrat mit maximaler Ersparnis" width="120" height="120" loading="lazy">
+                            <img src="./assets/products/slimsana/PRODx6-500px.webp" alt="SlimSana 6 Flaschen - Halbjahresvorrat mit kostenlosem Versand" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
-                            <div class="price-badge">
-                                <span class="price-old">210 €</span>
-                                <span style="font-size: 11px; color: #6b7280; text-transform: uppercase; font-weight: 700;">GESPART</span>
-                            </div>
-                            <div>
-                                <span class="price-new">49 €</span>
-                                <p class="price-unit">pro Flasche</p>
-                            </div>
+                            <span class="price-new">€49</span>
+                            <p class="price-unit">pro Flasche</p>
                         </div>
-                        <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB 🛒</button>
-                        <p class="total-price">Gesamt: <span class="old-price">534 €</span> <span class="new-price">294 €</span></p>
-                        <div class="payment-icons">
-                            <span style="font-size: 20px;">💳</span>
-                        </div>
-                        <p class="shipping-info free">GRATIS Versand</p>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB</button>
+                        <p class="total-price">GESAMT: 294€ + KOSTENLOSER VERSAND nach Deutschland</p>
                         <p class="guarantee">60-Tage-Garantie</p>
                     </div>
                 </article>
 
                 <!-- 3 Flaschen - BELIEBT -->
-                <article class="pricing-card popular">
-                    <span class="card-badge beliebt">BELIEBT</span>
+                <article class="pricing-card">
+                    <span class="card-badge">Beliebt</span>
                     <div class="card-header">
                         <h3>3 Flaschen</h3>
-                        <p class="card-subtitle">90 Tage Vorrat</p>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
-                            <img src="./assets/products/slimsana/PRODx3-500px.webp" alt="SlimSana 3 Flaschen - 90 Tage Vorrat" width="120" height="120" loading="lazy">
+                            <img src="./assets/products/slimsana/PRODx3-500px.webp" alt="SlimSana 3 Flaschen - Quartalsvorrat mit kostenlosem Versand" width="140" height="140" loading="lazy">
                         </div>
                         <div class="price-container">
-                            <div class="price-badge">
-                                <span class="price-old">120 €</span>
-                                <span style="font-size: 11px; color: #6b7280; text-transform: uppercase; font-weight: 700;">GESPART</span>
-                            </div>
-                            <div>
-                                <span class="price-new">59 €</span>
-                                <p class="price-unit">pro Flasche</p>
-                            </div>
+                            <span class="price-new">€59</span>
+                            <p class="price-unit">pro Flasche</p>
                         </div>
-                        <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB 🛒</button>
-                        <p class="total-price">Gesamt: <span class="old-price">297 €</span> <span class="new-price">177 €</span></p>
-                        <div class="payment-icons">
-                            <span style="font-size: 20px;">💳</span>
-                        </div>
-                        <p class="shipping-info free">GRATIS Versand</p>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB</button>
+                        <p class="total-price">GESAMT: 177€ + KOSTENLOSER VERSAND nach Deutschland</p>
                         <p class="guarantee">60-Tage-Garantie</p>
                     </div>
                 </article>
+            </div>
+
+            <div class="pricing-footer">
+                <div class="rating">★★★★★</div>
+                <p>Unsere Kunden sagen 4.7/5 Sterne basierend auf 1.850+ verifizierten Bewertungen</p>
+                <div class="pricing-footer-links">
+                    <a href="#faq">FAQ ansehen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="trust-badges-grid">
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🛡️</div>
+                <h3>60-Tage-Garantie</h3>
+                <p>100% Zufriedenheit oder Geld zurück</p>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🚚</div>
+                <h3>Kostenloser Versand</h3>
+                <p>Bei allen 3 & 6 Flaschen-Paketen</p>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🏭</div>
+                <h3>Hergestellt in Europa</h3>
+                <p>Hochmoderne Produktionsanlage</p>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">⭐</div>
+                <h3>1.850+ Bewertungen</h3>
+                <p>4.7/5 durchschnittliche Bewertung</p>
             </div>
         </div>
     </section>
