@@ -248,6 +248,10 @@
             padding: 20px 18px;
             border-radius: 16px 16px 0 0;
             text-align: center;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .pricing-card.best-value .card-header {
@@ -263,27 +267,37 @@
             font-weight: 900;
             color: var(--text-dark);
             letter-spacing: -0.5px;
+            margin: 0;
         }
 
         /* Card body */
         .card-body {
-            padding: 18px 16px 16px;
+            padding: 30px 20px 25px;
         }
 
         /* Product image */
         .product-image {
             text-align: center;
             margin-bottom: 20px;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .product-image img {
-            max-width: 100%;
+            max-width: 140px;
             height: auto;
         }
 
         /* Price container */
         .price-container {
             margin: 16px 0 20px;
+            min-height: 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .price-new {
@@ -317,6 +331,7 @@
             text-transform: uppercase;
             letter-spacing: 0.3px;
             line-height: 1.4;
+            min-height: 17px;
         }
 
         /* Add to cart button */
@@ -370,6 +385,7 @@
             margin: 6px 0 4px;
             color: #6b7280;
             letter-spacing: 0.3px;
+            min-height: 14px;
         }
 
         .shipping-info.paid {
@@ -382,6 +398,7 @@
             color: #6b7280;
             margin-top: 8px;
             font-weight: 600;
+            min-height: 14px;
         }
 
         /* Pricing footer */
@@ -878,7 +895,8 @@
                             <p class="price-unit">pro Flasche</p>
                         </div>
                         <button class="btn-cart" onclick="buyNow('6-bottles')">IN DEN WARENKORB</button>
-                        <p class="total-price">GESAMT: 294€ + KOSTENLOSER VERSAND nach Deutschland</p>
+                        <p class="total-price">GESAMT: 294€</p>
+                        <p class="shipping-info">+ KOSTENLOSER VERSAND nach Deutschland</p>
                         <p class="guarantee">60-Tage-Garantie</p>
                     </div>
                 </article>
@@ -898,7 +916,8 @@
                             <p class="price-unit">pro Flasche</p>
                         </div>
                         <button class="btn-cart" onclick="buyNow('3-bottles')">IN DEN WARENKORB</button>
-                        <p class="total-price">GESAMT: 177€ + KOSTENLOSER VERSAND nach Deutschland</p>
+                        <p class="total-price">GESAMT: 177€</p>
+                        <p class="shipping-info">+ KOSTENLOSER VERSAND nach Deutschland</p>
                         <p class="guarantee">60-Tage-Garantie</p>
                     </div>
                 </article>
