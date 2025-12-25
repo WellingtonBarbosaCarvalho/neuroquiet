@@ -1377,8 +1377,8 @@
         <div class="exit-popup-content">
             <button class="exit-popup-close" onclick="closeExitPopup()">&times;</button>
             <div class="exit-popup-header">
-                <h2>⏰ Warten Sie!</h2>
-                <p>Erhalten Sie <strong>10% EXTRA-RABATT</strong> direkt in Ihrem Posteingang</p>
+                <h2 data-i18n="popup_headline">⏰ Warten Sie!</h2>
+                <p><span data-i18n="popup_subheadline_prefix">Erhalten Sie </span><strong data-i18n="popup_discount">10% EXTRA-RABATT</strong><span data-i18n="popup_subheadline_suffix"> direkt in Ihrem Posteingang</span></p>
             </div>
             <form id="exitEmailForm" class="exit-email-form" onsubmit="handleExitEmailSubmit(event)">
                 <input
@@ -1386,14 +1386,15 @@
                     id="exitEmail"
                     name="email"
                     placeholder="Ihre E-Mail-Adresse"
+                    data-i18n-placeholder="popup_placeholder"
                     required
                     autocomplete="email"
                 >
-                <button type="submit" class="exit-submit-btn">
+                <button type="submit" class="exit-submit-btn" data-i18n="popup_cta">
                     Rabatt sichern
                 </button>
             </form>
-            <p class="exit-popup-privacy">🔒 Ihre Daten sind sicher. Kein Spam.</p>
+            <p class="exit-popup-privacy" data-i18n="popup_privacy">🔒 Ihre Daten sind sicher. Kein Spam.</p>
         </div>
     </div>
 
@@ -1561,12 +1562,70 @@
     </style>
 
     <script>
-        // Exit Intent Lead Capture Configuration - VERSÃO 2
+        // ===== DICIONÁRIO INTELIGENTE (i18n) =====
+        const dictionary = {
+            "de": {
+                "popup_headline": "⏰ Warten Sie!",
+                "popup_subheadline_prefix": "Erhalten Sie ",
+                "popup_discount": "10% EXTRA-RABATT",
+                "popup_subheadline_suffix": " direkt in Ihrem Posteingang",
+                "popup_placeholder": "Ihre E-Mail-Adresse",
+                "popup_cta": "Rabatt sichern",
+                "popup_privacy": "🔒 Ihre Daten sind sicher. Kein Spam.",
+                "popup_loading": "Wird gesendet..."
+            },
+            "fr": {
+                "popup_headline": "⏰ Attendez !",
+                "popup_subheadline_prefix": "Recevez ",
+                "popup_discount": "10% DE RÉDUCTION SUPPLÉMENTAIRE",
+                "popup_subheadline_suffix": " directement dans votre boîte mail",
+                "popup_placeholder": "Votre adresse e-mail",
+                "popup_cta": "Obtenir la réduction",
+                "popup_privacy": "🔒 Vos données sont sécurisées. Pas de spam.",
+                "popup_loading": "Envoi en cours..."
+            },
+            "en": {
+                "popup_headline": "⏰ Wait!",
+                "popup_subheadline_prefix": "Get an ",
+                "popup_discount": "EXCLUSIVE 10% DISCOUNT",
+                "popup_subheadline_suffix": " sent to your inbox",
+                "popup_placeholder": "Enter your email address",
+                "popup_cta": "Claim My Discount",
+                "popup_privacy": "🔒 Your data is safe. No spam, ever.",
+                "popup_loading": "Sending..."
+            }
+        };
+
+        // Detecta idioma do navegador e aplica traduções
+        function applyTranslations() {
+            const userLang = navigator.language.split('-')[0];
+            const lang = dictionary[userLang] ? userLang : "de"; // ErectogenX prioriza Alemão
+
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (dictionary[lang][key]) {
+                    el.textContent = dictionary[lang][key];
+                }
+            });
+
+            // Aplica placeholder
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+                const key = el.getAttribute("data-i18n-placeholder");
+                if (dictionary[lang][key]) {
+                    el.placeholder = dictionary[lang][key];
+                }
+            });
+
+            return lang; // Retorna o idioma detectado
+        }
+
+        // ===== CONFIGURAÇÃO DE CAPTURA DE LEADS - VERSÃO 2 =====
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhT89C7AGEnwneBKsh_1rkkCfRAKnjKrgqEpI3C9Zf7LESqh5guymIXn6nEXFyRg4/exec';
         const PRODUCT_NAME = 'ErectogenX';
         const AFFILIATE_LINK = 'https://www.checkout-ds24.com/product/637527?aff=sentinela&cam=EXITPOPUP'; // Link do melhor pacote (6 garrafas) com desconto
 
         let exitPopupShown = false;
+        let detectedLang = 'de'; // Idioma padrão
 
         // Check if popup was already shown in this session
         if (sessionStorage.getItem('exitPopupShown') === 'true') {
@@ -1598,6 +1657,7 @@
 
         function showExitPopup() {
             if (!exitPopupShown) {
+                detectedLang = applyTranslations(); // Aplica traduções e guarda idioma
                 document.getElementById('exitPopup').style.display = 'flex';
                 exitPopupShown = true;
                 sessionStorage.setItem('exitPopupShown', 'true');
@@ -1624,19 +1684,20 @@
             // Identifica o nome da página (ex: erectogenx) em vez do domínio inteiro
             const paginaOrigem = window.location.pathname.split("/").pop().replace(".html", "") || "home";
 
-            // Disable button and show loading
+            // Disable button and show loading (traduzido)
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.textContent = 'Wird gesendet...';
+                submitBtn.textContent = dictionary[detectedLang]["popup_loading"];
             }
 
             console.log('Sending lead data:', {
                 email: emailInput.value,
                 product: PRODUCT_NAME,
-                source: paginaOrigem
+                source: paginaOrigem,
+                language: navigator.language
             });
 
-            // Send to Google Apps Script (Versão 2)
+            // Send to Google Apps Script (Versão 2 com Language Tracking)
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -1647,7 +1708,8 @@
                 body: JSON.stringify({
                     email: emailInput.value,
                     product: PRODUCT_NAME,
-                    source: paginaOrigem
+                    source: paginaOrigem,
+                    language: navigator.language // Ex: "de-CH", "fr-FR", "en-US"
                 })
             })
             .then(() => {
