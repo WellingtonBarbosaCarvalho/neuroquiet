@@ -1235,37 +1235,70 @@
         .popup-shelf-card {
             background: white;
             border: 2px solid #a7f3d0;
-            border-radius: 12px;
-            padding: 15px;
+            border-radius: 16px;
+            padding: 20px 15px;
             text-align: center;
             cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popup-shelf-card::before {
+            content: '→';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%) translateX(10px);
+            font-size: 20px;
+            color: var(--primary-green);
+            opacity: 0;
             transition: all 0.3s ease;
         }
 
         .popup-shelf-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(134, 180, 140, 0.2);
+            box-shadow: 0 10px 30px rgba(134, 180, 140, 0.25);
             border-color: var(--primary-green);
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+        }
+
+        .popup-shelf-card:hover::before {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
         }
 
         .popup-shelf-card img {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             object-fit: contain;
-            margin-bottom: 10px;
+            padding: 10px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .popup-shelf-card:hover img {
+            transform: scale(1.05);
         }
 
         .popup-shelf-card h4 {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 17px;
+            font-weight: 800;
             color: #065f46;
-            margin: 0 0 5px 0;
+            margin: 0;
+            line-height: 1.2;
         }
 
         .popup-shelf-card p {
             font-size: 13px;
             color: #6b7280;
             margin: 0;
+            line-height: 1.4;
         }
 
         @media (max-width: 640px) {
