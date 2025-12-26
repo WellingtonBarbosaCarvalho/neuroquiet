@@ -1006,6 +1006,147 @@
             margin-bottom: 10px;
         }
 
+        /* ===== SOCIAL IMPACT BANNER ===== */
+        .social-banner {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-bottom: 2px solid #f87171;
+            padding: 12px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .social-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .social-banner-content p {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-red);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ===== PRODUCT SHELF SECTION ===== */
+        .product-shelf-section {
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+            padding: 60px 20px;
+            border-top: 3px solid #fee2e2;
+        }
+
+        .shelf-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .shelf-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .shelf-header p {
+            font-size: 16px;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+
+        .shelf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .shelf-card {
+            background: white;
+            border: 2px solid #fecaca;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .shelf-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.15);
+            border-color: var(--primary-red);
+        }
+
+        .shelf-card-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        .shelf-card-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .shelf-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 12px;
+        }
+
+        .shelf-card p {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .shelf-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .shelf-btn:hover {
+            background: linear-gradient(135deg, var(--dark-red) 0%, #7f1d1d 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
         @media (max-width: 768px) {
             .ingredients-grid {
                 grid-template-columns: 1fr;
@@ -1020,10 +1161,31 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            .social-banner-content {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .social-banner-content p {
+                font-size: 13px;
+            }
+            .shelf-grid {
+                grid-template-columns: 1fr;
+            }
+            .shelf-header h2 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Social Impact Banner -->
+    <div class="social-banner">
+        <div class="social-banner-content">
+            <span class="social-icon">🇧🇷</span>
+            <p data-i18n="social_message">Ao escolher qualquer produto desta página, você apoia o empreendedorismo de um jovem brasileiro e sua família.</p>
+        </div>
+    </div>
 
     <!-- Pricing Section -->
     <section class="pricing-section-wrapper" id="pricing">
@@ -1102,6 +1264,37 @@
                     <a href="#testimonials" data-i18n="footer_view_reviews">Bewertungen ansehen</a>
                     <a href="#faq" data-i18n="footer_view_faq">FAQ ansehen</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Shelf Section -->
+    <section class="product-shelf-section">
+        <div class="container">
+            <div class="shelf-header">
+                <h2 data-i18n="shelf_headline">Não é o que você procura?</h2>
+                <p data-i18n="shelf_subheadline">Conheça nossa seleção exclusiva para sua saúde:</p>
+            </div>
+            <div class="shelf-grid">
+                <!-- SlimSana Card -->
+                <article class="shelf-card">
+                    <div class="shelf-card-image">
+                        <img src="./assets/products/slimsana/PRODx6-500px.webp" alt="SlimSana" width="120" height="120" loading="lazy">
+                    </div>
+                    <h3 data-i18n="shelf_slimsana_title">SlimSana</h3>
+                    <p data-i18n="shelf_slimsana_desc">Natürliche 4-Phasen-Formel für gesundes Gewichtsmanagement</p>
+                    <a href="./slimsana.html" class="shelf-btn" data-i18n="shelf_view_product">Ver Produto</a>
+                </article>
+
+                <!-- PureMoringa Card -->
+                <article class="shelf-card">
+                    <div class="shelf-card-image">
+                        <img src="./assets/products/puremoringa/PRODx6-500px.webp" alt="Pure Moringa" width="120" height="120" loading="lazy">
+                    </div>
+                    <h3 data-i18n="shelf_puremoringa_title">Pure Moringa</h3>
+                    <p data-i18n="shelf_puremoringa_desc">100% Pure Moringa Leaf Powder Capsules - Nature's Ultimate Green Superfood</p>
+                    <a href="./puremoringa.html" class="shelf-btn" data-i18n="shelf_view_product">Ver Produto</a>
+                </article>
             </div>
         </div>
     </section>
@@ -1603,7 +1796,17 @@
                 "badge_made_title": "Hergestellt in Europa",
                 "badge_made_desc": "Hochmoderne Produktionsanlage",
                 "badge_reviews_title": "1.500+ Bewertungen",
-                "badge_reviews_desc": "4.9/5 durchschnittliche Bewertung"
+                "badge_reviews_desc": "4.9/5 durchschnittliche Bewertung",
+                // Social Banner
+                "social_message": "Mit jedem Kauf auf dieser Seite unterstützen Sie das Unternehmertum eines jungen Brasilianers und seiner Familie.",
+                // Product Shelf
+                "shelf_headline": "Nicht das, was Sie suchen?",
+                "shelf_subheadline": "Entdecken Sie unsere exklusive Auswahl für Ihre Gesundheit:",
+                "shelf_slimsana_title": "SlimSana",
+                "shelf_slimsana_desc": "Natürliche 4-Phasen-Formel für gesundes Gewichtsmanagement",
+                "shelf_puremoringa_title": "Pure Moringa",
+                "shelf_puremoringa_desc": "100% reine Moringa-Blattpulver-Kapseln - Natures ultimatives grünes Superfood",
+                "shelf_view_product": "Produkt ansehen"
             },
             "fr": {
                 // Popup
@@ -1644,7 +1847,17 @@
                 "badge_made_title": "Fabriqué en Europe",
                 "badge_made_desc": "Installation de production ultramoderne",
                 "badge_reviews_title": "1 500+ Avis",
-                "badge_reviews_desc": "4.9/5 note moyenne"
+                "badge_reviews_desc": "4.9/5 note moyenne",
+                // Social Banner
+                "social_message": "En choisissant l'un des produits de cette page, vous soutenez l'entrepreneuriat d'un jeune Brésilien et de sa famille.",
+                // Product Shelf
+                "shelf_headline": "Ce n'est pas ce que vous cherchez ?",
+                "shelf_subheadline": "Découvrez notre sélection exclusive pour votre santé :",
+                "shelf_slimsana_title": "SlimSana",
+                "shelf_slimsana_desc": "Formule naturelle en 4 phases pour une gestion saine du poids",
+                "shelf_puremoringa_title": "Pure Moringa",
+                "shelf_puremoringa_desc": "Capsules de poudre de feuilles de Moringa 100% pure - Le super-aliment vert ultime de la nature",
+                "shelf_view_product": "Voir le produit"
             },
             "en": {
                 // Popup
@@ -1685,7 +1898,17 @@
                 "badge_made_title": "Made in Europe",
                 "badge_made_desc": "State-of-the-art production facility",
                 "badge_reviews_title": "1,500+ Reviews",
-                "badge_reviews_desc": "4.9/5 average rating"
+                "badge_reviews_desc": "4.9/5 average rating",
+                // Social Banner
+                "social_message": "By choosing any product on this page, you support the entrepreneurship of a young Brazilian and his family.",
+                // Product Shelf
+                "shelf_headline": "Not what you're looking for?",
+                "shelf_subheadline": "Discover our exclusive selection for your health:",
+                "shelf_slimsana_title": "SlimSana",
+                "shelf_slimsana_desc": "Natural 4-phase formula for healthy weight management",
+                "shelf_puremoringa_title": "Pure Moringa",
+                "shelf_puremoringa_desc": "100% Pure Moringa Leaf Powder Capsules - Nature's Ultimate Green Superfood",
+                "shelf_view_product": "View Product"
             },
             "it": {
                 // Popup
@@ -1726,7 +1949,17 @@
                 "badge_made_title": "Prodotto in Europa",
                 "badge_made_desc": "Impianto di produzione all'avanguardia",
                 "badge_reviews_title": "1.500+ Recensioni",
-                "badge_reviews_desc": "4.9/5 valutazione media"
+                "badge_reviews_desc": "4.9/5 valutazione media",
+                // Social Banner
+                "social_message": "Scegliendo qualsiasi prodotto su questa pagina, sostieni l'imprenditorialità di un giovane brasiliano e della sua famiglia.",
+                // Product Shelf
+                "shelf_headline": "Non è quello che cerchi?",
+                "shelf_subheadline": "Scopri la nostra selezione esclusiva per la tua salute:",
+                "shelf_slimsana_title": "SlimSana",
+                "shelf_slimsana_desc": "Formula naturale in 4 fasi per una gestione sana del peso",
+                "shelf_puremoringa_title": "Pure Moringa",
+                "shelf_puremoringa_desc": "Capsule di polvere di foglie di Moringa 100% pure - Il superfood verde definitivo della natura",
+                "shelf_view_product": "Vedi prodotto"
             }
         };
 

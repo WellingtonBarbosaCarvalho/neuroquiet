@@ -575,6 +575,152 @@
             font-size: 0.8rem;
         }
 
+        /* ===== SOCIAL IMPACT BANNER ===== */
+        .social-banner {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-bottom: 2px solid #6ee7b7;
+            padding: 12px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .social-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .social-banner-content p {
+            font-size: 14px;
+            font-weight: 600;
+            color: #065f46;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ===== PRODUCT SHELF SECTION ===== */
+        .product-shelf-section {
+            background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+            padding: 60px 20px;
+            border-top: 3px solid #d1fae5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .shelf-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .shelf-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .shelf-header p {
+            font-size: 16px;
+            color: var(--medium-gray);
+            font-weight: 500;
+        }
+
+        .shelf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .shelf-card {
+            background: white;
+            border: 2px solid #a7f3d0;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .shelf-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(134, 180, 140, 0.15);
+            border-color: var(--primary-green);
+        }
+
+        .shelf-card-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        .shelf-card-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .shelf-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .shelf-card p {
+            font-size: 14px;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .shelf-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(134, 180, 140, 0.3);
+        }
+
+        .shelf-btn:hover {
+            background: linear-gradient(135deg, var(--dark-green) 0%, #557a5b 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(134, 180, 140, 0.4);
+        }
+
         /* Responsive Design */
         @media (min-width: 768px) {
             .pricing-grid {
@@ -586,32 +732,57 @@
             .hero-title {
                 font-size: 2rem;
             }
+
+            .social-banner-content {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .social-banner-content p {
+                font-size: 13px;
+            }
+
+            .shelf-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .shelf-header h2 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Social Impact Banner -->
+    <div class="social-banner">
+        <div class="social-banner-content">
+            <span class="social-icon">🇧🇷</span>
+            <p data-i18n="social_message">By choosing any product on this page, you support the entrepreneurship of a young Brazilian and his family.</p>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <h1 class="hero-title">Pure Moringa</h1>
-        <p class="hero-subtitle">100% Pure Moringa Leaf Powder Capsules - Nature's Ultimate Green Superfood</p>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">100% Pure Moringa Leaf Powder Capsules - Nature's Ultimate Green Superfood</p>
     </section>
 
     <!-- Pricing Section -->
     <section class="pricing-section" id="pricing">
         <div class="pricing-container">
             <div class="section-header">
-                <h2>Choose Your <span style="color: var(--primary-green);">Supply</span></h2>
+                <h2><span data-i18n="pricing_step">Choose Your</span> <span style="color: var(--primary-green);"><span data-i18n="pricing_supply">Supply</span></span></h2>
                 <div class="arrow-down"></div>
-                <p>Transform your well-being today</p>
-                <span class="guarantee-badge">60-Day Money Back Guarantee</span>
+                <p data-i18n="pricing_subtitle">Transform your well-being today</p>
+                <span class="guarantee-badge" data-i18n="pricing_guarantee">60-Day Money Back Guarantee</span>
             </div>
 
             <div class="pricing-grid">
                 <!-- 1 Bottle -->
                 <article class="pricing-card">
                     <div class="card-header">
-                        <h3>1 Bottle</h3>
+                        <h3 data-i18n="card_1_bottle">1 Bottle</h3>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
@@ -619,20 +790,20 @@
                         </div>
                         <div class="price-container">
                             <span class="price-new">$69</span>
-                            <p class="price-unit">Per Bottle</p>
+                            <p class="price-unit" data-i18n="card_per_bottle">Per Bottle</p>
                         </div>
-                        <button class="btn-cart" onclick="buyNow('1-bottle')">ADD TO CART</button>
-                        <p class="total-price">TOTAL: $69</p>
-                        <p class="shipping-info paid">+ Shipping</p>
-                        <p class="guarantee">60-Day Guarantee</p>
+                        <button class="btn-cart" onclick="buyNow('1-bottle')" data-i18n="card_add_to_cart">ADD TO CART</button>
+                        <p class="total-price"><span data-i18n="card_total">TOTAL:</span> $69</p>
+                        <p class="shipping-info paid" data-i18n="card_shipping_paid">+ Shipping</p>
+                        <p class="guarantee" data-i18n="card_guarantee">60-Day Guarantee</p>
                     </div>
                 </article>
 
                 <!-- 6 Bottles - RECOMMENDED -->
                 <article class="pricing-card best-value">
-                    <span class="card-badge">Recommended</span>
+                    <span class="card-badge" data-i18n="badge_recommended">Recommended</span>
                     <div class="card-header">
-                        <h3>6 Bottles</h3>
+                        <h3 data-i18n="card_6_bottles">6 Bottles</h3>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
@@ -640,20 +811,20 @@
                         </div>
                         <div class="price-container">
                             <span class="price-new">$39</span>
-                            <p class="price-unit">Per Bottle</p>
+                            <p class="price-unit" data-i18n="card_per_bottle">Per Bottle</p>
                         </div>
-                        <button class="btn-cart" onclick="buyNow('6-bottles')">ADD TO CART</button>
-                        <p class="total-price">TOTAL: $234</p>
-                        <p class="shipping-info">+ FREE SHIPPING</p>
-                        <p class="guarantee">60-Day Guarantee</p>
+                        <button class="btn-cart" onclick="buyNow('6-bottles')" data-i18n="card_add_to_cart">ADD TO CART</button>
+                        <p class="total-price"><span data-i18n="card_total">TOTAL:</span> $234</p>
+                        <p class="shipping-info" data-i18n="card_free_shipping">+ FREE SHIPPING</p>
+                        <p class="guarantee" data-i18n="card_guarantee">60-Day Guarantee</p>
                     </div>
                 </article>
 
                 <!-- 3 Bottles - POPULAR -->
                 <article class="pricing-card">
-                    <span class="card-badge">Popular</span>
+                    <span class="card-badge" data-i18n="badge_popular">Popular</span>
                     <div class="card-header">
-                        <h3>3 Bottles</h3>
+                        <h3 data-i18n="card_3_bottles">3 Bottles</h3>
                     </div>
                     <div class="card-body">
                         <div class="product-image">
@@ -661,22 +832,53 @@
                         </div>
                         <div class="price-container">
                             <span class="price-new">$59</span>
-                            <p class="price-unit">Per Bottle</p>
+                            <p class="price-unit" data-i18n="card_per_bottle">Per Bottle</p>
                         </div>
-                        <button class="btn-cart" onclick="buyNow('3-bottles')">ADD TO CART</button>
-                        <p class="total-price">TOTAL: $177</p>
-                        <p class="shipping-info">+ FREE SHIPPING</p>
-                        <p class="guarantee">60-Day Guarantee</p>
+                        <button class="btn-cart" onclick="buyNow('3-bottles')" data-i18n="card_add_to_cart">ADD TO CART</button>
+                        <p class="total-price"><span data-i18n="card_total">TOTAL:</span> $177</p>
+                        <p class="shipping-info" data-i18n="card_free_shipping">+ FREE SHIPPING</p>
+                        <p class="guarantee" data-i18n="card_guarantee">60-Day Guarantee</p>
                     </div>
                 </article>
             </div>
 
             <div class="pricing-footer">
                 <div class="rating">★★★★★</div>
-                <p>4.9/5 based on 1,527+ verified reviews</p>
+                <p data-i18n="footer_reviews">4.9/5 based on 1,527+ verified reviews</p>
                 <div class="pricing-footer-links">
-                    <a href="#faq">View FAQ</a>
+                    <a href="#faq" data-i18n="footer_view_faq">View FAQ</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Shelf Section -->
+    <section class="product-shelf-section">
+        <div class="container">
+            <div class="shelf-header">
+                <h2 data-i18n="shelf_headline">Not what you're looking for?</h2>
+                <p data-i18n="shelf_subheadline">Discover our exclusive selection for your health:</p>
+            </div>
+            <div class="shelf-grid">
+                <!-- ErectogenX Card -->
+                <article class="shelf-card">
+                    <div class="shelf-card-image">
+                        <img src="./assets/products/erectogenx/PRODx6-500px.webp" alt="ErectogenX" width="120" height="120" loading="lazy">
+                    </div>
+                    <h3 data-i18n="shelf_erectogenx_title">ErectogenX</h3>
+                    <p data-i18n="shelf_erectogenx_desc">Natural support for male vitality</p>
+                    <a href="./erectogenx.html" class="shelf-btn" data-i18n="shelf_view_product">View Product</a>
+                </article>
+
+                <!-- SlimSana Card -->
+                <article class="shelf-card">
+                    <div class="shelf-card-image">
+                        <img src="./assets/products/slimsana/PRODx6-500px.webp" alt="SlimSana" width="120" height="120" loading="lazy">
+                    </div>
+                    <h3 data-i18n="shelf_slimsana_title">SlimSana</h3>
+                    <p data-i18n="shelf_slimsana_desc">Natural 4-phase formula for healthy weight management</p>
+                    <a href="./slimsana.html" class="shelf-btn" data-i18n="shelf_view_product">View Product</a>
+                </article>
             </div>
         </div>
     </section>
@@ -686,33 +888,33 @@
         <div class="trust-badges-grid">
             <div class="trust-badge">
                 <div class="trust-badge-icon">🛡️</div>
-                <h3>60-Day Guarantee</h3>
-                <p>100% satisfaction or money back</p>
+                <h3 data-i18n="badge_guarantee_title">60-Day Guarantee</h3>
+                <p data-i18n="badge_guarantee_desc">100% satisfaction or money back</p>
             </div>
             <div class="trust-badge">
                 <div class="trust-badge-icon">🚚</div>
-                <h3>Free Shipping</h3>
-                <p>On all 3 & 6 bottle packages</p>
+                <h3 data-i18n="badge_shipping_title">Free Shipping</h3>
+                <p data-i18n="badge_shipping_desc">On all 3 & 6 bottle packages</p>
             </div>
             <div class="trust-badge">
                 <div class="trust-badge-icon">🏭</div>
-                <h3>Made in USA</h3>
-                <p>FDA-Registered Facility</p>
+                <h3 data-i18n="badge_made_title">Made in USA</h3>
+                <p data-i18n="badge_made_desc">FDA-Registered Facility</p>
             </div>
             <div class="trust-badge">
                 <div class="trust-badge-icon">⭐</div>
-                <h3>1,527+ Reviews</h3>
-                <p>4.9/5 average rating</p>
+                <h3 data-i18n="badge_reviews_title">1,527+ Reviews</h3>
+                <p data-i18n="badge_reviews_desc">4.9/5 average rating</p>
             </div>
             <div class="trust-badge">
                 <div class="trust-badge-icon">🌱</div>
-                <h3>100% Pure</h3>
-                <p>No additives or fillers</p>
+                <h3 data-i18n="badge_pure_title">100% Pure</h3>
+                <p data-i18n="badge_pure_desc">No additives or fillers</p>
             </div>
             <div class="trust-badge">
                 <div class="trust-badge-icon">🔬</div>
-                <h3>Non-GMO</h3>
-                <p>Sustainably harvested</p>
+                <h3 data-i18n="badge_nongmo_title">Non-GMO</h3>
+                <p data-i18n="badge_nongmo_desc">Sustainably harvested</p>
             </div>
         </div>
     </section>
@@ -968,9 +1170,10 @@
     </style>
 
     <script>
-        // ===== DICIONÁRIO INTELIGENTE (i18n) =====
+        // ===== DICIONÁRIO COMPLETO (i18n - Padrão Anglófono: EN + FR) =====
         const dictionary = {
             "en": {
+                // Popup (8 chaves)
                 "popup_headline": "⏰ Wait!",
                 "popup_subheadline_prefix": "Get an ",
                 "popup_discount": "EXCLUSIVE 10% DISCOUNT",
@@ -978,27 +1181,108 @@
                 "popup_placeholder": "Enter your email address",
                 "popup_cta": "Claim My Discount",
                 "popup_privacy": "🔒 Your data is safe. No spam, ever.",
-                "popup_loading": "Sending..."
-            },
-            "de": {
-                "popup_headline": "⏰ Warten Sie!",
-                "popup_subheadline_prefix": "Erhalten Sie ",
-                "popup_discount": "10% EXTRA-RABATT",
-                "popup_subheadline_suffix": " direkt in Ihrem Posteingang",
-                "popup_placeholder": "Ihre E-Mail-Adresse",
-                "popup_cta": "Rabatt sichern",
-                "popup_privacy": "🔒 Ihre Daten sind sicher. Kein Spam.",
-                "popup_loading": "Wird gesendet..."
+                "popup_loading": "Sending...",
+                // Hero (1 chave)
+                "hero_subtitle": "100% Pure Moringa Leaf Powder Capsules - Nature's Ultimate Green Superfood",
+                // Pricing Banner (4 chaves)
+                "pricing_step": "Choose Your",
+                "pricing_supply": "Supply",
+                "pricing_subtitle": "Transform your well-being today",
+                "pricing_guarantee": "60-Day Money Back Guarantee",
+                // Pricing Cards (11 chaves)
+                "card_1_bottle": "1 Bottle",
+                "card_3_bottles": "3 Bottles",
+                "card_6_bottles": "6 Bottles",
+                "card_per_bottle": "Per Bottle",
+                "card_add_to_cart": "ADD TO CART",
+                "card_total": "TOTAL:",
+                "card_shipping_paid": "+ Shipping",
+                "card_free_shipping": "+ FREE SHIPPING",
+                "card_guarantee": "60-Day Guarantee",
+                "badge_recommended": "Recommended",
+                "badge_popular": "Popular",
+                // Footer (2 chaves)
+                "footer_reviews": "4.9/5 based on 1,527+ verified reviews",
+                "footer_view_faq": "View FAQ",
+                // Trust Badges (12 chaves)
+                "badge_guarantee_title": "60-Day Guarantee",
+                "badge_guarantee_desc": "100% satisfaction or money back",
+                "badge_shipping_title": "Free Shipping",
+                "badge_shipping_desc": "On all 3 & 6 bottle packages",
+                "badge_made_title": "Made in USA",
+                "badge_made_desc": "FDA-Registered Facility",
+                "badge_reviews_title": "1,527+ Reviews",
+                "badge_reviews_desc": "4.9/5 average rating",
+                "badge_pure_title": "100% Pure",
+                "badge_pure_desc": "No additives or fillers",
+                "badge_nongmo_title": "Non-GMO",
+                "badge_nongmo_desc": "Sustainably harvested",
+                // Social Banner
+                "social_message": "By choosing any product on this page, you support the entrepreneurship of a young Brazilian and his family.",
+                // Product Shelf
+                "shelf_headline": "Not what you're looking for?",
+                "shelf_subheadline": "Discover our exclusive selection for your health:",
+                "shelf_erectogenx_title": "ErectogenX",
+                "shelf_erectogenx_desc": "Natural support for male vitality",
+                "shelf_slimsana_title": "SlimSana",
+                "shelf_slimsana_desc": "Natural 4-phase formula for healthy weight management",
+                "shelf_view_product": "View Product"
             },
             "fr": {
+                // Popup (8 chaves)
                 "popup_headline": "⏰ Attendez !",
                 "popup_subheadline_prefix": "Recevez ",
-                "popup_discount": "10% DE RÉDUCTION SUPPLÉMENTAIRE",
+                "popup_discount": "RÉDUCTION EXCLUSIVE DE 10%",
                 "popup_subheadline_suffix": " directement dans votre boîte mail",
-                "popup_placeholder": "Votre adresse e-mail",
-                "popup_cta": "Obtenir la réduction",
-                "popup_privacy": "🔒 Vos données sont sécurisées. Pas de spam.",
-                "popup_loading": "Envoi en cours..."
+                "popup_placeholder": "Entrez votre adresse e-mail",
+                "popup_cta": "Obtenir ma réduction",
+                "popup_privacy": "🔒 Vos données sont en sécurité. Pas de spam.",
+                "popup_loading": "Envoi en cours...",
+                // Hero (1 chave)
+                "hero_subtitle": "Capsules 100% pures de poudre de feuilles de Moringa - Le super-aliment vert ultime de la nature",
+                // Pricing Banner (4 chaves)
+                "pricing_step": "Choisissez votre",
+                "pricing_supply": "Approvisionnement",
+                "pricing_subtitle": "Transformez votre bien-être aujourd'hui",
+                "pricing_guarantee": "Garantie de remboursement de 60 jours",
+                // Pricing Cards (11 chaves)
+                "card_1_bottle": "1 Bouteille",
+                "card_3_bottles": "3 Bouteilles",
+                "card_6_bottles": "6 Bouteilles",
+                "card_per_bottle": "Par bouteille",
+                "card_add_to_cart": "AJOUTER AU PANIER",
+                "card_total": "TOTAL :",
+                "card_shipping_paid": "+ Livraison",
+                "card_free_shipping": "+ LIVRAISON GRATUITE",
+                "card_guarantee": "Garantie 60 jours",
+                "badge_recommended": "Recommandé",
+                "badge_popular": "Populaire",
+                // Footer (2 chaves)
+                "footer_reviews": "4.9/5 basé sur 1 527+ avis vérifiés",
+                "footer_view_faq": "Voir FAQ",
+                // Trust Badges (12 chaves)
+                "badge_guarantee_title": "Garantie 60 jours",
+                "badge_guarantee_desc": "Satisfaction à 100 % ou remboursement",
+                "badge_shipping_title": "Livraison Gratuite",
+                "badge_shipping_desc": "Sur tous les forfaits de 3 et 6 bouteilles",
+                "badge_made_title": "Fabriqué aux États-Unis",
+                "badge_made_desc": "Installation enregistrée par la FDA",
+                "badge_reviews_title": "1 527+ Avis",
+                "badge_reviews_desc": "Note moyenne de 4.9/5",
+                "badge_pure_title": "100% Pur",
+                "badge_pure_desc": "Aucun additif ni agent de remplissage",
+                "badge_nongmo_title": "Sans OGM",
+                "badge_nongmo_desc": "Récolté de manière durable",
+                // Social Banner
+                "social_message": "En choisissant l'un des produits de cette page, vous soutenez l'entrepreneuriat d'un jeune Brésilien et de sa famille.",
+                // Product Shelf
+                "shelf_headline": "Ce n'est pas ce que vous cherchez ?",
+                "shelf_subheadline": "Découvrez notre sélection exclusive pour votre santé :",
+                "shelf_erectogenx_title": "ErectogenX",
+                "shelf_erectogenx_desc": "Soutien naturel pour la vitalité masculine",
+                "shelf_slimsana_title": "SlimSana",
+                "shelf_slimsana_desc": "Formule naturelle en 4 phases pour une gestion saine du poids",
+                "shelf_view_product": "Voir le produit"
             }
         };
 
@@ -1025,13 +1309,19 @@
             return lang; // Retorna o idioma detectado
         }
 
-        // ===== CONFIGURAÇÃO DE CAPTURA DE LEADS - VERSÃO 2 =====
+        // ===== CONFIGURAÇÃO DE CAPTURA DE LEADS - VERSÃO 3 (Padrão Anglófono) =====
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhT89C7AGEnwneBKsh_1rkkCfRAKnjKrgqEpI3C9Zf7LESqh5guymIXn6nEXFyRg4/exec';
         const PRODUCT_NAME = 'PureMoringa';
         const AFFILIATE_LINK = 'https://www.checkout-ds24.com/product/626413?aff=sentinela&cam=EXITPOPUP'; // Link to best package with discount
 
         let exitPopupShown = false;
-        let detectedLang = 'en'; // Idioma padrão
+        let detectedLang = 'en'; // Idioma padrão (Inglês - mercado anglófono)
+
+        // ===== APLICA TRADUÇÕES AUTOMATICAMENTE AO CARREGAR A PÁGINA =====
+        window.addEventListener('DOMContentLoaded', function() {
+            detectedLang = applyTranslations(); // Traduz toda a página no idioma do navegador
+            console.log('PureMoringa: Página traduzida para:', detectedLang);
+        });
 
         // Check if popup was already shown in this session
         if (sessionStorage.getItem('exitPopupShown') === 'true') {
