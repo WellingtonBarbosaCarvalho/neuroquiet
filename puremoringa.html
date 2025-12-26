@@ -728,6 +728,293 @@
             }
         }
 
+        /* Product Info Section */
+        .product-info-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+        }
+
+        .info-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .info-header h2 {
+            font-size: 32px;
+            font-weight: 900;
+            color: #065f46;
+            margin-bottom: 15px;
+        }
+
+        .info-header p {
+            font-size: 18px;
+            color: #6b7280;
+        }
+
+        .info-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #374151;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-item {
+            background: white;
+            border: 2px solid #a7f3d0;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(134, 180, 140, 0.2);
+            border-color: var(--primary-green);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #065f46;
+            margin: 0;
+        }
+
+        .guarantee-callout {
+            background: linear-gradient(135deg, #065f46 0%, var(--primary-green) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .guarantee-callout h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .guarantee-callout p {
+            font-size: 18px;
+            margin: 0;
+            color: white;
+        }
+
+        /* Science Section */
+        .science-section {
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .science-section h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: #065f46;
+            margin-bottom: 10px;
+        }
+
+        .science-section > .container > p {
+            text-align: center;
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+            border: 2px solid var(--primary-green);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(134, 180, 140, 0.25);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .stat-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #374151;
+            margin: 0;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: #065f46;
+            margin-bottom: 50px;
+        }
+
+        .timeline-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 40px;
+            bottom: -30px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-green) 0%, #a7f3d0 100%);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-badge {
+            background: var(--primary-green);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(134, 180, 140, 0.3);
+        }
+
+        .timeline-content {
+            background: white;
+            border: 2px solid #a7f3d0;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .timeline-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+
+        .timeline-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-content strong {
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .comparison-section h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: #065f46;
+            margin-bottom: 40px;
+        }
+
+        .comparison-table {
+            max-width: 700px;
+            margin: 0 auto;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: linear-gradient(135deg, #065f46 0%, var(--primary-green) 100%);
+            color: white;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .comparison-header .comparison-col {
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-row:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        .comparison-feature {
+            padding: 20px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .comparison-col {
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comparison-col.winner {
+            background: linear-gradient(135deg, #d1fae5 0%, #f0fdf4 100%);
+            color: var(--primary-green);
+            font-weight: 900;
+        }
+
         @media (max-width: 767px) {
             .hero-title {
                 font-size: 2rem;
@@ -749,6 +1036,36 @@
             .shelf-header h2 {
                 font-size: 24px;
             }
+
+            .info-header h2,
+            .science-section h2,
+            .timeline-section h2,
+            .comparison-section h2 {
+                font-size: 24px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+
+            .comparison-header .comparison-col,
+            .comparison-feature,
+            .comparison-col {
+                padding: 15px 10px;
+                font-size: 13px;
+            }
+
+            .comparison-col {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
@@ -766,6 +1083,71 @@
     <section class="hero">
         <h1 class="hero-title">Pure Moringa</h1>
         <p class="hero-subtitle" data-i18n="hero_subtitle">100% Pure Moringa Leaf Powder Capsules - Nature's Ultimate Green Superfood</p>
+    </section>
+
+    <!-- Product Info Section -->
+    <section class="product-info-section">
+        <div class="container">
+            <div class="info-header">
+                <h2 data-i18n="info_headline">91% of Americans Lack Essential Nutrients – Do You?</h2>
+                <p data-i18n="info_subheadline">Nutrition is the key to wellness. Fill your body with nutrients, and it will thrive!</p>
+            </div>
+
+            <div class="info-content">
+                <p data-i18n="info_description">Transform your well-being with Pure Moringa – the ultimate green superfood packed with more nutrients than any other plant. Add it to your morning routine and feel your body's true optimal performance. 27 vitamins, 9 essential amino acids, 46 antioxidants and minerals like magnesium, iron, and calcium all working to give you:</p>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        <p data-i18n="benefit_energy">All-day energy</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">😊</span>
+                        <p data-i18n="benefit_mood">Supports A Balanced Mood</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🧠</span>
+                        <p data-i18n="benefit_clarity">Supports Mental Clarity and Focus</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🛡️</span>
+                        <p data-i18n="benefit_immune">Supports A Healthy Immune System</p>
+                    </div>
+                </div>
+
+                <div class="guarantee-callout">
+                    <h3 data-i18n="guarantee_headline">Feel better or it's free!</h3>
+                    <p data-i18n="guarantee_text">If you don't notice a health boost, we'll refund you within 60 days of the product being delivered. No questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="science-section">
+        <div class="container">
+            <h2 data-i18n="science_headline">The Science Supporting PURE</h2>
+            <p data-i18n="science_subheadline">Results from clinical studies on Pure Moringa:</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">73%</div>
+                    <p data-i18n="stat_cortisol">Reported a noticeable reduction in cortisol levels, verified through saliva and blood tests.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">81%</div>
+                    <p data-i18n="stat_sleep">Experienced deeper, more restorative sleep based on monitored sleep studies.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">86%</div>
+                    <p data-i18n="stat_stress">Showed reduction in oxidative stress, and boosted immunity verified through clinical tests.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">77%</div>
+                    <p data-i18n="stat_beauty">Noticed healthier skin, stronger nails, and improved hair quality.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Pricing Section -->
@@ -847,6 +1229,100 @@
                 <p data-i18n="footer_reviews">4.9/5 based on 1,527+ verified reviews</p>
                 <div class="pricing-footer-links">
                     <a href="#faq" data-i18n="footer_view_faq">View FAQ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 data-i18n="timeline_headline">What Should You Expect From Consistent Use of Pure Moringa?</h2>
+
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <div class="timeline-badge">📅 <span data-i18n="timeline_1week">1 Week</span></div>
+                    <div class="timeline-content">
+                        <p><strong>⚡</strong> <span data-i18n="timeline_1week_energy">Noticeable lift in energy and reduced brain fog from essential nutrients like B12, iron, and magnesium.</span></p>
+                        <p><strong>💪</strong> <span data-i18n="timeline_1week_absorption">Improved nutrient absorption and digestion, leading to less fatigue and more sustained energy throughout the day.</span></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-badge">📅 <span data-i18n="timeline_1month">1 Month</span></div>
+                    <div class="timeline-content">
+                        <p><strong>❤️</strong> <span data-i18n="timeline_1month_immune">Abundance of B vitamins and antioxidants help strengthen the immune system, reduce inflammation, and combat stress-induced fatigue.</span></p>
+                        <p><strong>😊</strong> <span data-i18n="timeline_1month_mood">Consistent intake of vitamin A, iron, and magnesium contributes to healthier skin, sharper mental clarity, and improved mood.</span></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-badge">📅 <span data-i18n="timeline_3months">3 Months</span></div>
+                    <div class="timeline-content">
+                        <p><strong>💊</strong> <span data-i18n="timeline_3months_metabolism">Enhanced metabolism and energy production from key minerals, leading to better physical performance and faster recovery after activities.</span></p>
+                        <p><strong>🧠</strong> <span data-i18n="timeline_3months_balance">Balanced hormones and optimized nutrient levels result in sustained energy, reduced fatigue, and clearer mental focus, helping you feel revitalized all day long.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 data-i18n="comparison_headline">Why Pure Moringa CRUSHES Greens Powders</h2>
+
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-col"></div>
+                    <div class="comparison-col winner">
+                        <span data-i18n="comparison_puremoringa">Pure Moringa</span>
+                    </div>
+                    <div class="comparison-col">
+                        <span data-i18n="comparison_greens">Generic Greens Powders</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature" data-i18n="comparison_feature_b12">Vitamin B12 & B6</div>
+                    <div class="comparison-col winner">✓</div>
+                    <div class="comparison-col">✗</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature" data-i18n="comparison_feature_minerals">Iron & Magnesium</div>
+                    <div class="comparison-col winner">✓</div>
+                    <div class="comparison-col">✗</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature" data-i18n="comparison_feature_antioxidants">Potent Antioxidants</div>
+                    <div class="comparison-col winner">✓</div>
+                    <div class="comparison-col">✗</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature" data-i18n="comparison_feature_vitamina">Natural Vitamin A</div>
+                    <div class="comparison-col winner">✓</div>
+                    <div class="comparison-col">✗</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature" data-i18n="comparison_feature_capsules">Easy to Take Capsules</div>
+                    <div class="comparison-col winner">✓</div>
+                    <div class="comparison-col">✗</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature" data-i18n="comparison_feature_energy">Consistent Energy Boost</div>
+                    <div class="comparison-col winner">✓</div>
+                    <div class="comparison-col">✗</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature" data-i18n="comparison_feature_taste">No Strange Taste</div>
+                    <div class="comparison-col winner">✓</div>
+                    <div class="comparison-col">✗</div>
                 </div>
             </div>
         </div>
@@ -1342,6 +1818,45 @@
                 "popup_shelf_headline": "Or discover other options:",
                 "popup_shelf_erectogenx_short": "Male Vitality",
                 "popup_shelf_slimsana_short": "Weight Management",
+                // Product Info Section (8 chaves)
+                "info_headline": "91% of Americans Lack Essential Nutrients – Do You?",
+                "info_subheadline": "Nutrition is the key to wellness. Fill your body with nutrients, and it will thrive!",
+                "info_description": "Transform your well-being with Pure Moringa – the ultimate green superfood packed with more nutrients than any other plant. Add it to your morning routine and feel your body's true optimal performance. 27 vitamins, 9 essential amino acids, 46 antioxidants and minerals like magnesium, iron, and calcium all working to give you:",
+                "benefit_energy": "All-day energy",
+                "benefit_mood": "Supports A Balanced Mood",
+                "benefit_clarity": "Supports Mental Clarity and Focus",
+                "benefit_immune": "Supports A Healthy Immune System",
+                "guarantee_headline": "Feel better or it's free!",
+                "guarantee_text": "If you don't notice a health boost, we'll refund you within 60 days of the product being delivered. No questions asked.",
+                // Science Section (6 chaves)
+                "science_headline": "The Science Supporting PURE",
+                "science_subheadline": "Results from clinical studies on Pure Moringa:",
+                "stat_cortisol": "Reported a noticeable reduction in cortisol levels, verified through saliva and blood tests.",
+                "stat_sleep": "Experienced deeper, more restorative sleep based on monitored sleep studies.",
+                "stat_stress": "Showed reduction in oxidative stress, and boosted immunity verified through clinical tests.",
+                "stat_beauty": "Noticed healthier skin, stronger nails, and improved hair quality.",
+                // Timeline Section (9 chaves)
+                "timeline_headline": "What Should You Expect From Consistent Use of Pure Moringa?",
+                "timeline_1week": "1 Week",
+                "timeline_1week_energy": "Noticeable lift in energy and reduced brain fog from essential nutrients like B12, iron, and magnesium.",
+                "timeline_1week_absorption": "Improved nutrient absorption and digestion, leading to less fatigue and more sustained energy throughout the day.",
+                "timeline_1month": "1 Month",
+                "timeline_1month_immune": "Abundance of B vitamins and antioxidants help strengthen the immune system, reduce inflammation, and combat stress-induced fatigue.",
+                "timeline_1month_mood": "Consistent intake of vitamin A, iron, and magnesium contributes to healthier skin, sharper mental clarity, and improved mood.",
+                "timeline_3months": "3 Months",
+                "timeline_3months_metabolism": "Enhanced metabolism and energy production from key minerals, leading to better physical performance and faster recovery after activities.",
+                "timeline_3months_balance": "Balanced hormones and optimized nutrient levels result in sustained energy, reduced fatigue, and clearer mental focus, helping you feel revitalized all day long.",
+                // Comparison Section (10 chaves)
+                "comparison_headline": "Why Pure Moringa CRUSHES Greens Powders",
+                "comparison_puremoringa": "Pure Moringa",
+                "comparison_greens": "Generic Greens Powders",
+                "comparison_feature_b12": "Vitamin B12 & B6",
+                "comparison_feature_minerals": "Iron & Magnesium",
+                "comparison_feature_antioxidants": "Potent Antioxidants",
+                "comparison_feature_vitamina": "Natural Vitamin A",
+                "comparison_feature_capsules": "Easy to Take Capsules",
+                "comparison_feature_energy": "Consistent Energy Boost",
+                "comparison_feature_taste": "No Strange Taste",
                 // Hero (1 chave)
                 "hero_subtitle": "100% Pure Moringa Leaf Powder Capsules - Nature's Ultimate Green Superfood",
                 // Pricing Banner (4 chaves)
@@ -1400,6 +1915,45 @@
                 "popup_shelf_headline": "Ou découvrez d'autres options :",
                 "popup_shelf_erectogenx_short": "Vitalité masculine",
                 "popup_shelf_slimsana_short": "Gestion du poids",
+                // Product Info Section (8 chaves)
+                "info_headline": "91% des Américains manquent de nutriments essentiels – Et vous?",
+                "info_subheadline": "La nutrition est la clé du bien-être. Remplissez votre corps de nutriments et il prospérera!",
+                "info_description": "Transformez votre bien-être avec Pure Moringa – le super-aliment vert ultime rempli de plus de nutriments que n'importe quelle autre plante. Ajoutez-le à votre routine matinale et ressentez les vraies performances optimales de votre corps. 27 vitamines, 9 acides aminés essentiels, 46 antioxydants et minéraux comme le magnésium, le fer et le calcium travaillent tous pour vous donner:",
+                "benefit_energy": "Énergie toute la journée",
+                "benefit_mood": "Soutient une humeur équilibrée",
+                "benefit_clarity": "Soutient la clarté mentale et la concentration",
+                "benefit_immune": "Soutient un système immunitaire sain",
+                "guarantee_headline": "Sentez-vous mieux ou c'est gratuit!",
+                "guarantee_text": "Si vous ne remarquez pas d'amélioration de votre santé, nous vous rembourserons dans les 60 jours suivant la livraison du produit. Sans poser de questions.",
+                // Science Section (6 chaves)
+                "science_headline": "La Science Soutient PURE",
+                "science_subheadline": "Résultats d'études cliniques sur Pure Moringa:",
+                "stat_cortisol": "Ont signalé une réduction notable des niveaux de cortisol, vérifiée par des tests de salive et de sang.",
+                "stat_sleep": "Ont connu un sommeil plus profond et réparateur basé sur des études de sommeil surveillées.",
+                "stat_stress": "Ont montré une réduction du stress oxydatif et une immunité renforcée vérifiée par des tests cliniques.",
+                "stat_beauty": "Ont remarqué une peau plus saine, des ongles plus forts et une qualité de cheveux améliorée.",
+                // Timeline Section (9 chaves)
+                "timeline_headline": "Qu'attendre de l'utilisation régulière de Pure Moringa?",
+                "timeline_1week": "1 Semaine",
+                "timeline_1week_energy": "Augmentation notable de l'énergie et réduction du brouillard cérébral grâce aux nutriments essentiels comme le B12, le fer et le magnésium.",
+                "timeline_1week_absorption": "Absorption améliorée des nutriments et digestion, entraînant moins de fatigue et plus d'énergie soutenue tout au long de la journée.",
+                "timeline_1month": "1 Mois",
+                "timeline_1month_immune": "L'abondance de vitamines B et d'antioxydants aide à renforcer le système immunitaire, réduire l'inflammation et combattre la fatigue induite par le stress.",
+                "timeline_1month_mood": "L'apport constant de vitamine A, de fer et de magnésium contribue à une peau plus saine, une clarté mentale plus nette et une humeur améliorée.",
+                "timeline_3months": "3 Mois",
+                "timeline_3months_metabolism": "Métabolisme amélioré et production d'énergie à partir de minéraux clés, conduisant à de meilleures performances physiques et une récupération plus rapide après les activités.",
+                "timeline_3months_balance": "Hormones équilibrées et niveaux de nutriments optimisés entraînent une énergie soutenue, une fatigue réduite et une concentration mentale plus claire, vous aidant à vous sentir revitalisé toute la journée.",
+                // Comparison Section (10 chaves)
+                "comparison_headline": "Pourquoi Pure Moringa ÉCRASE les Poudres Vertes",
+                "comparison_puremoringa": "Pure Moringa",
+                "comparison_greens": "Poudres Vertes Génériques",
+                "comparison_feature_b12": "Vitamine B12 & B6",
+                "comparison_feature_minerals": "Fer & Magnésium",
+                "comparison_feature_antioxidants": "Antioxydants Puissants",
+                "comparison_feature_vitamina": "Vitamine A Naturelle",
+                "comparison_feature_capsules": "Capsules Faciles à Prendre",
+                "comparison_feature_energy": "Boost d'Énergie Constant",
+                "comparison_feature_taste": "Aucun Goût Étrange",
                 // Hero (1 chave)
                 "hero_subtitle": "Capsules 100% pures de poudre de feuilles de Moringa - Le super-aliment vert ultime de la nature",
                 // Pricing Banner (4 chaves)
