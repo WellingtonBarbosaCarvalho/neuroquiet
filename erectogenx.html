@@ -548,8 +548,9 @@
         }
 
         .trust-badges-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 35px;
             max-width: 1200px;
             margin: 0 auto;
@@ -558,6 +559,7 @@
         .trust-badge {
             text-align: center;
             padding: 30px 20px;
+            flex: 0 0 280px;
             background: white;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
@@ -657,9 +659,13 @@
                 gap: 15px;
             }
             .trust-badges-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 max-width: 400px;
                 margin: 0 auto;
+            }
+
+            .trust-badge {
+                flex: 1 1 auto;
             }
         }
 
