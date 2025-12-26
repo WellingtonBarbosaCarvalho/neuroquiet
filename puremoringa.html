@@ -980,13 +980,21 @@
         }
     </script>
 
-    <!-- Exit Intent Lead Capture Popup -->
+    <!-- Exit Intent Lead Capture Popup - 3 Camadas de Conversão -->
     <div id="exitPopup" class="exit-popup-overlay" style="display: none;">
         <div class="exit-popup-content">
             <button class="exit-popup-close" onclick="closeExitPopup()">&times;</button>
+
+            <!-- Camada 1: Gatilho Emocional -->
+            <div class="exit-popup-social">
+                <span class="popup-social-icon">🇧🇷</span>
+                <p data-i18n="popup_social_msg">With your interest, you support the social project of a young Brazilian entrepreneur and his family.</p>
+            </div>
+
+            <!-- Camada 2: Captura de E-mail -->
             <div class="exit-popup-header">
-                <h2 data-i18n="popup_headline">⏰ Wait!</h2>
-                <p><span data-i18n="popup_subheadline_prefix">Get an </span><strong data-i18n="popup_discount">EXCLUSIVE 10% DISCOUNT</strong><span data-i18n="popup_subheadline_suffix"> sent to your inbox</span></p>
+                <h2 data-i18n="popup_title">⏰ Wait! One last thing...</h2>
+                <p data-i18n="popup_msg">Don't miss the chance to receive exclusive offers and health tips directly in your inbox!</p>
             </div>
             <form id="exitEmailForm" class="exit-email-form" onsubmit="handleExitEmailSubmit(event)">
                 <input
@@ -999,10 +1007,27 @@
                     autocomplete="email"
                 >
                 <button type="submit" class="exit-submit-btn" data-i18n="popup_cta">
-                    Claim My Discount
+                    JOIN THE LIST NOW
                 </button>
             </form>
             <p class="exit-popup-privacy" data-i18n="popup_privacy">🔒 Your data is safe. No spam, ever.</p>
+
+            <!-- Camada 3: Prateleira Inteligente -->
+            <div class="exit-popup-shelf">
+                <h3 data-i18n="popup_shelf_headline">Or discover other options:</h3>
+                <div class="popup-shelf-grid">
+                    <article class="popup-shelf-card" onclick="window.location.href='./erectogenx.html'">
+                        <img src="./assets/products/erectogenx/PRODx6-500px.webp" alt="ErectogenX" width="80" height="80">
+                        <h4 data-i18n="shelf_erectogenx_title">ErectogenX</h4>
+                        <p data-i18n="popup_shelf_erectogenx_short">Male Vitality</p>
+                    </article>
+                    <article class="popup-shelf-card" onclick="window.location.href='./slimsana.html'">
+                        <img src="./assets/products/slimsana/PRODx6-500px.webp" alt="SlimSana" width="80" height="80">
+                        <h4 data-i18n="shelf_slimsana_title">SlimSana</h4>
+                        <p data-i18n="popup_shelf_slimsana_short">Weight Management</p>
+                    </article>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1073,6 +1098,38 @@
             background: #f3f4f6;
             color: #1f2937;
             transform: rotate(90deg);
+        }
+
+        /* Camada 1: Social Message (Gatilho Emocional) */
+        .exit-popup-social {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .exit-popup-social p {
+            margin: 0;
+            font-size: 14px;
+            color: #065f46;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .popup-social-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
         }
 
         .exit-popup-header {
@@ -1154,9 +1211,77 @@
             margin: 15px 0 0 0;
         }
 
+        /* Camada 3: Prateleira Inteligente dentro do Popup */
+        .exit-popup-shelf {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid #a7f3d0;
+        }
+
+        .exit-popup-shelf h3 {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #065f46;
+            margin: 0 0 20px 0;
+        }
+
+        .popup-shelf-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .popup-shelf-card {
+            background: white;
+            border: 2px solid #a7f3d0;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-shelf-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(134, 180, 140, 0.2);
+            border-color: var(--primary-green);
+        }
+
+        .popup-shelf-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .popup-shelf-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #065f46;
+            margin: 0 0 5px 0;
+        }
+
+        .popup-shelf-card p {
+            font-size: 13px;
+            color: #6b7280;
+            margin: 0;
+        }
+
         @media (max-width: 640px) {
             .exit-popup-content {
                 padding: 30px 20px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .popup-shelf-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exit-popup-social {
+                flex-direction: column;
+                text-align: center;
             }
 
             .exit-popup-header h2 {
@@ -1173,15 +1298,17 @@
         // ===== DICIONÁRIO COMPLETO (i18n - Padrão Anglófono: EN + FR) =====
         const dictionary = {
             "en": {
-                // Popup (8 chaves)
-                "popup_headline": "⏰ Wait!",
-                "popup_subheadline_prefix": "Get an ",
-                "popup_discount": "EXCLUSIVE 10% DISCOUNT",
-                "popup_subheadline_suffix": " sent to your inbox",
+                // Popup - 3 Camadas de Conversão (10 chaves)
+                "popup_social_msg": "With your interest, you support the social project of a young Brazilian entrepreneur and his family.",
+                "popup_title": "⏰ Wait! One last thing...",
+                "popup_msg": "Don't miss the chance to receive exclusive offers and health tips directly in your inbox!",
                 "popup_placeholder": "Enter your email address",
-                "popup_cta": "Claim My Discount",
+                "popup_cta": "JOIN THE LIST NOW",
                 "popup_privacy": "🔒 Your data is safe. No spam, ever.",
                 "popup_loading": "Sending...",
+                "popup_shelf_headline": "Or discover other options:",
+                "popup_shelf_erectogenx_short": "Male Vitality",
+                "popup_shelf_slimsana_short": "Weight Management",
                 // Hero (1 chave)
                 "hero_subtitle": "100% Pure Moringa Leaf Powder Capsules - Nature's Ultimate Green Superfood",
                 // Pricing Banner (4 chaves)
@@ -1229,15 +1356,17 @@
                 "shelf_view_product": "View Product"
             },
             "fr": {
-                // Popup (8 chaves)
-                "popup_headline": "⏰ Attendez !",
-                "popup_subheadline_prefix": "Recevez ",
-                "popup_discount": "RÉDUCTION EXCLUSIVE DE 10%",
-                "popup_subheadline_suffix": " directement dans votre boîte mail",
+                // Popup - 3 Camadas de Conversão (10 chaves)
+                "popup_social_msg": "Grâce à votre intérêt, vous soutenez le projet social d'un jeune entrepreneur brésilien et de sa famille.",
+                "popup_title": "⏰ Attendez ! Une dernière chose...",
+                "popup_msg": "Ne manquez pas l'opportunité de recevoir des offres exclusives et des conseils santé directement dans votre boîte mail !",
                 "popup_placeholder": "Entrez votre adresse e-mail",
-                "popup_cta": "Obtenir ma réduction",
+                "popup_cta": "REJOINDRE LA LISTE MAINTENANT",
                 "popup_privacy": "🔒 Vos données sont en sécurité. Pas de spam.",
                 "popup_loading": "Envoi en cours...",
+                "popup_shelf_headline": "Ou découvrez d'autres options :",
+                "popup_shelf_erectogenx_short": "Vitalité masculine",
+                "popup_shelf_slimsana_short": "Gestion du poids",
                 // Hero (1 chave)
                 "hero_subtitle": "Capsules 100% pures de poudre de feuilles de Moringa - Le super-aliment vert ultime de la nature",
                 // Pricing Banner (4 chaves)
